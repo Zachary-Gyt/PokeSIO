@@ -1,0 +1,148 @@
+/*
+ * Étape 29 : les commandes tactiles (public/js/game/ui/TouchControls.js).
+ * body.touch-on : la manette est affichée.
+ *   - portrait : l'écran de jeu en haut, la croix en bas à gauche, A/B en bas à droite ;
+ *   - paysage  : la croix à gauche de l'écran, A/B à droite.
+ */
+
+/* Pas de zoom au double appui, pas de défilement de la page avec le doigt */
+html, body { touch-action: manipulation; }
+#game, #game canvas { touch-action: none; }
+
+/* Les boutons ajoutés dans la barre du haut */
+.touch-bar-button.active { color: #ffcb05 !important; }
+
+.touch-side[hidden] { display: none !important; }
+.touch-side {
+    --pad-ink: #e8ebf2;
+    --pad-face: #2b3040;
+    --pad-edge: #0e1016;
+    --pad-pressed: #3c4460;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 14px;
+    user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%; min-width: 0;
+    --pad-size: clamp(120px, 40vw, 176px);
+}
+
+/* ---- La croix --------------------------------------------------------- */
+.touch-dpad {
+    position: relative;
+    width: var(--pad-size); aspect-ratio: 1;
+    flex: none;
+}
+.touch-arrow, .touch-center {
+    position: absolute;
+    background: var(--pad-face);
+    box-shadow: inset 0 -4px 0 var(--pad-edge);
+}
+.arrow-up, .arrow-down { left: 33.3%; width: 33.4%; height: 36%; }
+.arrow-left, .arrow-right { top: 33.3%; height: 33.4%; width: 36%; }
+.arrow-up { top: 0; border-radius: 8px 8px 0 0; }
+.arrow-down { bottom: 0; border-radius: 0 0 8px 8px; }
+.arrow-left { left: 0; border-radius: 8px 0 0 8px; }
+.arrow-right { right: 0; border-radius: 0 8px 8px 0; }
+.touch-center { left: 33.3%; top: 33.3%; width: 33.4%; height: 33.4%; box-shadow: none; }
+/* Les petits triangles des flèches */
+.touch-arrow::after {
+    content: ''; position: absolute; left: 50%; top: 50%;
+    border: 9px solid transparent;
+    transform: translate(-50%, -50%);
+}
+.arrow-up::after { border-bottom-color: #8890a0; margin-top: -4px; }
+.arrow-down::after { border-top-color: #8890a0; margin-top: 4px; }
+.arrow-left::after { border-right-color: #8890a0; margin-left: -4px; }
+.arrow-right::after { border-left-color: #8890a0; margin-left: 4px; }
+.touch-dpad.dir-up .arrow-up, .touch-dpad.dir-down .arrow-down,
+.touch-dpad.dir-left .arrow-left, .touch-dpad.dir-right .arrow-right {
+    background: var(--pad-pressed); box-shadow: inset 0 -1px 0 var(--pad-edge);
+}
+.touch-dpad.dir-up .arrow-up::after { border-bottom-color: #ffcb05; }
+.touch-dpad.dir-down .arrow-down::after { border-top-color: #ffcb05; }
+.touch-dpad.dir-left .arrow-left::after { border-right-color: #ffcb05; }
+.touch-dpad.dir-right .arrow-right::after { border-left-color: #ffcb05; }
+
+/* ---- A et B (en diagonale, comme sur les consoles) --------------------- */
+.touch-ab {
+    position: relative;
+    width: var(--pad-size); height: calc(var(--pad-size) * .75);
+    flex: none;
+}
+.touch-button {
+    position: absolute;
+    width: 46%; aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font: calc(var(--pad-size) * .17) 'Power Green', monospace; color: var(--pad-ink);
+    box-shadow: inset 0 -5px 0 rgba(0, 0, 0, .35), 0 0 0 3px var(--pad-edge);
+}
+.touch-a { right: 0; top: 0; background: #c03838; }
+.touch-b { left: 0; bottom: 0; background: #4858a8; }
+.touch-button.pressed { transform: translateY(3px); box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .35), 0 0 0 3px var(--pad-edge); filter: brightness(1.2); }
+
+/* ---- Les petits boutons : Vélo, Pêche, Menu, Chat ---------------------- */
+.touch-extras { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.touch-pill {
+    min-width: 64px; padding: 7px 10px;
+    border-radius: 14px;
+    background: var(--pad-face); color: #b8c0d0;
+    font: 16px 'Power Green', monospace; text-align: center;
+    box-shadow: inset 0 -3px 0 var(--pad-edge);
+}
+.touch-pill.pressed { background: var(--pad-pressed); color: #ffcb05; box-shadow: inset 0 -1px 0 var(--pad-edge); }
+
+/* ---- Mise en page avec la manette -------------------------------------- */
+body.touch-on .stage {
+    display: grid;
+    justify-content: stretch;
+    gap: 10px;
+    padding: 8px;
+}
+
+/* Portrait : l'écran en haut (toute la largeur), la manette dessous */
+@media (orientation: portrait) {
+    body.touch-on .stage {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: "screen screen" "left right";
+        align-content: start;
+    }
+    body.touch-on .screen {
+        grid-area: screen; justify-self: center;
+        width: min(100%, (100vh - var(--bar-h) - 260px) * 4 / 3);
+        width: min(100%, (100dvh - var(--bar-h) - 260px) * 4 / 3);
+    }
+    body.touch-on .touch-left { grid-area: left; }
+    body.touch-on .touch-right { grid-area: right; }
+}
+
+/* Paysage : la croix à gauche, l'écran au milieu, A/B à droite */
+@media (orientation: landscape) {
+    body.touch-on .stage {
+        grid-template-columns: minmax(120px, 1fr) auto minmax(120px, 1fr);
+        grid-template-areas: "left screen right";
+        align-items: center;
+    }
+    body.touch-on .touch-side { --pad-size: clamp(104px, min(17vw, 38vh), 176px); }
+    body.touch-on .screen {
+        grid-area: screen;
+        width: min(100vw - 2 * 130px - 36px, (100vh - var(--bar-h) - 24px) * 4 / 3);
+        width: min(100vw - 2 * 130px - 36px, (100dvh - var(--bar-h) - 24px) * 4 / 3);
+    }
+    body.touch-on .touch-left { grid-area: left; }
+    body.touch-on .touch-right { grid-area: right; }
+}
+
+/* Petits écrans : une barre du haut plus fine, pour laisser la place au jeu */
+@media (max-height: 520px), (max-width: 600px) {
+    body.touch-on { --bar-h: 34px; }
+    body.touch-on .bar { font-size: 15px; padding: 0 8px; }
+    body.touch-on .bar nav { gap: 12px; }
+    body.touch-on .bar .who { display: none; }
+}
+@media (max-width: 420px) {
+    body.touch-on .bar .brand { display: none; }
+    body.touch-on .bar { justify-content: flex-end; }
+}

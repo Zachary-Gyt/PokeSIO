@@ -1,0 +1,540 @@
+{ "compressionlevel":-1,
+ "height":16,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 4, 1, 1,
+            9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 12, 9, 9,
+            26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
+            27, 28, 42, 34, 34, 35, 17, 17, 17, 17, 17, 17, 17,
+            44, 35, 17, 17, 17, 17, 41, 34, 34, 34, 34, 34, 34,
+            27, 17, 26, 26, 28, 17, 17, 17, 17, 17, 17, 17, 17,
+            27, 17, 26, 26, 27, 17, 17, 17, 17, 17, 17, 17, 17,
+            27, 17, 26, 26, 27, 17, 17, 17, 26, 20, 17, 17, 41,
+            27, 17, 42, 34, 35, 17, 17, 17, 26, 27, 17, 17, 17,
+            27, 17, 17, 17, 17, 17, 17, 41, 34, 35, 17, 17, 17,
+            27, 17, 26, 26, 28, 17, 17, 17, 26, 20, 17, 17, 41,
+            27, 17, 26, 26, 27, 17, 17, 17, 26, 27, 17, 17, 17,
+            27, 17, 26, 26, 27, 17, 17, 41, 34, 35, 17, 17, 17,
+            27, 17, 42, 34, 35, 17, 17, 17, 17, 17, 17, 17, 41,
+            27, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17,
+            96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96],
+         "height":16,
+         "id":1,
+         "name":"ground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":13,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1387, 1388,
+            0, 0, 142, 143, 144, 0, 201, 0, 0, 0, 0, 1395, 1396,
+            124, 0, 150, 151, 152, 0, 209, 0, 0, 0, 0, 1403, 1404,
+            2147483782, 0, 0, 0, 0, 0, 217, 218, 218, 218, 218, 218, 218,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 131, 132, 0, 0, 0, 0, 0, 0, 0, 141, 137,
+            0, 0, 139, 140, 1519, 0, 0, 0, 0, 0, 0, 141, 145,
+            0, 0, 147, 148, 1519, 0, 141, 137, 138, 149, 0, 0, 0,
+            124, 0, 0, 1519, 0, 0, 141, 145, 146, 149, 0, 141, 137,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 141, 145,
+            0, 0, 131, 132, 0, 0, 141, 137, 138, 149, 0, 0, 0,
+            0, 0, 139, 140, 1519, 0, 141, 145, 146, 149, 0, 141, 137,
+            0, 0, 147, 148, 1519, 0, 0, 0, 0, 0, 0, 141, 145,
+            0, 0, 0, 1519, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            124, 0, 0, 0, 0, 85, 86, 87, 0, 0, 0, 0, 124,
+            0, 0, 0, 0, 0, 93, 94, 95, 0, 0, 0, 0, 0],
+         "height":16,
+         "id":2,
+         "name":"decor",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":13,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            2147483774, 0, 0, 0, 0, 0, 0, 210, 210, 210, 210, 210, 210,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 129,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 129, 130, 0, 0, 0, 0,
+            116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 129,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 129, 130, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 129,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            116, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 116,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":16,
+         "id":3,
+         "name":"above",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":13,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"warps",
+         "objects":[
+                {
+                 "height":32,
+                 "id":1,
+                 "name":"sortie",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"to_map",
+                         "type":"string",
+                         "value":"bachut"
+                        }, 
+                        {
+                         "name":"to_x",
+                         "type":"int",
+                         "value":38
+                        }, 
+                        {
+                         "name":"to_y",
+                         "type":"int",
+                         "value":8
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":192,
+                 "y":480
+                }, 
+                {
+                 "height":32,
+                 "id":12,
+                 "name":"guichet_1",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"bank"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":0,
+                 "y":96
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"spawns",
+         "objects":[
+                {
+                 "height":0,
+                 "id":2,
+                 "name":"spawn",
+                 "opacity":1,
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":192,
+                 "y":480
+                }],
+         "opacity":1,
+         "properties":[
+                {
+                 "name":"action",
+                 "type":"string",
+                 "value":"bank"
+                }],
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"npcs",
+         "objects":[
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"guichet_jetons",
+                 "opacity":1,
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"coins"
+                        }, 
+                        {
+                         "name":"behavior",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"Guicheti\u00e8re"
+                        }, 
+                        {
+                         "name":"objname",
+                         "type":"string",
+                         "value":"guichet_jetons"
+                        }, 
+                        {
+                         "name":"sprite",
+                         "type":"string",
+                         "value":"npc_11"
+                        }, 
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"..."
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":256,
+                 "y":64
+                }, 
+                {
+                 "height":0,
+                 "id":4,
+                 "name":"lots",
+                 "opacity":1,
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"prizes"
+                        }, 
+                        {
+                         "name":"behavior",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"Lots"
+                        }, 
+                        {
+                         "name":"objname",
+                         "type":"string",
+                         "value":"lots"
+                        }, 
+                        {
+                         "name":"prizes",
+                         "type":"string",
+                         "value":"pokemon"
+                        }, 
+                        {
+                         "name":"sprite",
+                         "type":"string",
+                         "value":"npc_10"
+                        }, 
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"..."
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":320,
+                 "y":64
+                }, 
+                {
+                 "height":0,
+                 "id":5,
+                 "name":"gerant",
+                 "opacity":1,
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"gift"
+                        }, 
+                        {
+                         "name":"after",
+                         "type":"string",
+                         "value":"Les jetons s'ach\u00e8tent au guichet, en haut."
+                        }, 
+                        {
+                         "name":"behavior",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"left"
+                        }, 
+                        {
+                         "name":"gift",
+                         "type":"string",
+                         "value":"bachut_boite_jetons"
+                        }, 
+                        {
+                         "name":"item",
+                         "type":"string",
+                         "value":"coin-case"
+                        }, 
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"G\u00e9rant"
+                        }, 
+                        {
+                         "name":"objname",
+                         "type":"string",
+                         "value":"gerant"
+                        }, 
+                        {
+                         "name":"sprite",
+                         "type":"string",
+                         "value":"npc_10"
+                        }, 
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"Bienvenue au Casino de Bachut ! Tenez, une Bo\u00eete Jetons pour ranger vos jetons."
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":256,
+                 "y":416
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":7,
+         "name":"signs",
+         "objects":[
+                {
+                 "height":256,
+                 "id":6,
+                 "name":"machines_droite",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"slots"
+                        }, 
+                        {
+                         "name":"difficulty",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":384,
+                 "y":160
+                }, 
+                {
+                 "height":64,
+                 "id":7,
+                 "name":"machines_milieu",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"slots"
+                        }, 
+                        {
+                         "name":"difficulty",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":224,
+                 "y":320
+                }, 
+                {
+                 "height":96,
+                 "id":8,
+                 "name":"roulette_1",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"roulette"
+                        }, 
+                        {
+                         "name":"wager",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":64,
+                 "y":160
+                }, 
+                {
+                 "height":96,
+                 "id":9,
+                 "name":"roulette_3",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"roulette"
+                        }, 
+                        {
+                         "name":"wager",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":64,
+                 "y":320
+                }, 
+                {
+                 "height":64,
+                 "id":10,
+                 "name":"machines_milieu",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"slots"
+                        }, 
+                        {
+                         "name":"difficulty",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":224,
+                 "y":224
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":8,
+ "nextobjectid":13,
+ "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"battleback",
+         "type":"string",
+         "value":"indoor1"
+        }, 
+        {
+         "name":"bgm",
+         "type":"string",
+         "value":"Game Corner"
+        }, 
+        {
+         "name":"displayName",
+         "type":"string",
+         "value":"Casino de Bachut"
+        }, 
+        {
+         "name":"no_bike",
+         "type":"bool",
+         "value":true
+        }],
+ "renderorder":"right-down",
+ "tiledversion":"1.12.2",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "columns":8,
+         "firstgid":1,
+         "image":"..\/tilesets\/game_corner.png",
+         "imageheight":960,
+         "imagewidth":256,
+         "margin":0,
+         "name":"game_corner",
+         "spacing":0,
+         "tilecount":240,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "columns":8,
+         "firstgid":241,
+         "image":"..\/tilesets\/interior.png",
+         "imageheight":8032,
+         "imagewidth":256,
+         "margin":0,
+         "name":"interior",
+         "spacing":0,
+         "tilecount":2008,
+         "tileheight":32,
+         "tilewidth":32
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":"1.10",
+ "width":13
+}

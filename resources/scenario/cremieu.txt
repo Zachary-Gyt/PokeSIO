@@ -1,0 +1,39 @@
+# =====================================================================
+# Crémieu (carte cremieu)
+# La Nageuse : PNJ « nageuse », event = nageuse (CS03 Surf après le 5e badge)
+# Le Pêcheur : PNJ « pecheur_expert », event = pecheur_expert (Super Canne au 3e badge, Méga Canne au 6e)
+# =====================================================================
+
+evenement nageuse
+    nom Nageuse
+    si drapeau cs_surf_recue
+        dire Avec Surf, ton Pokémon te porte sur l'eau. L'étang n'aura plus de secrets pour toi !
+    sinon si badge 5
+        dire Le Badge Âme ! Alors tu peux surfer. Prends ça !
+        donner objet hm03 1
+        drapeau cs_surf_recue
+        dire La CS03, c'est Surf. À toi les lacs et les rivières !
+    sinon
+        dire J'aimerais tant traverser l'étang... Reviens avec le Badge Âme.
+    fin
+fin
+
+evenement pecheur_expert
+    nom Pêcheur
+    si drapeau mega_canne_recue
+        dire La Méga Canne attrape les plus gros Pokémon. Bonne pêche !
+    sinon si badges 6 et drapeau super_canne_recue
+        dire Six badges ! Tu es devenu un vrai pêcheur. Prends ma meilleure canne.
+        donner objet super-rod 1
+        drapeau mega_canne_recue
+    sinon si drapeau super_canne_recue
+        dire Reviens avec 6 badges : j'aurai une canne encore meilleure pour toi.
+    sinon si badges 3
+        dire Tu as déjà 3 badges ? Tiens, prends cette Super Canne !
+        donner objet good-rod 1
+        drapeau super_canne_recue
+        dire Avec elle, tu pêcheras des Pokémon plus forts.
+    sinon
+        dire La pêche, c'est toute ma vie. Reviens avec 3 badges, je te donnerai une bonne canne.
+    fin
+fin

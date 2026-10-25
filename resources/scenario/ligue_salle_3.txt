@@ -1,0 +1,11 @@
+# Étape 27 : salle 3 de la Ligue. La porte du fond ne s'ouvre qu'une fois le membre de la salle battu
+# PENDANT CETTE TENTATIVE : « si ligue 3 » = au moins 3 membres battus à la suite.
+evenement porte
+    si ligue 3
+        son door
+        teleporter ligue_salle_4 5 10 haut
+    sinon
+        message La porte est verrouillée. Il faut d'abord vaincre le dresseur de cette salle !
+        deplacer joueur bas 1
+    fin
+fin

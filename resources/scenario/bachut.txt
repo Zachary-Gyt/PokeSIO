@@ -1,0 +1,33 @@
+# =====================================================================
+# Bachut (carte bachut)
+# Le Pilote : PNJ « pilote », event = pilote (CS02 Vol après le 3e badge)
+# L'Ouvrier : PNJ « ouvrier », event = ouvrier (CS06 Éclate-Roc après le 6e badge)
+# =====================================================================
+
+evenement pilote
+    nom Pilote
+    si drapeau cs_vol_recue
+        dire Avec Vol, tu peux retourner en un instant dans une ville déjà visitée.
+    sinon si badge 3
+        dire Le Badge Foudre ! Tes Pokémon peuvent maintenant voler hors des combats.
+        donner objet hm02 1
+        drapeau cs_vol_recue
+        dire La CS02, c'est Vol. Bon voyage !
+    sinon
+        dire J'étais pilote. Rien ne vaut le ciel... Reviens avec le Badge Foudre, petit.
+    fin
+fin
+
+evenement ouvrier
+    nom Ouvrier
+    si drapeau cs_eclate_roc_recue
+        dire Éclate-Roc brise les rochers fissurés. Parfois, un Pokémon se cache dessous !
+    sinon si badge 6
+        dire Tu as le Badge Marais ? Tiens, j'en ai plus besoin, moi.
+        donner objet hm06 1
+        drapeau cs_eclate_roc_recue
+        dire La CS06, c'est Éclate-Roc !
+    sinon
+        dire Ces rochers sur la Route 1... Il faudrait les casser. Reviens avec le Badge Marais.
+    fin
+fin

@@ -1,0 +1,25 @@
+# =====================================================================
+# Le bureau de la directrice de l'École ORT (carte ort_office)
+# Madame Goudet : PNJ « goudet » avec la propriété event = goudet
+# =====================================================================
+
+evenement goudet
+    nom Mme Goudet
+    si drapeau goudet_legendaire_donne
+        dire Huit badges... Je suis fière de toi, {joueur}.
+        dire Le Maître de l'ORT t'attend en salle 310, si tu te sens prêt.
+    sinon si badges 8
+        dire {joueur} ! Ces huit badges... Tu as donc battu huit Champions de l'École !
+        dire Le Professeur Thouverez avait raison à ton sujet.
+        dire Je garde depuis longtemps un Pokémon très particulier. Il mérite un dresseur comme toi.
+        donner pokemon legendaire 50
+        drapeau goudet_legendaire_donne
+        dire Prends-en grand soin. Et maintenant, pourquoi ne pas défier le Maître de l'ORT, en salle 310 ?
+    sinon
+        dire Bonjour, {joueur}. Je suis Madame Goudet, la directrice de l'École ORT.
+        dire Le Professeur Thouverez m'a parlé de toi.
+        dire Les Champions de l'École t'attendent : ceux de Kanto au 1er étage, ceux de Johto au 2e.
+        dire Tu as {badges} badge(s). Reviens me voir quand tu en auras 8 !
+        dire Pour t'entraîner, va au bâtiment au fond de la cour de l'ORT : la Tour de Combat.
+    fin
+fin

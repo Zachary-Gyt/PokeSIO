@@ -1,0 +1,11 @@
+# Étape 27 : salle 2 de la Ligue. La porte du fond ne s'ouvre qu'une fois le membre de la salle battu
+# PENDANT CETTE TENTATIVE : « si ligue 2 » = au moins 2 membres battus à la suite.
+evenement porte
+    si ligue 2
+        son door
+        teleporter ligue_salle_3 5 10 haut
+    sinon
+        message La porte est verrouillée. Il faut d'abord vaincre le dresseur de cette salle !
+        deplacer joueur bas 1
+    fin
+fin

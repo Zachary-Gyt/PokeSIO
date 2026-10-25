@@ -1,0 +1,280 @@
+# =====================================================================
+# Salle des événements (carte evenements_test) : des exemples de tout
+# ce que le langage de scénario sait faire. Lis-les dans l'ordre !
+#
+# Chaque bloc « evenement nom » ... « fin » est joué quand on parle à
+# l'objet Tiled qui a la propriété event = nom (PNJ, panneau, zone).
+# Les lignes qui commencent par # sont des commentaires.
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+# 1. Un événement AUTOMATIQUE (zone du calque "events", trigger = auto).
+#    Il se joue en arrivant sur la carte. La zone a hide_if = accueil_vu :
+#    une fois le drapeau levé, elle disparaît et ne se rejoue plus.
+#    « prof » est le NOM de l'objet du Professeur dans Tiled.
+# ---------------------------------------------------------------------
+evenement accueil
+    exclamation prof
+    deplacer prof vers joueur
+    nom Prof. Saule
+    dire Ah, {joueur} ! Bienvenue dans la salle des événements.
+    dire Ici, tout ce qui se passe est écrit dans un fichier : resources/scenario/evenements_test.txt.
+    dire Viens me parler quand tu veux, j'ai quelque chose pour toi.
+    deplacer prof gauche 3
+    regarder prof droite
+    drapeau accueil_vu
+fin
+
+
+# ---------------------------------------------------------------------
+# 2. Un cadeau UNE SEULE FOIS, grâce à un drapeau.
+#    Astuce : lève le drapeau JUSTE APRÈS le cadeau.
+# ---------------------------------------------------------------------
+evenement professeur
+    si drapeau potions_recues
+        dire Le garde du nord te laissera passer, maintenant.
+        dire Au fait : tu as {argent} en poche et {badges} badge(s).
+    sinon
+        dire Tiens, prends ces Potions. Elles te seront utiles !
+        donner objet potion 5
+        drapeau potions_recues
+        dire Montre-les au garde, au nord : il te laissera passer.
+    fin
+fin
+
+
+# ---------------------------------------------------------------------
+# 3. Un PNJ qui s'ÉCARTE. Dans Tiled, il y a DEUX gardes :
+#      garde       au milieu du passage, hide_if = garde_parti
+#      garde_cote  sur le côté,          show_if = garde_parti
+#    Le garde marche sur le côté, le drapeau est levé, et à la fin de
+#    l'événement le premier disparaît pendant que le second apparaît :
+#    au prochain passage, il sera toujours sur le côté.
+# ---------------------------------------------------------------------
+evenement garde
+    si drapeau potions_recues
+        dire Oh, le Professeur t'a donné des Potions ? Alors tu peux passer.
+        deplacer ce bas 1 droite 1
+        regarder ce gauche
+        drapeau garde_parti
+    sinon
+        dire Halte ! Va d'abord voir le Professeur, près de l'entrée.
+    fin
+fin
+
+evenement garde_cote
+    dire Au nord : un Pokémon endormi, et une dresseuse qui guette les passants.
+fin
+
+
+# ---------------------------------------------------------------------
+# 4. Un Pokémon qui BLOQUE le chemin, et un COMBAT SAUVAGE scripté.
+#    Dans Tiled : propriété pokemon = SNORLAX (sa planche de marche).
+#    Si le joueur perd, tout devient noir et l'événement s'arrête :
+#    le drapeau n'est pas levé, Ronflex sera encore là.
+# ---------------------------------------------------------------------
+evenement ronflex
+    message Un Pokémon énorme dort au milieu du passage...
+    si question Le réveiller en lui chatouillant le nez ?
+        exclamation ce
+        cri snorlax
+        message Ronflex se réveille, de très mauvaise humeur !
+        combat sauvage snorlax 30
+        drapeau ronflex_parti
+        si resultat capture
+            message Ronflex a rejoint ton équipe !
+        sinon
+            message Ronflex est reparti dormir dans les montagnes...
+        fin
+    sinon
+        message Mieux vaut le laisser dormir.
+    fin
+fin
+
+
+# ---------------------------------------------------------------------
+# 5. Une dresseuse qui vient vers le joueur (zone "step" de 1 x 4 cases
+#    sur la ligne de sable), puis un combat qu'on a le droit de PERDRE.
+#    « perdable » : pas de « tout devient noir », l'équipe est soignée,
+#    et on peut réagir à la défaite avec « si resultat defaite ».
+#    Le dresseur evenements_lina vient de la table trainers
+#    (php artisan db:seed --class=EventTestSeeder).
+# ---------------------------------------------------------------------
+evenement lina_defi
+    regarder lina gauche
+    exclamation lina
+    musique Battle trainer
+    deplacer lina vers joueur
+    nom Lina
+    dire Hé, toi ! Personne ne passe sans affronter Lina !
+    combat dresseur evenements_lina perdable
+    nom Lina
+    si resultat victoire
+        dire Tu m'as battue... La route est à toi !
+        drapeau lina_battue
+    sinon
+        dire Hihi, j'ai gagné ! Tes Pokémon sont soignés : reviens quand tu veux.
+    fin
+    musique carte
+fin
+
+evenement lina
+    si drapeau lina_battue
+        dire Je vais m'entraîner encore plus !
+    sinon
+        dire Marche sur la ligne de sable si tu veux te battre !
+    fin
+fin
+
+
+# ---------------------------------------------------------------------
+# 6. Une QUESTION oui / non, et un POKÉMON en cadeau.
+#    « si equipe 6 » : l'équipe est pleine, il ira au PC.
+# ---------------------------------------------------------------------
+evenement eleveuse
+    si drapeau evoli_recu
+        dire Tu prends bien soin d'Évoli ? Il évolue de tant de façons...
+        arreter
+    fin
+    dire Mes Évoli ont eu des petits. J'en ai un de trop...
+    si question Voudrais-tu t'occuper de cet Évoli ?
+        si equipe 6
+            dire Ton équipe est pleine : je l'envoie à ton PC.
+        fin
+        donner pokemon eevee 5 objet soothe-bell
+        drapeau evoli_recu
+        dire Il porte un Grelot Zen : il t'aimera encore plus vite !
+    sinon
+        dire Ah... Reviens si tu changes d'avis.
+    fin
+fin
+
+
+# ---------------------------------------------------------------------
+# 7. Un MENU à plusieurs choix, et une VARIABLE (un compteur).
+#    Le dernier choix sert aussi de « Retour » (touche Échap).
+# ---------------------------------------------------------------------
+evenement quiz
+    si drapeau quiz_fini
+        dire Champion du quiz ! Tu as eu {variable:quiz_points} bonnes réponses.
+        arreter
+    fin
+    dire Bienvenue au quiz Pokémon ! Trois bonnes réponses et tu gagnes un lot.
+    variable quiz_points = 0
+    menu Quel type est super efficace contre Eau ?
+        choix Feu
+        choix Plante
+            variable quiz_points + 1
+        choix Roche
+    fin
+    menu Quel Pokémon évolue avec une Pierre Lune ?
+        choix Mélofée
+            variable quiz_points + 1
+        choix Abra
+        choix Évoli
+    fin
+    menu Combien de badges faut-il pour la Ligue ?
+        choix Six
+        choix Huit
+            variable quiz_points + 1
+        choix Dix
+    fin
+    si variable quiz_points = 3
+        dire Trois sur trois ! Bravo, voici ton lot.
+        donner objet rare-candy
+        drapeau quiz_fini
+    sinon
+        dire Tu as {variable:quiz_points} bonne(s) réponse(s) sur 3. Réessaie !
+    fin
+fin
+
+
+# ---------------------------------------------------------------------
+# 8. Un ÉCHANGE d'objets : « si objet », puis « prendre objet ».
+# ---------------------------------------------------------------------
+evenement collectionneur
+    si drapeau echange_fait
+        dire Ma collection de Potions s'agrandit, merci encore !
+        arreter
+    fin
+    dire Je collectionne les Potions. Je t'échange un Super Bonbon contre une seule !
+    si pas objet potion
+        dire Tu n'en as pas ? Le Professeur en distribue, il paraît.
+    sinon si question Donner une Potion ?
+        prendre objet potion 1
+        donner objet rare-candy 1
+        drapeau echange_fait
+    sinon
+        dire Dommage...
+    fin
+fin
+
+
+# ---------------------------------------------------------------------
+# 9. Se reposer comme chez Maman : fondu au noir, jingle, soin.
+# ---------------------------------------------------------------------
+evenement repos
+    dire Tu as l'air fatigué. Repose-toi un peu !
+    fondu noir
+    soigner
+    fondu clair
+    dire Voilà, tes Pokémon sont en pleine forme. Bonne route !
+fin
+
+
+# ---------------------------------------------------------------------
+# 10. Un menu de TÉLÉPORTATION. « teleporter » termine l'événement.
+# ---------------------------------------------------------------------
+evenement teleporteur
+    menu Où veux-tu que je t'envoie ?
+        choix Salle de test
+            dire Concentration...
+            secouer
+            teleporter dev_room 14 11 bas
+        choix Crémieu
+            dire Concentration...
+            secouer
+            teleporter cremieu 6 8 bas
+        choix Rester ici
+            dire Comme tu veux.
+    fin
+fin
+
+
+# ---------------------------------------------------------------------
+# 11. L'HEURE, le JOUR et le HASARD.
+# ---------------------------------------------------------------------
+evenement fleuriste
+    si heure nuit
+        dire Il est tard... Les fleurs dorment, et moi aussi bientôt.
+    sinon si jour samedi dimanche
+        dire C'est le week-end ! Les fleurs sont plus belles le week-end.
+    sinon
+        dire Bonjour ! Belle journée pour les fleurs.
+    fin
+    si hasard 30
+        dire Oh, et tiens, une Baie que j'ai trouvée par terre.
+        donner objet oran-berry
+    fin
+fin
+
+
+# ---------------------------------------------------------------------
+# 12. Un PANNEAU (calque signs) avec un compteur de visites.
+# ---------------------------------------------------------------------
+evenement panneau
+    variable visites + 1
+    message SALLE DES ÉVÉNEMENTS. Vous avez lu ce panneau {variable:visites} fois.
+fin
+
+
+# ---------------------------------------------------------------------
+# 13. Une zone qu'on REGARDE (trigger = action) : un trésor caché
+#     dans la haie, en bas à droite.
+# ---------------------------------------------------------------------
+evenement cachette
+    message Il y a quelque chose au fond de la haie...
+    donner argent 500
+    drapeau cachette_trouvee
+fin

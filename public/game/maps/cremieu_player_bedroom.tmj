@@ -1,0 +1,202 @@
+{ "compressionlevel":-1,
+ "height":9,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33,
+            41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41,
+            386, 386, 386, 386, 386, 386, 386, 377, 377, 386, 386,
+            387, 377, 377, 377, 377, 377, 377, 377, 377, 377, 377,
+            387, 377, 377, 377, 377, 377, 377, 377, 377, 377, 377,
+            387, 377, 377, 377, 794, 794, 794, 377, 377, 377, 377,
+            387, 377, 377, 377, 794, 794, 794, 377, 377, 377, 377,
+            387, 377, 377, 377, 377, 377, 377, 377, 377, 377, 377,
+            387, 377, 377, 377, 377, 377, 377, 377, 377, 377, 377],
+         "height":9,
+         "id":1,
+         "name":"ground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 1121, 1122, 0, 1108, 1109, 0, 0, 0, 0,
+            1318, 1173, 1129, 1130, 0, 1116, 1117, 0, 0, 0, 0,
+            1326, 1181, 1137, 1138, 0, 0, 0, 887, 888, 904, 0,
+            0, 0, 0, 0, 0, 1329, 0, 895, 896, 912, 0,
+            1201, 1202, 1203, 785, 786, 1337, 786, 787, 0, 0, 0,
+            1209, 1210, 1211, 793, 0, 1345, 0, 795, 0, 0, 1276,
+            1217, 1218, 1219, 793, 0, 1348, 0, 795, 0, 0, 1284,
+            0, 0, 0, 801, 802, 802, 802, 803, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 1395, 0],
+         "height":9,
+         "id":2,
+         "name":"decor",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[1310, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 879, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 1340, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 1387, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":9,
+         "id":3,
+         "name":"above",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"warps",
+         "objects":[
+                {
+                 "height":32,
+                 "id":1,
+                 "name":"escalier",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"to_map",
+                         "type":"string",
+                         "value":"cremieu_player_house"
+                        }, 
+                        {
+                         "name":"to_x",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"to_y",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":256,
+                 "y":64
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"spawns",
+         "objects":[
+                {
+                 "height":0,
+                 "id":2,
+                 "name":"spawn",
+                 "opacity":1,
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":96,
+                 "y":192
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"signs",
+         "objects":[
+                {
+                 "height":32,
+                 "id":3,
+                 "name":"pc",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"pc"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":0,
+                 "y":32
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":7,
+ "nextobjectid":4,
+ "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"battleback",
+         "type":"string",
+         "value":"indoor1"
+        }, 
+        {
+         "name":"displayName",
+         "type":"string",
+         "value":"Chambre"
+        }, 
+        {
+         "name":"no_bike",
+         "type":"bool",
+         "value":true
+        }],
+ "renderorder":"right-down",
+ "tiledversion":"1.12.2",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "columns":8,
+         "firstgid":1,
+         "image":"..\/tilesets\/interior.png",
+         "imageheight":8032,
+         "imagewidth":256,
+         "margin":0,
+         "name":"interior",
+         "spacing":0,
+         "tilecount":2008,
+         "tileheight":32,
+         "tilewidth":32
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":"1.10",
+ "width":11
+}

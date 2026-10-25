@@ -1,0 +1,275 @@
+{ "compressionlevel":-1,
+ "height":9,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[161, 162, 163, 163, 163, 164, 165, 165, 166, 163, 163, 163, 167, 168,
+            169, 170, 171, 171, 171, 172, 173, 173, 174, 171, 171, 171, 175, 176,
+            177, 178, 179, 179, 179, 180, 181, 181, 182, 179, 179, 179, 183, 184,
+            185, 186, 187, 196, 197, 188, 189, 189, 190, 197, 198, 187, 191, 192,
+            193, 194, 205, 204, 205, 205, 201, 202, 205, 205, 206, 205, 199, 200,
+            193, 194, 205, 203, 205, 205, 209, 210, 205, 205, 207, 205, 199, 200,
+            193, 194, 205, 204, 205, 205, 217, 218, 205, 205, 206, 205, 199, 200,
+            193, 194, 205, 212, 213, 213, 213, 213, 213, 213, 214, 205, 199, 200,
+            64, 64, 64, 64, 64, 64, 220, 220, 64, 64, 64, 64, 64, 64],
+         "height":9,
+         "id":1,
+         "name":"ground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":14,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            369, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 371,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":9,
+         "id":2,
+         "name":"decor",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":14,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":9,
+         "id":3,
+         "name":"above",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":14,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"warps",
+         "objects":[
+                {
+                 "height":32,
+                 "id":1,
+                 "name":"sortie",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"to_map",
+                         "type":"string",
+                         "value":"ort_courtyard"
+                        }, 
+                        {
+                         "name":"to_x",
+                         "type":"int",
+                         "value":33
+                        }, 
+                        {
+                         "name":"to_y",
+                         "type":"int",
+                         "value":8
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":192,
+                 "y":256
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"spawns",
+         "objects":[
+                {
+                 "height":0,
+                 "id":2,
+                 "name":"spawn",
+                 "opacity":1,
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":192,
+                 "y":224
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"npcs",
+         "objects":[
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"hotesse",
+                 "opacity":1,
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"battle_tower"
+                        }, 
+                        {
+                         "name":"behavior",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"H\u00f4tesse"
+                        }, 
+                        {
+                         "name":"objname",
+                         "type":"string",
+                         "value":"hotesse"
+                        }, 
+                        {
+                         "name":"sprite",
+                         "type":"string",
+                         "value":"npc_22"
+                        }, 
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"..."
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":192,
+                 "y":96
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":7,
+         "name":"signs",
+         "objects":[
+                {
+                 "height":32,
+                 "id":4,
+                 "name":"tableau",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"tower_board"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":192,
+                 "y":32
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":8,
+ "nextobjectid":5,
+ "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"battleback",
+         "type":"string",
+         "value":"indoor1"
+        }, 
+        {
+         "name":"displayName",
+         "type":"string",
+         "value":"Tour de Combat"
+        }, 
+        {
+         "name":"no_bike",
+         "type":"bool",
+         "value":true
+        }],
+ "renderorder":"right-down",
+ "tiledversion":"1.12.2",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "columns":8,
+         "firstgid":1,
+         "image":"..\/tilesets\/Multiplayer rooms.png",
+         "imageheight":1376,
+         "imagewidth":256,
+         "margin":0,
+         "name":"Multiplayer rooms",
+         "spacing":0,
+         "tilecount":344,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "columns":8,
+         "firstgid":345,
+         "image":"..\/tilesets\/Mart interior.png",
+         "imageheight":576,
+         "imagewidth":256,
+         "margin":0,
+         "name":"Mart interior",
+         "spacing":0,
+         "tilecount":144,
+         "tileheight":32,
+         "tilewidth":32
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":"1.10",
+ "width":14
+}

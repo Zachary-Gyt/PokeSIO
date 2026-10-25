@@ -1,0 +1,949 @@
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGS
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle Champion.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle Elite.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle Frontier.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle Gym Leader.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle roaming.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle trainer.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle victory leader.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle victory trainer.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle victory wild.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle victory.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Battle wild.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Bicycle.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Bicycle_n.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Cave.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Cedolan City.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Credits.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Evolution.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Game Corner.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Gym.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Hall of Fame.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Ingido Plateau.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Islands.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Lab.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Lappet Town.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Lerucean Town.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Natural Park.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\New Start.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Poke Center.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Poke Mart.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Radio - Lullaby.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Radio - March.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Radio - Oak.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Route 1.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Route 2.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Route 3.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Rout‚ 1.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Safari Zone exterior.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Safari Zone.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Surfing.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Tiall.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Title.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Triple Triad.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\BGM\Underwater.mid
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Badge get.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Battle capture success.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Berry get.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\BP get.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Bug catching 1st.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Bug catching 2nd.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Bug catching 3rd.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Egg get.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Evolution start.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Evolution success.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Forget move.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\GUI save game.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Item get.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Key item get.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Machine get.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Pkmn get.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Pkmn healing.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Register phone.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Slots big win.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Slots win.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Voltorb Flip game over.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\ME\Voltorb Flip win.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle ability.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle ball drop.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle ball hit.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle ball shake.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle catch click.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle critical catch throw.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle damage normal.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle damage super.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle damage weak.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle flee.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle jump to ball.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle recall.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Battle throw.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Bicycle.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cut.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Door enter.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Door exit.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Door slide.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Elevator end.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Elevator moving.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Exclaim.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Fly.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI menu close.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI menu open.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI naming confirm.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI naming tab swap end.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI naming tab swap start.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI party switch.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI pokedex open.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI save choice.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI sel buzzer.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI sel cancel.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI sel cursor.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI sel decision.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI storage hide party panel.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI storage pick up.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI storage put down.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI storage show party panel.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI summary change page.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\GUI trainer card open.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Headbutt.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Itemfinder.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mart buy item.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining collapse.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining cursor.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining found all.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining hammer.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining iron.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining item get.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining pick.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining ping.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining reveal full.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining reveal.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Mining tool change.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\PC access.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\PC close.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\PC open.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Pkmn exp full.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Pkmn exp gain.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Pkmn faint.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Pkmn level up.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Pkmn move learnt.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Player bump.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Player fall.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Player jump.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Poison step.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Repel.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Rock Smash.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Safari Zone end.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Slots coin.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Slots stop.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Strength push.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Sweet Scent.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Tile Game cursor.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Use item in party.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Vending machine dispense.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Voltorb Flip explosion.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Voltorb Flip gain coins.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Voltorb Flip level down.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Voltorb Flip level up.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Voltorb Flip mark.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Voltorb Flip point.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Voltorb Flip tile.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Vs flash.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Vs sword.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Water berry plant.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Absorb2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Ace.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Acupressure.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Applause.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Battle1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Blow1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Blow3.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Blow4.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Blow5.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Blow6.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Blow7.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Bow1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\buzzer.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Collapse1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Comet Punch.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Confuse.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Crash.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Damage1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Darkness2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Darkness6.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\decrease.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Defense Curl.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Dizzy Punch.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Earth1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Earth3.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Earth4.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Earth5.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Explosion.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Explosion1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Explosion2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Explosion3.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Explosion4.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Explosion6.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Explosion7.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Fire1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Fire2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Fire3.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Fire4.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Fire5.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Fire6.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Flail.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Flash2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\fog2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Follow Me.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Fury Swipes.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\gust.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Harden.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\hit.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Ice2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Ice5.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Ice8.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\increase.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\infatuated.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Knock.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Lock On.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Lovely Kiss.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Lucky Chant.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Mega Punch.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\metal.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Metronome.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\MiningCollapse.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\MiningPing.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Natural Gift.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\normaldamage.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Paralyze1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Paralyze3.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Poison.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Pollen.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Present - Heal.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Psych Up.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Psycho Cut.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\punch5.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Recovery.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Refresh.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Saint1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Saint3.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Saint4.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Saint6.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Saint7.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Saint8.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Saint9.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Sand.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Scary Face.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Select.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Shell Smash.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Shiny sparkle.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Sing.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Slam.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Slash.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Slash1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Slash10.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Slash11.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Slash2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Slash3.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Slash6.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Slash8.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Slash9.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Sleep.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Smokescreen.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Snore.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Sound2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Stare.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Substitute.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Super Fang.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\superdamage.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Swagger.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Sweet Scent.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Sword1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Sword2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Swords Dance.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Take Down.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Teleport.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\throw.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Thunder1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Thunder3.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Thunder4.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Thunder9.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Trump Card.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Twine.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Up.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Uproar.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Vice Grip.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Voltorb Flip Explosion.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Voltorb Flip Mark.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Water1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Water2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Water3.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Water5.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Weatherball.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Whirlwind.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Wind1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Wind5.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Wind7.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Wind8.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Work Up.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Wring Out.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Anim\Yawn.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ABOMASNOW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ABRA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ABSOL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ACCELGOR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AERODACTYL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AGGRON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AIPOM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ALAKAZAM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ALOMOMOLA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ALTARIA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AMBIPOM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AMOONGUSS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AMPHAROS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ANORITH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ARBOK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ARCANINE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ARCEUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ARCHEN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ARCHEOPS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ARIADOS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ARMALDO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ARON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ARTICUNO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AUDINO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AXEW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AZELF.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AZUMARILL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\AZURILL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BAGON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BALTOY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BANETTE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BARBOACH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BASCULIN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BASTIODON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BAYLEEF.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BEARTIC.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BEAUTIFLY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BEEDRILL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BEHEEYEM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BELDUM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BELLOSSOM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BELLSPROUT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BIBAREL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BIDOOF.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BISHARP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BLASTOISE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BLAZIKEN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BLISSEY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BLITZLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BOLDORE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BONSLY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BOUFFALANT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BRAVIARY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BRELOOM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BRONZONG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BRONZOR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BUDEW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BUIZEL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BULBASAUR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BUNEARY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BURMY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\BUTTERFREE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CACNEA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CACTURNE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CAMERUPT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CARNIVINE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CARRACOSTA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CARVANHA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CASCOON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CASTFORM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CATERPIE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CELEBI.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHANDELURE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHANSEY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHARIZARD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHARMANDER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHARMELEON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHATOT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHERRIM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHERUBI.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHIKORITA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHIMCHAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHIMECHO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHINCHOU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CHINGLING.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CINCCINO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CLAMPERL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CLAYDOL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CLEFABLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CLEFAIRY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CLEFFA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CLOYSTER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\COBALION.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\COFAGRIGUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\COMBEE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\COMBUSKEN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CONKELDURR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CORPHISH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CORSOLA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\COTTONEE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CRADILY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CRANIDOS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CRAWDAUNT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CRESSELIA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CROAGUNK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CROBAT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CROCONAW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CRUSTLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CRYOGONAL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CUBCHOO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CUBONE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\CYNDAQUIL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DARKRAI.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DARMANITAN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DARUMAKA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DEERLING.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DEINO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DELCATTY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DELIBIRD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DEOXYS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DEWGONG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DEWOTT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DIALGA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DIGLETT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DITTO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DODRIO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DODUO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DONPHAN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DRAGONAIR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DRAGONITE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DRAPION.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DRATINI.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DRIFBLIM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DRIFLOON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DRILBUR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DROWZEE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DRUDDIGON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DUCKLETT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DUGTRIO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DUNSPARCE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DUOSION.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DURANT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DUSCLOPS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DUSKNOIR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DUSKULL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DUSTOX.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\DWEBBLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EELEKTRIK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EELEKTROSS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EEVEE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EKANS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ELECTABUZZ.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ELECTIVIRE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ELECTRIKE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ELECTRODE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ELEKID.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ELGYEM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EMBOAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EMOLGA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EMPOLEON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ENTEI.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ESCAVALIER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ESPEON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EXCADRILL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EXEGGCUTE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EXEGGUTOR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\EXPLOUD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FARFETCHD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FEAROW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FEEBAS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FERALIGATR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FERROSEED.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FERROTHORN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FINNEON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FLAAFFY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FLAREON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FLOATZEL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FLYGON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FOONGUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FORRETRESS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FRAXURE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FRILLISH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FROSLASS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\FURRET.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GABITE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GALLADE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GALVANTULA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GARBODOR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GARCHOMP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GARDEVOIR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GASTLY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GASTRODON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GENESECT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GENGAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GEODUDE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GIBLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GIGALITH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GIRAFARIG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GIRATINA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GLACEON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GLALIE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GLAMEOW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GLIGAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GLISCOR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GLOOM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GOLBAT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GOLDEEN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GOLDUCK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GOLEM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GOLETT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GOLURK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GOREBYSS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GOTHITA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GOTHITELLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GOTHORITA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GRANBULL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GRAVELER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GRIMER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GROTLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GROUDON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GROVYLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GROWLITHE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GRUMPIG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GULPIN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GURDURR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\GYARADOS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HAPPINY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HARIYAMA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HAUNTER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HAXORUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HEATMOR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HEATRAN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HERACROSS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HERDIER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HIPPOPOTAS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HIPPOWDON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HITMONCHAN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HITMONLEE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HITMONTOP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HONCHKROW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HOOH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HOOTHOOT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HOPPIP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HORSEA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HOUNDOOM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HOUNDOUR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HUNTAIL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HYDREIGON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\HYPNO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\IGGLYBUFF.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ILLUMISE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\INFERNAPE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\IVYSAUR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\JELLICENT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\JIGGLYPUFF.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\JIRACHI.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\JOLTEON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\JOLTIK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\JUMPLUFF.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\JYNX.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KABUTO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KABUTOPS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KADABRA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KAKUNA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KANGASKHAN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KARRABLAST.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KECLEON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KELDEO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KINGDRA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KINGLER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KIRLIA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KLANG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KLINK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KLINKLANG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KOFFING.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KRABBY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KRICKETOT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KRICKETUNE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KROKOROK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KROOKODILE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KYOGRE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KYUREM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KYUREM_1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\KYUREM_2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LAIRON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LAMPENT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LANDORUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LANDORUS_1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LANTURN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LAPRAS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LARVESTA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LARVITAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LATIAS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LATIOS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LEAFEON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LEAVANNY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LEDIAN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LEDYBA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LICKILICKY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LICKITUNG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LIEPARD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LILEEP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LILLIGANT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LILLIPUP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LINOONE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LITWICK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LOMBRE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LOPUNNY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LOTAD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LOUDRED.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LUCARIO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LUDICOLO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LUGIA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LUMINEON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LUNATONE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LUVDISC.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LUXIO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\LUXRAY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MACHAMP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MACHOKE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MACHOP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAGBY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAGCARGO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAGIKARP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAGMAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAGMORTAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAGNEMITE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAGNETON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAGNEZONE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAKUHITA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAMOSWINE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MANAPHY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MANDIBUZZ.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MANECTRIC.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MANKEY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MANTINE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MANTYKE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MARACTUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAREEP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MARILL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAROWAK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MARSHTOMP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MASQUERAIN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MAWILE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MEDICHAM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MEDITITE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MEGANIUM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MELOETTA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MEOWTH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MESPRIT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\METAGROSS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\METANG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\METAPOD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MEW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MEWTWO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MIENFOO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MIENSHAO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MIGHTYENA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MILOTIC.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MILTANK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MIMEJR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MINCCINO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MINUN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MISDREAVUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MISMAGIUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MOLTRES.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MONFERNO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MOTHIM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MRMIME.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MUDKIP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MUK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MUNCHLAX.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MUNNA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MURKROW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\MUSHARNA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NATU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NIDOKING.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NIDOQUEEN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NIDORANfE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NIDORANmA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NIDORINA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NIDORINO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NINCADA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NINETALES.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NINJASK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NOCTOWL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NOSEPASS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NUMEL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\NUZLEAF.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\OCTILLERY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ODDISH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\OMANYTE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\OMASTAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ONIX.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\OSHAWOTT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PACHIRISU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PALKIA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PALPITOAD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PANPOUR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PANSAGE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PANSEAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PARAS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PARASECT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PATRAT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PAWNIARD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PELIPPER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PERSIAN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PETILIL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PHANPY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PHIONE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PICHU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PIDGEOT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PIDGEOTTO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PIDGEY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PIDOVE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PIGNITE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PIKACHU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PILOSWINE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PINECO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PINSIR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PIPLUP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PLUSLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\POLITOED.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\POLIWAG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\POLIWHIRL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\POLIWRATH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PONYTA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\POOCHYENA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PORYGON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PORYGON2.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PORYGONZ.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PRIMEAPE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PRINPLUP.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PROBOPASS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PSYDUCK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PUPITAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PURRLOIN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\PURUGLY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\QUAGSIRE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\QUILAVA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\QWILFISH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RAICHU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RAIKOU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RALTS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RAMPARDOS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RAPIDASH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RATICATE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RATTATA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RAYQUAZA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\REGICE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\REGIGIGAS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\REGIROCK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\REGISTEEL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RELICANTH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\REMORAID.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RESHIRAM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\REUNICLUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RHYDON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RHYHORN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RHYPERIOR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RIOLU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ROGGENROLA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ROSELIA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ROSERADE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ROTOM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\RUFFLET.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SABLEYE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SALAMENCE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SAMUROTT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SANDILE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SANDSHREW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SANDSLASH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SAWK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SAWSBUCK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SCEPTILE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SCIZOR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SCOLIPEDE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SCRAFTY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SCRAGGY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SCYTHER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SEADRA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SEAKING.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SEALEO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SEEDOT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SEEL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SEISMITOAD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SENTRET.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SERPERIOR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SERVINE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SEVIPER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SEWADDLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHARPEDO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHAYMIN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHAYMIN_1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHEDINJA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHELGON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHELLDER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHELLOS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHELMET.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHIELDON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHIFTRY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHINX.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHROOMISH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHUCKLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SHUPPET.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SIGILYPH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SILCOON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SIMIPOUR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SIMISAGE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SIMISEAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SKARMORY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SKIPLOOM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SKITTY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SKORUPI.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SKUNTANK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SLAKING.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SLAKOTH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SLOWBRO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SLOWKING.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SLOWPOKE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SLUGMA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SMEARGLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SMOOCHUM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SNEASEL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SNIVY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SNORLAX.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SNORUNT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SNOVER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SNUBBULL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SOLOSIS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SOLROCK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SPEAROW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SPHEAL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SPINARAK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SPINDA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SPIRITOMB.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SPOINK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SQUIRTLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\STANTLER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\STARAPTOR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\STARAVIA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\STARLY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\STARMIE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\STARYU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\STEELIX.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\STOUTLAND.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\STUNFISK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\STUNKY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SUDOWOODO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SUICUNE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SUNFLORA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SUNKERN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SURSKIT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SWABLU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SWADLOON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SWALOT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SWAMPERT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SWANNA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SWELLOW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SWINUB.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\SWOOBAT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TAILLOW.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TANGELA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TANGROWTH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TAUROS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TEDDIURSA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TENTACOOL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TENTACRUEL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TEPIG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TERRAKION.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\THROH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\THUNDURUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\THUNDURUS_1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TIMBURR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TIRTOUGA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TOGEKISS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TOGEPI.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TOGETIC.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TORCHIC.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TORKOAL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TORNADUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TORNADUS_1.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TORTERRA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TOTODILE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TOXICROAK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TRANQUILL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TRAPINCH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TREECKO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TROPIUS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TRUBBISH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TURTWIG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TYMPOLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TYNAMO.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TYPHLOSION.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TYRANITAR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\TYROGUE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\UMBREON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\UNFEZANT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\UNOWN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\URSARING.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\UXIE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VANILLISH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VANILLITE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VANILLUXE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VAPOREON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VENIPEDE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VENOMOTH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VENONAT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VENUSAUR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VESPIQUEN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VIBRAVA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VICTINI.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VICTREEBEL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VIGOROTH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VILEPLUME.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VIRIZION.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VOLBEAT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VOLCARONA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VOLTORB.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VULLABY.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\VULPIX.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WAILMER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WAILORD.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WALREIN.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WARTORTLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WATCHOG.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WEAVILE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WEEDLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WEEPINBELL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WEEZING.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WHIMSICOTT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WHIRLIPEDE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WHISCASH.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WHISMUR.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WIGGLYTUFF.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WINGULL.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WOBBUFFET.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WOOBAT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WOOPER.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WORMADAM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WURMPLE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\WYNAUT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\XATU.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\YAMASK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\YANMA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\YANMEGA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ZANGOOSE.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ZAPDOS.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ZEBSTRIKA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ZEKROM.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ZIGZAGOON.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ZOROARK.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ZORUA.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ZUBAT.ogg
+C:\Users\zgouy\Downloads\Pokemon Essentials v21.1 2023-07-30\Pokemon Essentials v21.1 2023-07-30\Audio\SE\Cries\ZWEILOUS.ogg

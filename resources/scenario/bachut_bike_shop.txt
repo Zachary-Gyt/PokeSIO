@@ -1,0 +1,24 @@
+# =====================================================================
+# Le Magasin de Vélos de Bachut (carte bachut_bike_shop)
+# Le vendeur : PNJ avec la propriété event = velo
+# =====================================================================
+
+evenement velo
+    nom Vendeur
+    si objet bicycle
+        dire Alors, cette Bicyclette ? Appuie sur B pour monter dessus !
+    sinon
+        dire Bienvenue au Magasin de Vélos de Bachut !
+        si question Une Bicyclette toute neuve, pour 10 000 ₽. Vous la prenez ?
+            si argent 10000
+                prendre argent 10000
+                donner objet bicycle 1
+                dire Merci ! Appuie sur B pour monter dessus. Bonne route !
+            sinon
+                dire Oh... Vous n'avez pas assez d'argent. Revenez plus tard !
+            fin
+        sinon
+            dire Revenez quand vous voulez !
+        fin
+    fin
+fin

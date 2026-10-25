@@ -1,0 +1,295 @@
+{ "compressionlevel":-1,
+ "height":9,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[33, 34, 35, 36, 33, 33, 33, 33, 33, 33, 33,
+            41, 42, 43, 44, 41, 41, 41, 41, 41, 41, 41,
+            645, 645, 645, 645, 645, 377, 377, 377, 377, 377, 377,
+            645, 645, 645, 645, 645, 377, 377, 377, 377, 377, 377,
+            645, 645, 645, 645, 645, 377, 377, 377, 377, 377, 377,
+            645, 645, 645, 645, 645, 377, 377, 377, 377, 377, 377,
+            645, 645, 645, 645, 645, 377, 377, 377, 377, 377, 377,
+            645, 645, 645, 645, 645, 377, 377, 377, 377, 377, 377,
+            159, 159, 159, 159, 159, 159, 159, 159, 159, 159, 159],
+         "height":9,
+         "id":1,
+         "name":"ground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 1061, 1062, 1108, 1109, 0, 1147, 1148,
+            0, 0, 0, 0, 1069, 1070, 1116, 1117, 0, 1155, 1156,
+            0, 0, 0, 0, 0, 1619, 0, 0, 0, 1163, 1164,
+            0, 0, 0, 0, 0, 1634, 0, 0, 1301, 0, 0,
+            0, 0, 1280, 0, 0, 1642, 1643, 1643, 1643, 1643, 1643,
+            0, 0, 0, 0, 0, 3290, 0, 0, 0, 0, 0,
+            0, 1280, 0, 0, 0, 3290, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 3290, 0, 862, 863, 864, 1395,
+            0, 0, 0, 0, 0, 0, 0, 870, 871, 872, 0],
+         "height":9,
+         "id":2,
+         "name":"decor",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 1510, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 1518, 1619, 1619, 1619, 1619, 1619,
+            0, 0, 0, 0, 0, 3282, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1387,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":9,
+         "id":3,
+         "name":"above",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"warps",
+         "objects":[
+                {
+                 "height":32,
+                 "id":1,
+                 "name":"sortie",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"to_map",
+                         "type":"string",
+                         "value":"cremieu"
+                        }, 
+                        {
+                         "name":"to_x",
+                         "type":"int",
+                         "value":11
+                        }, 
+                        {
+                         "name":"to_y",
+                         "type":"int",
+                         "value":9
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":256,
+                 "y":256
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"spawns",
+         "objects":[
+                {
+                 "height":0,
+                 "id":2,
+                 "name":"spawn",
+                 "opacity":1,
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":256,
+                 "y":224
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"npcs",
+         "objects":[
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"dame_pension",
+                 "opacity":1,
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"daycare"
+                        }, 
+                        {
+                         "name":"behavior",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"Dame de la Pension"
+                        }, 
+                        {
+                         "name":"objname",
+                         "type":"string",
+                         "value":"dame_pension"
+                        }, 
+                        {
+                         "name":"sprite",
+                         "type":"string",
+                         "value":"npc_11"
+                        }, 
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"..."
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":256,
+                 "y":96
+                }, 
+                {
+                 "height":0,
+                 "id":4,
+                 "name":"gardien_pension",
+                 "opacity":1,
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"daycare_man"
+                        }, 
+                        {
+                         "name":"behavior",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"Gardien de la Pension"
+                        }, 
+                        {
+                         "name":"objname",
+                         "type":"string",
+                         "value":"gardien_pension"
+                        }, 
+                        {
+                         "name":"sprite",
+                         "type":"string",
+                         "value":"npc_10"
+                        }, 
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"..."
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":192,
+                 "y":160
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":7,
+ "nextobjectid":5,
+ "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"battleback",
+         "type":"string",
+         "value":"indoor1"
+        }, 
+        {
+         "name":"displayName",
+         "type":"string",
+         "value":"Pension Pok\u00e9mon"
+        }, 
+        {
+         "name":"no_bike",
+         "type":"bool",
+         "value":true
+        }],
+ "renderorder":"right-down",
+ "tiledversion":"1.12.2",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "columns":8,
+         "firstgid":1,
+         "image":"..\/tilesets\/interior.png",
+         "imageheight":8032,
+         "imagewidth":256,
+         "margin":0,
+         "name":"interior",
+         "spacing":0,
+         "tilecount":2008,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "columns":8,
+         "firstgid":2009,
+         "image":"..\/tilesets\/outside.png",
+         "imageheight":16064,
+         "imagewidth":256,
+         "margin":0,
+         "name":"outside",
+         "spacing":0,
+         "tilecount":4016,
+         "tileheight":32,
+         "tilewidth":32
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":"1.10",
+ "width":11
+}

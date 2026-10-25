@@ -1,0 +1,243 @@
+{ "compressionlevel":-1,
+ "height":9,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[26, 2, 2, 2, 2, 2, 2, 2, 2, 2, 26,
+            33, 10, 10, 10, 10, 10, 10, 10, 10, 10, 33,
+            42, 50, 50, 33, 60, 50, 50, 40, 42, 42, 33,
+            42, 33, 33, 33, 43, 33, 33, 33, 33, 33, 33,
+            42, 33, 33, 33, 43, 33, 33, 33, 33, 33, 33,
+            42, 50, 50, 50, 51, 33, 33, 33, 33, 43, 33,
+            42, 33, 33, 43, 33, 33, 33, 33, 33, 43, 33,
+            42, 58, 50, 51, 33, 33, 33, 58, 50, 51, 58,
+            26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26],
+         "height":9,
+         "id":1,
+         "name":"ground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3,
+            9, 0, 0, 73, 0, 0, 0, 0, 0, 0, 11,
+            17, 15, 0, 81, 0, 0, 0, 118, 119, 120, 19,
+            24, 0, 0, 97, 0, 0, 0, 0, 0, 0, 0,
+            113, 114, 116, 89, 0, 0, 0, 79, 80, 0, 79,
+            0, 0, 0, 0, 0, 0, 0, 87, 88, 0, 87,
+            0, 113, 116, 0, 0, 0, 0, 95, 96, 0, 95,
+            25, 0, 0, 20, 21, 22, 0, 0, 0, 0, 27,
+            0, 0, 0, 28, 29, 30, 0, 0, 0, 0, 0],
+         "height":9,
+         "id":2,
+         "name":"decor",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 5, 0, 4, 4, 4, 102, 103, 104, 0,
+            0, 7, 13, 69, 12, 12, 12, 110, 111, 112, 0,
+            0, 0, 0, 77, 0, 0, 0, 0, 0, 0, 0,
+            105, 106, 108, 0, 0, 0, 0, 71, 72, 0, 71,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 105, 108, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":9,
+         "id":3,
+         "name":"above",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"warps",
+         "objects":[
+                {
+                 "height":32,
+                 "id":1,
+                 "name":"sortie",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"to_map",
+                         "type":"string",
+                         "value":"bachut"
+                        }, 
+                        {
+                         "name":"to_x",
+                         "type":"int",
+                         "value":24
+                        }, 
+                        {
+                         "name":"to_y",
+                         "type":"int",
+                         "value":8
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":128,
+                 "y":256
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"spawns",
+         "objects":[
+                {
+                 "height":0,
+                 "id":2,
+                 "name":"spawn",
+                 "opacity":1,
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":128,
+                 "y":224
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"npcs",
+         "objects":[
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"vendeur",
+                 "opacity":1,
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"action",
+                         "type":"string",
+                         "value":"shop"
+                        }, 
+                        {
+                         "name":"behavior",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"Vendeur"
+                        }, 
+                        {
+                         "name":"objname",
+                         "type":"string",
+                         "value":"vendeur"
+                        }, 
+                        {
+                         "name":"shop",
+                         "type":"string",
+                         "value":"default"
+                        }, 
+                        {
+                         "name":"sprite",
+                         "type":"string",
+                         "value":"npc_10"
+                        }, 
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"..."
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":64,
+                 "y":96
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":7,
+ "nextobjectid":4,
+ "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"battleback",
+         "type":"string",
+         "value":"indoor1"
+        }, 
+        {
+         "name":"bgm",
+         "type":"string",
+         "value":"Poke Mart"
+        }, 
+        {
+         "name":"displayName",
+         "type":"string",
+         "value":"Boutique Pok\u00e9mon"
+        }, 
+        {
+         "name":"no_bike",
+         "type":"bool",
+         "value":true
+        }],
+ "renderorder":"right-down",
+ "tiledversion":"1.12.2",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "columns":8,
+         "firstgid":1,
+         "image":"..\/tilesets\/Mart interior.png",
+         "imageheight":576,
+         "imagewidth":256,
+         "margin":0,
+         "name":"Mart interior",
+         "spacing":0,
+         "tilecount":144,
+         "tileheight":32,
+         "tilewidth":32
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":"1.10",
+ "width":11
+}

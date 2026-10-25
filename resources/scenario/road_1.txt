@@ -1,0 +1,18 @@
+# =====================================================================
+# La Route 1 (carte road_1)
+# Le Montagnard : PNJ « montagnard », event = montagnard (CS04 Force après le 4e badge)
+# =====================================================================
+
+evenement montagnard
+    nom Montagnard
+    si drapeau cs_force_recue
+        dire Avec Force, tu peux pousser les gros rochers. Ho hisse !
+    sinon si badge 4
+        dire Le Badge Prisme ! Tu es costaud, toi. Prends ça.
+        donner objet hm04 1
+        drapeau cs_force_recue
+        dire La CS04, c'est Force. Elle pousse les rochers qui bloquent le passage.
+    sinon
+        dire Cette grotte cache bien des choses... Reviens avec le Badge Prisme, j'aurai un cadeau.
+    fin
+fin

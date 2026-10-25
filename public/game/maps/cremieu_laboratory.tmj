@@ -1,0 +1,310 @@
+{ "compressionlevel":-1,
+ "height":14,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[138, 138, 138, 138, 138, 138, 138, 138, 138, 138, 138, 138, 138,
+            146, 146, 146, 146, 146, 146, 146, 146, 146, 146, 146, 146, 146,
+            250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250,
+            251, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241,
+            251, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 243, 241,
+            251, 250, 250, 251, 241, 241, 241, 241, 248, 250, 250, 251, 241,
+            251, 266, 258, 259, 241, 241, 241, 241, 241, 241, 241, 241, 241,
+            251, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241,
+            251, 241, 241, 241, 241, 243, 241, 241, 241, 241, 241, 241, 241,
+            250, 250, 250, 250, 250, 251, 241, 241, 248, 250, 250, 250, 250,
+            251, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241,
+            251, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241,
+            251, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241, 241,
+            159, 159, 159, 159, 159, 159, 159, 159, 159, 159, 159, 159, 159],
+         "height":14,
+         "id":1,
+         "name":"ground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":13,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[1405, 0, 0, 0, 0, 0, 1073, 0, 1107, 1124, 1125, 1124, 1125,
+            1413, 1411, 1521, 1523, 1521, 1523, 1081, 0, 1115, 1132, 1133, 1132, 1133,
+            1421, 1419, 1553, 1562, 1553, 1562, 0, 0, 0, 1140, 1141, 1140, 1141,
+            1349, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            1349, 1409, 1410, 0, 0, 0, 0, 0, 1684, 1685, 1686, 0, 0,
+            0, 1417, 1418, 0, 0, 0, 0, 0, 1692, 1693, 1694, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            1126, 1124, 1125, 1124, 1125, 0, 0, 0, 1124, 1125, 1124, 1125, 1126,
+            1134, 1132, 1133, 1132, 1133, 0, 0, 0, 1132, 1133, 1132, 1133, 1134,
+            1142, 1140, 1141, 1140, 1141, 0, 0, 0, 1140, 1141, 1140, 1141, 1142,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            1395, 0, 0, 0, 0, 862, 863, 864, 0, 0, 0, 0, 1395,
+            0, 0, 0, 0, 0, 870, 871, 872, 0, 0, 0, 0, 0],
+         "height":14,
+         "id":2,
+         "name":"decor",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":13,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 1461, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 1468, 1469, 2959, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 1401, 1402, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 2957, 2957, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            1387, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1387,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":14,
+         "id":3,
+         "name":"above",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":13,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"warps",
+         "objects":[
+                {
+                 "height":32,
+                 "id":1,
+                 "name":"sortie",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"to_map",
+                         "type":"string",
+                         "value":"cremieu"
+                        }, 
+                        {
+                         "name":"to_x",
+                         "type":"int",
+                         "value":23
+                        }, 
+                        {
+                         "name":"to_y",
+                         "type":"int",
+                         "value":18
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":192,
+                 "y":416
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"spawns",
+         "objects":[
+                {
+                 "height":0,
+                 "id":2,
+                 "name":"spawn",
+                 "opacity":1,
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":192,
+                 "y":384
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"npcs",
+         "objects":[
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"prof",
+                 "opacity":1,
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"behavior",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"event",
+                         "type":"string",
+                         "value":"professeur"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"Professeur Thouverez"
+                        }, 
+                        {
+                         "name":"objname",
+                         "type":"string",
+                         "value":"prof"
+                        }, 
+                        {
+                         "name":"sprite",
+                         "type":"string",
+                         "value":"professor"
+                        }, 
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"..."
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":192,
+                 "y":128
+                }, 
+                {
+                 "height":0,
+                 "id":4,
+                 "name":"assistant",
+                 "opacity":1,
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"behavior",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"event",
+                         "type":"string",
+                         "value":"assistant"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"Assistant"
+                        }, 
+                        {
+                         "name":"objname",
+                         "type":"string",
+                         "value":"assistant"
+                        }, 
+                        {
+                         "name":"sprite",
+                         "type":"string",
+                         "value":"npc_24"
+                        }, 
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"Le Professeur \u00e9tudie les Pok\u00e9mon de la r\u00e9gion. Il adore parler de sa recherche !"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":96,
+                 "y":352
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":7,
+ "nextobjectid":5,
+ "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"battleback",
+         "type":"string",
+         "value":"indoor1"
+        }, 
+        {
+         "name":"displayName",
+         "type":"string",
+         "value":"Laboratoire Pok\u00e9mon"
+        }, 
+        {
+         "name":"no_bike",
+         "type":"bool",
+         "value":true
+        }],
+ "renderorder":"right-down",
+ "tiledversion":"1.12.2",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "columns":8,
+         "firstgid":1,
+         "image":"..\/tilesets\/interior.png",
+         "imageheight":8032,
+         "imagewidth":256,
+         "margin":0,
+         "name":"interior",
+         "spacing":0,
+         "tilecount":2008,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "columns":8,
+         "firstgid":2009,
+         "image":"..\/tilesets\/outside.png",
+         "imageheight":16064,
+         "imagewidth":256,
+         "margin":0,
+         "name":"outside",
+         "spacing":0,
+         "tilecount":4016,
+         "tileheight":32,
+         "tilewidth":32
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":"1.10",
+ "width":13
+}

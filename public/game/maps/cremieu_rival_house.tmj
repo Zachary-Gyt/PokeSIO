@@ -1,0 +1,261 @@
+{ "compressionlevel":-1,
+ "height":9,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33,
+            41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41,
+            377, 377, 377, 377, 377, 377, 377, 377, 377, 377, 377,
+            377, 377, 377, 377, 377, 377, 377, 377, 377, 377, 377,
+            377, 377, 770, 770, 770, 770, 377, 377, 377, 377, 377,
+            377, 377, 770, 770, 770, 770, 377, 377, 377, 377, 377,
+            377, 377, 377, 377, 377, 377, 377, 377, 377, 377, 377,
+            377, 377, 377, 377, 377, 377, 377, 377, 377, 377, 377,
+            159, 159, 159, 159, 159, 159, 159, 159, 159, 159, 159],
+         "height":9,
+         "id":1,
+         "name":"ground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 1147, 1148, 0, 1329, 1108, 1109, 0, 0,
+            0, 1186, 1187, 1155, 1156, 0, 1337, 1116, 1117, 873, 874,
+            0, 1194, 1195, 1163, 1164, 0, 1345, 0, 904, 881, 882,
+            0, 761, 762, 762, 762, 762, 763, 0, 912, 889, 890,
+            0, 769, 1291, 1697, 1699, 1292, 771, 0, 0, 0, 1398,
+            0, 769, 1291, 1705, 1707, 1292, 771, 0, 0, 0, 1276,
+            0, 777, 778, 778, 778, 778, 779, 0, 0, 0, 1284,
+            0, 0, 862, 863, 864, 0, 0, 0, 0, 0, 0,
+            0, 0, 870, 871, 872, 0, 0, 0, 0, 0, 0],
+         "height":9,
+         "id":2,
+         "name":"decor",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1382,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1390,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":9,
+         "id":3,
+         "name":"above",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":11,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"warps",
+         "objects":[
+                {
+                 "height":32,
+                 "id":1,
+                 "name":"sortie",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"to_map",
+                         "type":"string",
+                         "value":"cremieu"
+                        }, 
+                        {
+                         "name":"to_x",
+                         "type":"int",
+                         "value":20
+                        }, 
+                        {
+                         "name":"to_y",
+                         "type":"int",
+                         "value":9
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":96,
+                 "y":256
+                }, 
+                {
+                 "height":32,
+                 "id":2,
+                 "name":"escalier",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"to_map",
+                         "type":"string",
+                         "value":"cremieu_rival_bedroom"
+                        }, 
+                        {
+                         "name":"to_x",
+                         "type":"int",
+                         "value":9
+                        }, 
+                        {
+                         "name":"to_y",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":288,
+                 "y":64
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"spawns",
+         "objects":[
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"spawn",
+                 "opacity":1,
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":96,
+                 "y":224
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"npcs",
+         "objects":[
+                {
+                 "height":0,
+                 "id":4,
+                 "name":"mere_rival",
+                 "opacity":1,
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"behavior",
+                         "type":"string",
+                         "value":"static"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"M\u00e8re du rival"
+                        }, 
+                        {
+                         "name":"objname",
+                         "type":"string",
+                         "value":"mere_rival"
+                        }, 
+                        {
+                         "name":"sprite",
+                         "type":"string",
+                         "value":"npc_14"
+                        }, 
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"Mon fils ? Il est parti s'entra\u00eener sur la Route 1, comme toujours."
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":64,
+                 "y":128
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":7,
+ "nextobjectid":5,
+ "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"battleback",
+         "type":"string",
+         "value":"indoor1"
+        }, 
+        {
+         "name":"displayName",
+         "type":"string",
+         "value":"Maison du rival"
+        }, 
+        {
+         "name":"no_bike",
+         "type":"bool",
+         "value":true
+        }],
+ "renderorder":"right-down",
+ "tiledversion":"1.12.2",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "columns":8,
+         "firstgid":1,
+         "image":"..\/tilesets\/interior.png",
+         "imageheight":8032,
+         "imagewidth":256,
+         "margin":0,
+         "name":"interior",
+         "spacing":0,
+         "tilecount":2008,
+         "tileheight":32,
+         "tilewidth":32
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":"1.10",
+ "width":11
+}

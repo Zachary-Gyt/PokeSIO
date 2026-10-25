@@ -1,0 +1,34 @@
+{
+    "maps": [
+        {
+            "fileName": "cremieu.tmj",
+            "x": 0,
+            "y": 0,
+            "width": 1216,
+            "height": 832
+        },
+        {
+            "fileName": "road_1.tmj",
+            "x": 128,
+            "y": -1280,
+            "width": 768,
+            "height": 1280
+        },
+        {
+            "fileName": "bachut.tmj",
+            "x": -640,
+            "y": -2176,
+            "width": 1536,
+            "height": 896
+        },
+        {
+            "fileName": "cremieu_safari.tmj",
+            "x": -640,
+            "y": 0,
+            "width": 640,
+            "height": 704
+        }
+    ],
+    "onlyShowAdjacentMaps": false,
+    "type": "world"
+}

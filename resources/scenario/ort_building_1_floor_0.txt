@@ -1,0 +1,18 @@
+# =====================================================================
+# Le hall de l'École ORT (carte ort_building_1_floor_0)
+# L'Accueil : PNJ « accueil » avec la propriété event = accueil (CS05 Flash après le 1er badge)
+# =====================================================================
+
+evenement accueil
+    nom Accueil
+    si badge 1 et pas drapeau cs_flash_recue
+        dire Oh ! Le Badge Roche ! Félicitations !
+        dire Les couloirs de la grotte de la Route 1 sont bien sombres... Ceci t'aidera.
+        donner objet hm05 1
+        drapeau cs_flash_recue
+        dire La CS05, c'est Flash : elle illumine les grottes obscures.
+    sinon
+        dire Bienvenue à l'École ORT !
+        dire Les arènes de Kanto sont au 1er étage, celles de Johto au 2e. Le bureau de Madame Goudet est au 3e.
+    fin
+fin

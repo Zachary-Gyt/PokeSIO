@@ -1,0 +1,16 @@
+# =====================================================================
+# La cantine de l'École ORT (carte ort_canteen)
+# Le Cuisinier : PNJ « cuisinier » avec la propriété event = cuisinier
+# =====================================================================
+
+evenement cuisinier
+    nom Cuisinier
+    si drapeau restes_recus
+        dire Aujourd'hui, c'est frites ! Enfin... comme tous les jours.
+    sinon
+        dire Oh, un nouveau ! Tu as faim ? Il me reste un petit quelque chose d'hier...
+        donner objet leftovers 1
+        drapeau restes_recus
+        dire Fais-le tenir à un Pokémon : il récupérera des PV à chaque tour de combat !
+    fin
+fin

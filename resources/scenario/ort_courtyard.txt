@@ -1,0 +1,19 @@
+# =====================================================================
+# La cour de l'École ORT (carte ort_courtyard)
+# Le Jardinier : PNJ « jardinier » avec la propriété event = jardinier (CS01 Coupe après le 2e badge)
+# =====================================================================
+
+evenement jardinier
+    nom Jardinier
+    si drapeau cs_coupe_recue
+        dire Coupe tranche les petits arbres qui bloquent le chemin. Mais pas mes fleurs, hein !
+    sinon si badge 2
+        dire Tu as le Badge Cascade ? Alors tu peux utiliser ceci hors des combats.
+        donner objet hm01 1
+        drapeau cs_coupe_recue
+        dire La CS01, c'est Coupe. Pratique pour les arbustes !
+    sinon
+        dire Je m'occupe des hautes herbes de la cour. Des Pokémon s'y cachent, fais attention !
+        dire Reviens avec le Badge Cascade : j'aurai quelque chose pour toi.
+    fin
+fin

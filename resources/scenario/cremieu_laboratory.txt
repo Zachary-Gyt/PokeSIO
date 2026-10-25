@@ -1,0 +1,43 @@
+# =====================================================================
+# Le Laboratoire de Crémieu (carte cremieu_laboratory)
+# Le Professeur Thouverez : PNJ « prof » avec la propriété event = professeur
+# Son assistant, à l'entrée : PNJ « assistant » avec la propriété event = assistant
+# =====================================================================
+
+evenement professeur
+    nom Professeur Thouverez
+    si drapeau oeuf_etrange_recu
+        dire Alors, {joueur}, ton apprentissage se passe bien ?
+        dire Les Pokémon ont encore tant à nous apprendre. Bon courage à toi !
+    sinon
+        dire Ah, {joueur} ! Te voilà enfin. Je suis le Professeur Thouverez.
+        dire J'étudie les Pokémon de la région. Et ce matin, j'ai fait une découverte étonnante...
+        dire Regarde : un Œuf. Mais pas n'importe lequel ! Je n'en ai jamais vu de pareil.
+        dire Il en sortira peut-être un Pokémon très rare... Je préfère le confier à quelqu'un qui en prendra soin.
+        donner oeuf legendaire 1000
+        drapeau oeuf_etrange_recu
+        dire Garde-le dans ton équipe et marche beaucoup : il finira par éclore !
+        si pas drapeau labo_balls_recues
+            dire Et prends aussi ces Poké Balls, pour attraper tes premiers Pokémon.
+            donner objet poke-ball 5
+            drapeau labo_balls_recues
+        fin
+        dire Pour la suite, va voir Madame Goudet, la directrice de l'École ORT, à Bachut.
+        dire La Route 1, au nord de Crémieu, y mène. Elle saura t'aider à progresser !
+    fin
+fin
+
+evenement assistant
+    nom Assistant
+    si drapeau multi_exp_recu
+        dire La Multi Exp partage l'expérience entre tous les Pokémon de ton équipe. Pratique, non ?
+    sinon si drapeau oeuf_etrange_recu
+        dire Le Professeur t'a confié cet Œuf étrange ? Il te fait vraiment confiance !
+        dire Tiens, ceci va t'aider à entraîner toute ton équipe.
+        donner objet exp-share 1
+        drapeau multi_exp_recu
+        dire Avec la Multi Exp, même les Pokémon qui ne combattent pas gagnent de l'expérience.
+    sinon
+        dire Le Professeur Thouverez t'attend au fond du laboratoire. Va le voir !
+    fin
+fin

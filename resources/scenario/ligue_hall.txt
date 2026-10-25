@@ -1,0 +1,8 @@
+# Étape 27 : le hall de la Ligue Pokémon (démo).
+# Le garde (requires_badges = 8) bloque la porte tant qu'il manque des badges ;
+# la zone "porte" (calque events) envoie dans la première salle.
+evenement porte
+    message La porte du Conseil 4 s'ouvre...
+    son door
+    teleporter ligue_salle_1 5 10 haut
+fin

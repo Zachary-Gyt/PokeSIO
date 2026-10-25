@@ -1,0 +1,24 @@
+# =====================================================================
+# La maison du joueur, à Crémieu (carte cremieu_player_house)
+# Maman : PNJ « maman » avec la propriété event = maman
+# =====================================================================
+
+evenement maman
+    nom Maman
+    si drapeau maman_premiere_fois
+        # Comme dans les jeux : écran noir, petite musique, et toute l'équipe est soignée
+        dire {joueur} ! Tu as l'air épuisé. Repose-toi un peu, mon chéri.
+        fondu noir
+        soigner
+        fondu clair
+        dire Voilà ! Toi et tes Pokémon, vous êtes en pleine forme.
+        dire Sois prudent, d'accord ? Et reviens me voir quand tu veux !
+    sinon
+        exclamation maman
+        dire Ah, {joueur} ! Tu es enfin réveillé !
+        dire Le Professeur Thouverez est passé ce matin. Il voulait te voir.
+        dire Son laboratoire est en bas du village, juste au sud de la maison.
+        dire Vas-y vite, il a l'air d'avoir quelque chose d'important pour toi !
+        drapeau maman_premiere_fois
+    fin
+fin
