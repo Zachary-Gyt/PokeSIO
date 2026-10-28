@@ -1,3 +1,4 @@
+import { watchLoader } from '../net/ImageWatch.js';
 import Npc from '../objects/Npc.js';
 import RemotePlayers from '../objects/RemotePlayers.js';
 import Follower from '../objects/Follower.js';
@@ -91,6 +92,7 @@ export default class WorldScene extends Phaser.Scene {
     preload() {
         const config = this.registry.get('config');
         const v = `?v=${config.version}`;
+        watchLoader(this);
         if (window.gameLoading) {
             this.load.on('progress', (value) => window.gameLoading?.set(0.6 + value * 0.35, 'Chargement de la carte...'));
         }
@@ -156,9 +158,12 @@ export default class WorldScene extends Phaser.Scene {
     }
 
     create() {
-        // Étape 21 : les planches de PNJ et de dresseurs arrivées avec cette carte sont découpées en 4 x 4
+        // Étape 21 : les planches de PNJ et de dresseurs arrivées avec cette carte sont découpées en 4 x 4.
+        // Pokémon : SEULEMENT les planches de marche posées sur la carte ("pkmn_SNORLAX"), jamais les images
+        // de combat, d'icône ou de menu ("pkmn_http://.../front/X.png", "pkmn_icon_...") : découpées, elles
+        // n'affichaient plus que leur coin en haut à gauche (1/16 de l'image), donc un sprite vide.
         for (const key of this.textures.getTextureKeys()) {
-            if (key.startsWith('npc_') || key.startsWith('trainer_') || key.startsWith('pkmn_')) sliceCharacterSheet(this, key);
+            if (key.startsWith('npc_') || key.startsWith('trainer_') || /^pkmn_[A-Za-z0-9_]+$/.test(key)) sliceCharacterSheet(this, key);
         }
 
         this.avatar = this.registry.get('config').character.avatar ?? (this.registry.get('config').character.gender === 'female' ? 'leaf' : 'red'); // étape 17 : red, leaf, brendan, may
@@ -736,8 +741,6 @@ export default class WorldScene extends Phaser.Scene {
             if (npc.action === 'battle_tower') return this.openTower();
             if (npc.action === 'bank') return this.openOverlay({ type: 'bank', map: this.mapKey });   // la Banque
             if (npc.action === 'tower_board') return this.openOverlay({ type: 'towerBoard' });
-            // Étape 19 : le Maître des capacités
-            if (npc.action === 'move_tutor') return this.openOverlay({ type: 'moveTutor', map: this.mapKey, name: npc.name ?? '' });
             // Étape 20 : le Casino (guichet des jetons, comptoirs des lots, et un PNJ qui garde une machine)
             if (this.casinoAction(npc.action, npc.props)) return;
             if (npc.trainer?.isTitle) return this.titleChallenge(npc);
@@ -1167,6 +1170,7 @@ export default class WorldScene extends Phaser.Scene {
                     toast(`${data.name} a refusé votre invitation.`);
                     return;
                 }
+                if (data.kind === 'group') return;   // "X rejoint le groupe." arrive dans le chat
                 this.multi.pendingStart = data.kind === 'trade' ? { tradeId: data.tradeId } : { battleId: data.battleId };
             },
             title_lost: (data) => toast(`${data.by} vous a pris votre titre de ${data.title} !`, 6),

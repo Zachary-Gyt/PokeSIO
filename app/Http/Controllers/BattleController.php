@@ -80,7 +80,7 @@ class BattleController extends Controller
         abort_unless($battle->character_id === $character->id, 404);
 
         $input = $request->validate([
-            'type' => ['required', Rule::in(['move', 'switch', 'item', 'run', 'continue', 'learn', 'safari_ball', 'bait', 'rock'])],
+            'type' => ['required', Rule::in(['move', 'switch', 'item', 'run', 'continue', 'learn', 'shift', 'safari_ball', 'bait', 'rock'])],
             'slot' => ['nullable', 'integer', 'between:-1,3'],
             'party' => ['nullable', 'integer', 'between:0,5'],
             'item_id' => ['nullable', 'integer'],

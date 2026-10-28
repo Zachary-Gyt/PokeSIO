@@ -1824,10 +1824,68 @@
      ]
     }
    ]
+  },
+  {
+   "draworder": "topdown",
+   "id": 8,
+   "name": "berries",
+   "objects": [
+    {
+     "id": 8,
+     "name": "",
+     "type": "",
+     "x": 128,
+     "y": 384,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "berry",
+       "type": "string",
+       "value": "lum-berry"
+      },
+      {
+       "name": "id",
+       "type": "string",
+       "value": "lum"
+      }
+     ]
+    },
+    {
+     "id": 9,
+     "name": "",
+     "type": "",
+     "x": 256,
+     "y": 416,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "berry",
+       "type": "string",
+       "value": "leppa-berry"
+      },
+      {
+       "name": "id",
+       "type": "string",
+       "value": "leppa"
+      }
+     ]
+    }
+   ],
+   "opacity": 1,
+   "type": "objectgroup",
+   "visible": true,
+   "x": 0,
+   "y": 0
   }
  ],
- "nextlayerid": 8,
- "nextobjectid": 8,
+ "nextlayerid": 9,
+ "nextobjectid": 10,
  "orientation": "orthogonal",
  "properties": [
   {

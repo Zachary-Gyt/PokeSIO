@@ -308,7 +308,7 @@ class WikiController extends Controller
                 $add($bush['berry'], "Buisson à Baies : {$name}");
             }
             foreach (array_keys(config('shops', [])) as $shop) {
-                if (is_array(config("shops.{$shop}")) && $shop !== 'prices' && $map->hasShop($shop)) {
+                if (is_array(config("shops.{$shop}")) && ! in_array($shop, ['prices', 'price_overrides'], true) && $map->hasShop($shop)) {
                     $shops[$shop][] = $name;
                 }
             }

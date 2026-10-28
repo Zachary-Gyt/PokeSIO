@@ -62,37 +62,77 @@ class GameCornerService
     }
 
     // =====================================================================
-    // Le guichet : acheter des jetons avec de l'argent
+    // Le guichet : acheter (et revendre) des jetons, au nombre près
     // =====================================================================
 
-    public function packs(): array
+    public function coinPrice(): int
     {
-        return collect(config('game_corner.packs', []))
-            ->map(fn ($p, $i) => ['index' => $i, 'coins' => (int) $p[0], 'price' => (int) $p[1]])
-            ->values()->all();
+        return max(1, (int) config('game_corner.coin_price', 20));
     }
 
-    public function buy(Character $character, int $index): array
+    public function coinSellPrice(): int
     {
-        $pack = $this->packs()[$index] ?? null;
-        if (! $pack) {
-            throw new InvalidAction('Ce lot de jetons n\'existe pas.');
+        return max(0, (int) config('game_corner.coin_sell_price', 20));
+    }
+
+    /** Combien de jetons ce joueur peut acheter (argent, place dans la Boîte Jetons) et revendre */
+    public function limits(Character $character): array
+    {
+        return [
+            'canBuy' => max(0, min(intdiv((int) $character->money, $this->coinPrice()), $this->max() - (int) $character->coins)),
+            'canSell' => $this->coinSellPrice() > 0 ? (int) $character->coins : 0,
+        ];
+    }
+
+    /** Acheter exactement $amount jetons */
+    public function buy(Character $character, int $amount): array
+    {
+        if ($amount < 1) {
+            throw new InvalidAction('Combien de jetons ?');
         }
 
-        return DB::transaction(function () use ($character, $pack) {
+        return DB::transaction(function () use ($character, $amount) {
             $character = Character::whereKey($character->id)->lockForUpdate()->first();
             $this->requireCoinCase($character);
-            if ($character->coins + $pack['coins'] > $this->max()) {
+            if ($character->coins + $amount > $this->max()) {
                 throw new InvalidAction('Votre Boîte Jetons ne peut pas en contenir autant !');
             }
-            if (! $character->spendMoney($pack['price'])) {
+            $price = $amount * $this->coinPrice();
+            if (! $character->spendMoney($price)) {
                 throw new InvalidAction('Vous n\'avez pas assez d\'argent.');
             }
-            $this->addCoins($character, $pack['coins']);
+            $this->addCoins($character, $amount);
 
-            return ['coins' => (int) $character->coins, 'money' => (int) $character->money,
-                'message' => "Et voilà vos {$pack['coins']} jetons !"];
+            return $this->wallet($character) + ['message' => "Et voilà vos {$amount} jetons !"];
         });
+    }
+
+    /** Revendre exactement $amount jetons contre de l'argent */
+    public function sell(Character $character, int $amount): array
+    {
+        if ($this->coinSellPrice() <= 0) {
+            throw new InvalidAction('Le guichet ne rachète pas les jetons.');
+        }
+        if ($amount < 1) {
+            throw new InvalidAction('Combien de jetons ?');
+        }
+
+        return DB::transaction(function () use ($character, $amount) {
+            $character = Character::whereKey($character->id)->lockForUpdate()->first();
+            $this->requireCoinCase($character);
+            if (! $this->spendCoins($character, $amount)) {
+                throw new InvalidAction('Vous n\'avez pas autant de jetons.');
+            }
+            $character->addMoney($amount * $this->coinSellPrice());
+
+            return $this->wallet($character->fresh()) + ['message' => 'Voici votre argent : ' . number_format($amount * $this->coinSellPrice(), 0, ',', ' ') . ' ₽.'];
+        });
+    }
+
+    /** Jetons, argent et limites du joueur (affichés par le guichet) */
+    public function wallet(Character $character): array
+    {
+        return ['coins' => (int) $character->coins, 'money' => (int) $character->money] + $this->limits($character);
     }
 
     // =====================================================================

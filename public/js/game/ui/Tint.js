@@ -58,6 +58,7 @@ function makeTexture(scene, key, frameName, mode, color) {
     const css = `#${color.toString(16).padStart(6, '0')}`;
 
     const canvas = scene.textures.createCanvas(tintedKey, w, h);
+    (scene.__tinted ??= new Set()).add(tintedKey);
     const ctx = canvas.getContext();
     ctx.imageSmoothingEnabled = false;
     ctx.drawImage(source, cutX, cutY, w, h, 0, 0, w, h);
@@ -85,4 +86,16 @@ function makeTexture(scene, key, frameName, mode, color) {
     ctx.globalCompositeOperation = 'source-over';
     canvas.refresh();
     return tintedKey;
+}
+
+/**
+ * Libère les copies teintées créées par une scène (appelé à la fin d'un combat).
+ * Sans cela, chaque Pokémon rencontré laissait plusieurs copies de son image en mémoire,
+ * ce qui finit par saturer un téléphone après une longue partie.
+ */
+export function releaseTints(scene) {
+    for (const key of scene.__tinted ?? []) {
+        if (scene.textures.exists(key)) scene.textures.remove(key);
+    }
+    scene.__tinted?.clear();
 }

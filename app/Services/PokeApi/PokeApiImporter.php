@@ -570,7 +570,12 @@ class PokeApiImporter
     private function flavorText(array $entries, string $field = 'flavor_text'): ?string
     {
         foreach ([$this->lang, 'en'] as $lang) {
-            $match = collect($entries)->where('language.name', $lang)->last();
+            // Le texte le plus récent, sauf le message d'Épée / Bouclier « Il est recommandé de l'oublier »
+            // (capacités retirées de ces jeux) : on prend alors celui d'un jeu plus ancien
+            $match = collect($entries)->where('language.name', $lang)
+                ->reject(fn ($e) => preg_match(\App\Console\Commands\UpdateMoveDescriptions::OBSOLETE, $e[$field] ?? '')
+                    || preg_match('/This move can.t be used|recommended that this move is forgotten/i', $e[$field] ?? ''))
+                ->last();
             if ($match) {
                 $text = str_replace(["\u{00AD}\n", "\f", "\u{00AD}"], ['', ' ', ''], $match[$field]);
 

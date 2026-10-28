@@ -43,7 +43,7 @@
             <li><strong>Centre Pokémon</strong> : parlez à l'infirmière pour soigner toute l'équipe. Si toute votre équipe est K.O. en combat, vous revenez au dernier Centre où vous vous êtes soigné (et perdez un peu d'argent).</li>
             <li><strong>PC</strong> : 8 boîtes de 30 Pokémon. Une capture avec une équipe pleine va directement au PC.</li>
             <li><strong>Boutique</strong> : le choix grandit avec le nombre de badges. Une <strong>Honor Ball</strong> offerte pour 10 Balls achetées d'un coup. Voir <a href="{{ route('wiki.items') }}">Objets</a>.</li>
-            <li><strong>Maître des capacités</strong> : il fait réapprendre les capacités oubliées, oublier une CS, ou changer l'ordre des capacités.</li>
+            <li><strong>Changer de capacités</strong> : Menu &gt; Pokémon &gt; Résumé &gt; page Capacités. Choisissez une capacité, puis celle qui la remplace : toutes celles que le Pokémon apprend par niveau jusqu'à son niveau (et ses formes précédentes), et toutes celles qu'il a déjà apprises une fois (CT, CS...). C'est gratuit, hors combat.</li>
         </ul>
 
         <h2>Les capacités de terrain (CS)</h2>
@@ -58,11 +58,19 @@
                 @endforeach
             </table>
         @endif
-        <p>Une CS ne s'oublie pas en apprenant une nouvelle capacité : seul le Maître des capacités peut la faire oublier.</p>
+        <p>Une CS ne s'oublie pas en apprenant une nouvelle capacité : changez-la depuis le Résumé (page Capacités), elle restera disponible pour plus tard.</p>
 
         <h2>Avec les autres joueurs</h2>
         <ul>
-            <li><strong>Le chat</strong> (touche T) : parlez à tous les joueurs connectés. Les messages des administrateurs sont en rouge, marqués <strong>[Admin]</strong>. Ceux des <strong>[Professeur]</strong> sont en vert (un titre d'honneur, sans pouvoir particulier).</li>
+            <li><strong>Le chat</strong> (touche T), quatre canaux :
+                <ul>
+                    <li><strong>[Local]</strong> : un message tapé tel quel est lu par les joueurs de la même carte ;</li>
+                    <li><strong>[Global]</strong> : <code>/all Message</code> (ou <code>/monde</code>) est lu par tous les joueurs connectés ;</li>
+                    <li><strong>[MP]</strong> : <code>/msg Pseudo Message</code> n'est lu que par ce joueur (pseudo avec des espaces : entre guillemets) ; <code>/r Message</code> répond au dernier qui vous a écrit ;</li>
+                    <li><strong>[Groupe]</strong> : <code>/g Message</code> est lu par votre groupe.</li>
+                </ul>
+                <code>/aide</code> donne la liste. Les messages des administrateurs sont en rouge, marqués <strong>[Admin]</strong>. Ceux des <strong>[Professeur]</strong> sont en vert (un titre d'honneur, sans pouvoir particulier).</li>
+            <li><strong>Les groupes</strong> ({{ config('chat.group_size', 4) }} joueurs au plus) : invitez un joueur avec <code>/inviter Pseudo</code>, avec Action devant lui (« Inviter dans le groupe »), ou depuis Menu &gt; <strong>Groupe</strong>. Le menu Groupe montre les membres, le chef (★) et la carte où chacun se trouve. Le chef peut exclure un membre (<code>/exclure Pseudo</code>) ou donner sa place (<code>/chef Pseudo</code>) ; <code>/quitter</code> pour partir. Le chat du groupe annonce les arrivées, les départs et les connexions des membres. Le groupe reste d'une partie à l'autre.</li>
             <li><strong>Une seule partie à la fois</strong> par compte : si vous ouvrez le jeu dans un autre onglet ou sur un autre appareil, l'ancienne fenêtre se met en pause (bouton « Jouer ici » pour la reprendre).</li>
             <li><strong>Échanger</strong> : allez voir un autre joueur et appuyez sur Action, puis « Échanger ». Chacun propose un Pokémon, puis confirme. Certains Pokémon évoluent pendant l'échange (voir <a href="{{ route('wiki.evolutions') }}">Évolutions</a>).</li>
             <li><strong>Combattre</strong> : même chose avec « Combattre ». Les objets du Sac sont interdits dans les combats entre joueurs.</li>

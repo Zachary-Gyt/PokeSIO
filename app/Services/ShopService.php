@@ -14,7 +14,7 @@ use App\Models\InventoryItem;
 class ShopService
 {
     /** Clés de config/shops.php qui ne sont pas des boutiques */
-    private const NOT_SHOPS = ['bonus_ball', 'prices'];
+    private const NOT_SHOPS = ['bonus_ball', 'prices', 'price_overrides'];
 
     /**
      * Prix d'achat : la colonne items.price, ou à défaut le prix de config/shops.php ("prices").
@@ -22,6 +22,12 @@ class ShopService
      */
     public static function priceOf(Item $item): int
     {
+        // 1) prix imposé (config shops.price_overrides) ; 2) prix de la base ; 3) prix de secours (shops.prices)
+        $override = config("shops.price_overrides.{$item->slug}");
+        if ($override !== null) {
+            return (int) $override;
+        }
+
         return (int) $item->price > 0 ? (int) $item->price : (int) (config("shops.prices.{$item->slug}") ?? 0);
     }
 

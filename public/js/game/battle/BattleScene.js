@@ -1,3 +1,4 @@
+import { watchLoader, textureUsable } from '../net/ImageWatch.js';
 import { colorLayer } from '../objects/DayNight.js';
 import { CommandMenu, DataBox, FightMenu, MessageBox, ChoiceWindow, InfoWindow, SafariBox, SAFARI_LAYOUT, tweenAsync, wait } from './BattleUI.js';
 import PartyScreen from './PartyScreen.js';
@@ -7,7 +8,7 @@ import NamingScreen from '../menu/NamingScreen.js';
 import { api } from '../menu/Api.js';
 import { attachControls } from '../ui/Controls.js';
 import { ballKey, bottomPadding, loadImages } from './BattleAssets.js';
-import { blend, tint, tintFill, clearTint } from '../ui/Tint.js';
+import { blend, tint, tintFill, clearTint, releaseTints } from '../ui/Tint.js';
 
 /**
  * L'ÉCRAN DE COMBAT.
@@ -65,6 +66,15 @@ export default class BattleScene extends Phaser.Scene {
         const v = this.view;
         const base = this.config.basePath;
         const bg = `${base}/battle/backgrounds`;
+        watchLoader(this);
+        // Une texture cassée (chargement raté plus tôt) est enlevée : load.image la recharge
+        for (const p of v.player.party) {
+            if (p.sprites.back) textureUsable(this, spriteKey(p.sprites.back));
+            if (p.sprites.icon) textureUsable(this, `pkmn_icon_${p.sprites.icon}`);
+        }
+        if (v.foe.active.sprites.front) textureUsable(this, spriteKey(v.foe.active.sprites.front));
+        // Les copies teintées de ce combat (flashs, statuts, sortie de Ball) sont libérées à la fin
+        this.events.once('shutdown', () => releaseTints(this));
 
         this.load.image(`bb_${v.background}_bg`, `${bg}/${v.background}_bg.png`);
         this.load.image(`bb_${v.base}_base0`, `${bg}/${v.base}_base0.png`);
@@ -287,7 +297,7 @@ export default class BattleScene extends Phaser.Scene {
     async nextPhase() {
         const v = this.view;
         // PvP : j'ai déjà choisi (ou c'est à l'autre d'envoyer un Pokémon) -> j'attends
-        if (this.pvp && v.phase !== 'ended' && (v.pvp?.waiting || (v.phase === 'switch' && !v.mustSwitch))) {
+        if (this.pvp && v.phase !== 'ended' && (v.pvp?.waiting || (v.phase === 'switch' && !v.mustSwitch && !v.mayShift))) {
             return this.pvpWait();
         }
         switch (v.phase) {
@@ -299,7 +309,10 @@ export default class BattleScene extends Phaser.Scene {
                 }
                 return this.chooseCommand();
             case 'switch':
+                if (this.pvp && v.mayShift) return this.shiftPrompt();
                 return this.forcedSwitch();
+            case 'shift':
+                return this.shiftPrompt();
             case 'learn_move':
                 return this.learnMove();
             case 'ended':
@@ -369,6 +382,21 @@ export default class BattleScene extends Phaser.Scene {
         return this.send({ type: 'switch', party: index });
     }
 
+    /**
+     * Style « Choix » : le dresseur adverse va envoyer un Pokémon (le message vient d'être lu).
+     * « Voulez-vous changer de Pokémon ? » Oui : écran d'équipe (Retour = garder le sien).
+     */
+    async shiftPrompt() {
+        this.message.setVisible(true);
+        await this.message.show(this.pvp ? `${this.view.pvp?.opponent ?? 'L\'adversaire'} va envoyer un autre Pokémon.\nVoulez-vous changer de Pokémon ?` : 'Voulez-vous changer de Pokémon ?', { keep: true });
+        let index = null;
+        if (await this.yesNo()) {
+            index = await this.openParty({ prompt: 'Choisissez un Pokémon.' });
+        }
+        if (this.pvp) return this.send(index === null ? { type: 'stay' } : { type: 'switch', party: index });
+        return this.send({ type: 'shift', party: index });
+    }
+
     async forcedSwitch() {
         const index = await this.openParty({ prompt: 'Choisissez un Pokémon.', canCancel: false });
         return this.send({ type: 'switch', party: index });
@@ -399,7 +427,8 @@ export default class BattleScene extends Phaser.Scene {
                     await this.flash(`${p.name} n'a plus la force de se battre !`);
                     continue;
                 }
-                if (index === v.player.active && v.phase !== 'switch') {
+                // (après un K.O., le Pokémon au combat a 0 PV ; après Demi-Tour / Relais, il est encore là)
+                if (index === v.player.active) {
                     await this.flash(`${p.name} est déjà au combat !`);
                     continue;
                 }
@@ -482,9 +511,9 @@ export default class BattleScene extends Phaser.Scene {
             this.focus = list;
             const forget = await list.promise;
             this.focus = null;
-            // Étape 19 : une CS ne s'oublie que chez le Maître des capacités
+            // Étape 19 : une CS ne s'oublie que depuis le Résumé (page Capacités)
             if (forget !== null && forget < 4 && p.moves[forget]?.hm) {
-                await this.message.show('Une CS ne peut pas être oubliée ainsi.\nLe Maître des capacités peut la faire oublier.', { pause: true });
+                await this.message.show('Une CS ne peut pas être oubliée ainsi.\nChange-la depuis le Résumé du Pokémon.', { pause: true });
                 return this.learnMove();
             }
             if (forget !== null && forget < 4) {

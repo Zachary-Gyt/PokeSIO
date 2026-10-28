@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Battle\InvalidAction;
+use App\Models\Battle;
 use App\Models\Character;
 use App\Models\Move;
 use App\Models\Pokemon;
@@ -11,17 +12,17 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Étape 19 : le MAÎTRE DES CAPACITÉS (PNJ Tiled : action = move_tutor).
+ * CHANGER LES CAPACITÉS d'un Pokémon, depuis le Résumé (Menu > Pokémon > Résumé > Capacités).
+ * (Remplace l'ancien Maître des capacités : le nom de la classe est resté.)
  *
- * Le joueur voit toutes les capacités que son Pokémon peut connaître :
- *   - celles qu'il connaît déjà (dont les CS et les CT) ;
- *   - celles que son espèce apprend par niveau jusqu'à son niveau (et ses formes précédentes, voir config).
- * Il en choisit 1 à 4, dans l'ordre qu'il veut : c'est ainsi qu'on réapprend une capacité oubliée,
- * qu'on oublie une CS, ou qu'on change l'ordre des capacités.
+ * Le Pokémon peut reprendre, gratuitement et à tout moment hors combat :
+ *   - les capacités que son espèce apprend par niveau jusqu'à son niveau (et ses formes précédentes, voir config) ;
+ *   - toutes celles qu'il a apprises au moins une fois (CT, CS, Œuf, Gribouille...) : table pokemon_learned_moves.
+ * Les CS se remplacent ici librement : on peut toujours les reprendre de la même façon.
  */
 class MoveTutorService
 {
-    /** Les capacités proposées pour ce Pokémon (avec, pour celles qu'il connaît, leur place 1..4) */
+    /** Toutes les capacités possibles pour ce Pokémon (celles qu'il connaît ont leur place "slot" 1..4) */
     public function options(Pokemon $pokemon): array
     {
         $pokemon->loadMissing('species', 'moves.move.type');
@@ -31,7 +32,9 @@ class MoveTutorService
         foreach ($known as $pm) {
             $list[$pm->move_id] = $this->row($pm->move, $pm->current_pp, $pm->max_pp, $pm->slot);
         }
-        foreach ($this->learnable($pokemon) as $move) {
+        $others = $this->learnable($pokemon)->concat($this->learnedBefore($pokemon))
+            ->unique('id')->sortBy(fn (Move $m) => $m->name, SORT_NATURAL | SORT_FLAG_CASE);
+        foreach ($others as $move) {
             $list[$move->id] ??= $this->row($move, $move->pp, $move->pp, null);
         }
 
@@ -39,9 +42,45 @@ class MoveTutorService
     }
 
     /**
-     * Enregistre les capacités choisies ($moveIds : 1 à 4 ids, dans l'ordre).
-     * Les capacités gardées conservent leurs PP (et leurs PP Plus) ; les nouvelles ont leurs PP au maximum.
-     * Renvoie le prix payé.
+     * Met la capacité $moveId à la place $slot (1..4). Une place vide (le Pokémon connaît moins de 4 capacités)
+     * reçoit la capacité à la suite des autres. La nouvelle capacité a ses PP au maximum.
+     */
+    public function replace(Character $character, Pokemon $pokemon, int $slot, int $moveId): void
+    {
+        if ($pokemon->is_egg) {
+            throw new InvalidAction('Un Œuf ne connaît aucune capacité !');
+        }
+        if (Battle::where('character_id', $character->id)->where('status', 'active')->exists()) {
+            throw new InvalidAction('Impossible pendant un combat !');
+        }
+        $pokemon->loadMissing('moves');
+        $known = $pokemon->moves->sortBy('slot')->values();
+        if ($slot < 1 || $slot > min(PokemonMove::MAX_MOVES, $known->count() + 1)) {
+            throw new InvalidAction('Emplacement de capacité inconnu.');
+        }
+        if ($known->contains('move_id', $moveId)) {
+            throw new InvalidAction("{$pokemon->name} connaît déjà cette capacité.");
+        }
+        $allowed = collect($this->options($pokemon))->pluck('id')->all();
+        if (! in_array($moveId, $allowed, true)) {
+            throw new InvalidAction("{$pokemon->name} ne peut pas apprendre cette capacité.");
+        }
+
+        $move = Move::findOrFail($moveId);
+        DB::transaction(function () use ($pokemon, $known, $slot, $move) {
+            $old = $known->firstWhere('slot', $slot);
+            if ($old) {
+                $old->forceFill(['move_id' => $move->id, 'current_pp' => $move->pp, 'pp_ups' => 0])->save();
+            } else {
+                $pokemon->moves()->create(['move_id' => $move->id, 'slot' => $known->count() + 1, 'current_pp' => $move->pp, 'pp_ups' => 0]);
+            }
+        });
+        $pokemon->unsetRelation('moves');
+    }
+
+    /**
+     * Enregistre 1 à 4 capacités d'un coup, dans l'ordre (ancien écran du Maître ; gardé pour les scripts).
+     * Les capacités gardées conservent leurs PP. Renvoie le prix payé (config move_tutor.price).
      */
     public function apply(Character $character, Pokemon $pokemon, array $moveIds): int
     {
@@ -58,7 +97,7 @@ class MoveTutorService
 
         $current = $pokemon->moves->sortBy('slot')->pluck('move_id')->map(fn ($id) => (int) $id)->values()->all();
         if ($current === $moveIds) {
-            return 0;   // rien ne change : gratuit
+            return 0;
         }
 
         return DB::transaction(function () use ($character, $pokemon, $moveIds) {
@@ -71,7 +110,6 @@ class MoveTutorService
             $moves = Move::whereIn('id', $moveIds)->get()->keyBy('id');
             $pokemon->moves()->delete();
             foreach ($moveIds as $i => $id) {
-                /** @var PokemonMove|null $old */
                 $old = $kept[$id] ?? null;
                 $pokemon->moves()->create([
                     'move_id' => $id,
@@ -100,9 +138,15 @@ class MoveTutorService
 
         return $species->flatMap(fn ($s) => $s->levelUpMovesUpTo($pokemon->level))
             ->each(fn (Move $m) => $m->loadMissing('type'))
-            ->unique('id')
-            ->sortBy(fn (Move $m) => $m->name)
             ->values();
+    }
+
+    /** Capacités que ce Pokémon a déjà connues (CT, CS, Œuf...) */
+    private function learnedBefore(Pokemon $pokemon): Collection
+    {
+        $ids = DB::table('pokemon_learned_moves')->where('pokemon_id', $pokemon->id)->pluck('move_id');
+
+        return Move::with('type')->whereIn('id', $ids)->get();
     }
 
     private function row(Move $move, int $pp, int $maxPp, ?int $slot): array

@@ -1217,6 +1217,55 @@
      "width": 0,
      "x": 448,
      "y": 352
+    },
+    {
+     "id": 5,
+     "name": "",
+     "type": "",
+     "x": 384,
+     "y": 352,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Infirmière"
+      },
+      {
+       "name": "objname",
+       "type": "string",
+       "value": "infirmiere_cantine"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_16"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "up"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "heal"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
     }
    ],
    "opacity": 1,
@@ -1227,7 +1276,7 @@
   }
  ],
  "nextlayerid": 7,
- "nextobjectid": 5,
+ "nextobjectid": 6,
  "orientation": "orthogonal",
  "properties": [
   {

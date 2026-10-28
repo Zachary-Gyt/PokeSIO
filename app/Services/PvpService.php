@@ -176,11 +176,13 @@ class PvpService
                 'move' => ['type' => 'move', 'slot' => (int) ($input['slot'] ?? -1)],
                 'switch' => ['type' => 'switch', 'party' => (int) ($input['party'] ?? -1)],
                 'continue' => ['type' => 'continue'],
+                'stay' => ['type' => 'stay'],   // style « Choix » : garder son Pokémon
                 default => throw new InvalidAction('Action impossible dans un combat entre joueurs.'),
             };
 
             if ($state['phase'] === 'switch') {
-                if (empty($state['needSwitch'][$side]) || $action['type'] !== 'switch') {
+                $need = $state['needSwitch'][$side] ?? false;
+                if (! $need || ! ($action['type'] === 'switch' || ($action['type'] === 'stay' && $need === 'optional'))) {
                     throw new InvalidAction('Attendez que l\'autre joueur choisisse son Pokémon.');
                 }
             } elseif ($state['phase'] !== 'command') {
@@ -214,6 +216,7 @@ class PvpService
 
         $engine = new BattleEngine($state, $this->factory->typeChart());
         if ($state['phase'] === 'switch') {
+            // Tous ceux qui ont un choix à faire (remplacer, ou changer en style « Choix ») doivent avoir répondu
             if ((! empty($state['needSwitch']['player']) && ! $p1) || (! empty($state['needSwitch']['foe']) && ! $p2)) {
                 return false;
             }

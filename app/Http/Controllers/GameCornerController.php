@@ -13,7 +13,8 @@ use Illuminate\Http\Request;
 /**
  * Étape 20 : le Casino, appelé par le jeu.
  *   GET  /jouer/{id}/casino?map=...                       jetons, Boîte Jetons, lots du guichet
- *   POST /jouer/{id}/casino/jetons    { map, pack }       acheter des jetons (PNJ action = coins)
+ *   POST /jouer/{id}/casino/jetons    { map, amount }     acheter des jetons, au nombre près (PNJ action = coins)
+ *   POST /jouer/{id}/casino/jetons/vendre { map, amount } revendre des jetons
  *   GET  /jouer/{id}/casino/lots?map=&counter=            un comptoir des lots (PNJ action = prizes)
  *   POST /jouer/{id}/casino/lots      { map, counter, index }
  *   POST /jouer/{id}/casino/machine   { map, difficulty } s'asseoir à une machine à sous
@@ -36,22 +37,30 @@ class GameCornerController extends Controller
     {
         $this->authorizeCharacter($request, $character);
 
-        return response()->json([
-            'coins' => (int) $character->coins,
-            'money' => (int) $character->money,
+        return response()->json($this->corner->wallet($character) + [
             'coinCase' => $this->corner->hasCoinCase($character),
             'max' => $this->corner->max(),
-            'packs' => $this->corner->packs(),
+            'price' => $this->corner->coinPrice(),
+            'sellPrice' => $this->corner->coinSellPrice(),
         ]);
     }
 
     public function buy(Request $request, Character $character)
     {
         $this->authorizeCharacter($request, $character);
-        $data = $request->validate(['map' => $this->mapRule(), 'pack' => ['required', 'integer', 'min:0']]);
+        $data = $request->validate(['map' => $this->mapRule(), 'amount' => ['required', 'integer', 'min:1', 'max:99999']]);
         $this->requireAction($data['map'], 'coins');
 
-        return $this->attempt(fn () => $this->corner->buy($character, $data['pack']));
+        return $this->attempt(fn () => $this->corner->buy($character, $data['amount']));
+    }
+
+    public function sell(Request $request, Character $character)
+    {
+        $this->authorizeCharacter($request, $character);
+        $data = $request->validate(['map' => $this->mapRule(), 'amount' => ['required', 'integer', 'min:1', 'max:99999']]);
+        $this->requireAction($data['map'], 'coins');
+
+        return $this->attempt(fn () => $this->corner->sell($character, $data['amount']));
     }
 
     public function prizes(Request $request, Character $character)

@@ -189,12 +189,14 @@ Route::middleware(['auth', EnsureNotBanned::class, SinglePlaySession::class])->g
         Route::post('/pas', [\App\Http\Controllers\DaycareController::class, 'steps'])->name('daycare.steps');
         // Étape 19 : Repousse et Corde Sortie, Maître des capacités
         Route::post('/objet-terrain', [\App\Http\Controllers\FieldItemController::class, 'use'])->middleware('throttle:30,1,fielditem.use:')->name('fielditem.use');
-        Route::get('/maitre-capacites', [\App\Http\Controllers\MoveTutorController::class, 'show'])->name('movetutor.show');
-        Route::post('/maitre-capacites', [\App\Http\Controllers\MoveTutorController::class, 'update'])->middleware('throttle:30,1,movetutor.update:')->name('movetutor.update');
+        // Changer les capacités d'un Pokémon depuis le Résumé (remplace le Maître des capacités)
+        Route::get('/equipe/capacites', [\App\Http\Controllers\PartyMovesController::class, 'index'])->name('party.moves');
+        Route::post('/equipe/capacites', [\App\Http\Controllers\PartyMovesController::class, 'replace'])->middleware('throttle:60,1,party.moves:')->name('party.moves.replace');
         // Étape 20 : le Casino
         Route::prefix('/casino')->name('casino.')->controller(\App\Http\Controllers\GameCornerController::class)->group(function () {
             Route::get('/', 'show')->name('show');
             Route::post('/jetons', 'buy')->middleware('throttle:30,1,casino.buy:')->name('buy');
+            Route::post('/jetons/vendre', 'sell')->middleware('throttle:30,1,casino.sell:')->name('sell');
             Route::get('/lots', 'prizes')->name('prizes');
             Route::post('/lots', 'exchange')->middleware('throttle:30,1,casino.exchange:')->name('exchange');
             Route::post('/machine', 'openSlots')->name('slots.open');
@@ -226,10 +228,19 @@ Route::middleware(['auth', EnsureNotBanned::class, SinglePlaySession::class])->g
         Route::post('/cherche-vs', [\App\Http\Controllers\RematchController::class, 'vsSeeker'])->middleware('throttle:30,1,rematch.vsseeker:')->name('rematch.vsseeker');
         // Étape 24 : les événements du scénario (resources/scenario/*.txt)
         Route::get('/evenements', [\App\Http\Controllers\EventController::class, 'state'])->name('events.state');
+        // Les images que le jeu n'a pas pu charger (notées dans le journal du serveur)
+        Route::post('/diagnostic/image', [\App\Http\Controllers\DiagnosticController::class, 'image'])->middleware('throttle:20,1,diagnostic:')->name('diagnostic.image');
         Route::post('/evenements', [\App\Http\Controllers\EventController::class, 'start'])->middleware('throttle:60,1,events.start:')->name('events.start');
         Route::post('/evenements/suite', [\App\Http\Controllers\EventController::class, 'resume'])->middleware('throttle:60,1,events.resume:')->name('events.resume');
         Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
         Route::post('/chat', [ChatController::class, 'send'])->name('chat.send');
+        // Les groupes de joueurs (chat /g, menu > Groupe)
+        Route::get('/groupe', [\App\Http\Controllers\GroupController::class, 'show'])->name('group.show');
+        Route::post('/groupe/inviter', [\App\Http\Controllers\GroupController::class, 'invite'])->middleware('throttle:20,1,group.invite:')->name('group.invite');
+        Route::post('/groupe/repondre', [\App\Http\Controllers\GroupController::class, 'answer'])->name('group.answer');
+        Route::post('/groupe/quitter', [\App\Http\Controllers\GroupController::class, 'leave'])->name('group.leave');
+        Route::post('/groupe/exclure', [\App\Http\Controllers\GroupController::class, 'kick'])->name('group.kick');
+        Route::post('/groupe/chef', [\App\Http\Controllers\GroupController::class, 'promote'])->name('group.promote');
     });
 
     /*

@@ -217,8 +217,8 @@ class EvolutionService
         }
 
         $slot = $pokemon->moves->firstWhere('slot', $forgetSlot);
-        // Étape 19 : une CS ne s'oublie que chez le Maître des capacités
-        abort_if($slot && Move::isLockedHm((int) $slot->move_id), 422, 'Une CS ne peut pas être oubliée ainsi. Le Maître des capacités peut la faire oublier.');
+        // Étape 19 : une CS ne s'oublie que depuis le Résumé (page Capacités)
+        abort_if($slot && Move::isLockedHm((int) $slot->move_id), 422, 'Une CS ne peut pas être oubliée ainsi. Change-la depuis le Résumé du Pokémon (page Capacités).');
         abort_unless($slot, 422, 'Capacité à oublier inconnue.');
         $slot->forceFill(['move_id' => $move->id, 'current_pp' => $move->pp, 'pp_ups' => 0])->save();
     }

@@ -1,8 +1,11 @@
 /**
  * Le MULTIJOUEUR côté navigateur : la connexion à Laravel Reverb (via Laravel Echo).
  *
- *   - canal privé "character.{id}" : mes notifications (invitations, échange, combat, titre perdu) ;
- *   - canal de présence "map.{carte}" : les joueurs sur la même carte que moi, et leurs positions.
+ *   - canal privé "character.{id}" : mes notifications (invitations, échange, combat, titre perdu)
+ *     et mes messages privés (/msg) ;
+ *   - canal de présence "map.{carte}" : les joueurs sur la même carte que moi, leurs positions, le chat local ;
+ *   - canal privé "chat.global" : le chat global (/all) ;
+ *   - canal de présence "group.{id}" : mon groupe (chat /g, membres connectés) : voir setGroup().
  *
  * Les positions passent par des "whispers" : de navigateur à navigateur, sans passer par Laravel
  * (rapide, et ça ne charge pas le serveur). Elles ne servent qu'à l'affichage : tout ce qui compte
@@ -16,6 +19,9 @@
  *   multi.on('invitation', (data) => ...);       // types : voir app/Events/PlayerNotice.php
  *   multi.joinMap('cremieu', { onMove, onLeave }, ['route_1']);   // étape 25 : + les cartes collées
  *   multi.sendPosition({ x, y, facing, mode });
+ *   multi.on('chat', (message) => ...);          // tous les canaux : message.channel = local, global, group, private
+ *   multi.on('group_presence', ({ type, member }) => ...);   // type : here, joining, leaving
+ *   multi.on('online_presence', ({ type, member }) => ...);  // tous les joueurs : joining, leaving
  */
 export default class Multiplayer extends Phaser.Events.EventEmitter {
     constructor(config) {
@@ -63,8 +69,36 @@ export default class Multiplayer extends Phaser.Events.EventEmitter {
             this.emit('connection', this.connected);
         });
 
-        // Mes notifications : un seul événement "notice", le champ "type" dit de quoi il s'agit
-        this.echo.private(`character.${this.me.id}`).listen('.notice', (data) => this.emit(data.type, data));
+        // Mes notifications : un seul événement "notice", le champ "type" dit de quoi il s'agit.
+        // Mes messages privés arrivent sur le même canal (événement "chat")
+        this.echo.private(`character.${this.me.id}`)
+            .listen('.notice', (data) => this.emit(data.type, data))
+            .listen('.chat', (message) => this.emit('chat', message));
+        // Le chat global
+        this.echo.private('chat.global').listen('.chat', (message) => this.emit('chat', message));
+        // Tous les joueurs en jeu : qui se connecte, qui se déconnecte (annoncé dans le chat)
+        if (this.config.announceConnections !== false) {
+            this.echo.join('online')
+                .joining((member) => this.emit('online_presence', { type: 'joining', member }))
+                .leaving((member) => this.emit('online_presence', { type: 'leaving', member }));
+        }
+        // Mon groupe : rejoint maintenant, et à chaque changement (notification "group")
+        this.setGroup(this.config.group ?? null);
+        this.on('group', (data) => { if ('groupId' in data) this.setGroup(data.groupId); });
+    }
+
+    /** J'entre dans un groupe (id), j'en change, ou j'en sors (null) : canal de présence "group.{id}" */
+    setGroup(id) {
+        if (!this.echo || this.groupId === id) return;
+        if (this.groupId) this.echo.leave(`group.${this.groupId}`);
+        this.groupId = id;
+        this.config.group = id;
+        if (!id) return;
+        this.echo.join(`group.${id}`)
+            .here((members) => { for (const member of members) this.emit('group_presence', { type: 'here', member }); })
+            .joining((member) => this.emit('group_presence', { type: 'joining', member }))
+            .leaving((member) => this.emit('group_presence', { type: 'leaving', member }))
+            .listen('.chat', (message) => this.emit('chat', message));
     }
 
     /**

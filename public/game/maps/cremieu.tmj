@@ -3185,21 +3185,16 @@
    "name": "npcs",
    "objects": [
     {
+     "height": 0,
      "id": 11,
      "name": "cremieu_pecheur_gaston",
-     "type": "region3",
-     "x": 384,
-     "y": 576,
-     "width": 0,
-     "height": 0,
+     "opacity": 1,
      "point": true,
-     "rotation": 0,
-     "visible": true,
      "properties": [
       {
-       "name": "trainer",
+       "name": "behavior",
        "type": "string",
-       "value": "cremieu_pecheur_gaston"
+       "value": "static"
       },
       {
        "name": "facing",
@@ -3207,33 +3202,34 @@
        "value": "down"
       },
       {
+       "name": "trainer",
+       "type": "string",
+       "value": "cremieu_pecheur_gaston"
+      }
+     ],
+     "rotation": 0,
+     "type": "region3",
+     "visible": true,
+     "width": 0,
+     "x": 384,
+     "y": 576
+    },
+    {
+     "height": 0,
+     "id": 12,
+     "name": "nageuse",
+     "opacity": 1,
+     "point": true,
+     "properties": [
+      {
        "name": "behavior",
        "type": "string",
        "value": "static"
-      }
-     ]
-    },
-    {
-     "id": 12,
-     "name": "nageuse",
-     "type": "region3",
-     "x": 416,
-     "y": 480,
-     "width": 0,
-     "height": 0,
-     "point": true,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "name",
-       "type": "string",
-       "value": "Nageuse"
       },
       {
-       "name": "sprite",
+       "name": "event",
        "type": "string",
-       "value": "swimmer_f"
+       "value": "nageuse"
       },
       {
        "name": "facing",
@@ -3241,14 +3237,9 @@
        "value": "left"
       },
       {
-       "name": "behavior",
+       "name": "name",
        "type": "string",
-       "value": "static"
-      },
-      {
-       "name": "event",
-       "type": "string",
-       "value": "nageuse"
+       "value": "Nageuse"
       },
       {
        "name": "objname",
@@ -3256,33 +3247,39 @@
        "value": "nageuse"
       },
       {
+       "name": "sprite",
+       "type": "string",
+       "value": "swimmer_f"
+      },
+      {
        "name": "text",
        "type": "string",
        "value": "..."
       }
-     ]
+     ],
+     "rotation": 0,
+     "type": "region3",
+     "visible": true,
+     "width": 0,
+     "x": 416,
+     "y": 480
     },
     {
+     "height": 0,
      "id": 13,
      "name": "pecheur_expert",
-     "type": "region3",
-     "x": 128,
-     "y": 512,
-     "width": 0,
-     "height": 0,
+     "opacity": 1,
      "point": true,
-     "rotation": 0,
-     "visible": true,
      "properties": [
       {
-       "name": "name",
+       "name": "behavior",
        "type": "string",
-       "value": "Pêcheur"
+       "value": "static"
       },
       {
-       "name": "sprite",
+       "name": "event",
        "type": "string",
-       "value": "fisherman"
+       "value": "pecheur_expert"
       },
       {
        "name": "facing",
@@ -3290,14 +3287,9 @@
        "value": "right"
       },
       {
-       "name": "behavior",
+       "name": "name",
        "type": "string",
-       "value": "static"
-      },
-      {
-       "name": "event",
-       "type": "string",
-       "value": "pecheur_expert"
+       "value": "Pêcheur"
       },
       {
        "name": "objname",
@@ -3305,11 +3297,22 @@
        "value": "pecheur_expert"
       },
       {
+       "name": "sprite",
+       "type": "string",
+       "value": "fisherman"
+      },
+      {
        "name": "text",
        "type": "string",
        "value": "..."
       }
-     ]
+     ],
+     "rotation": 0,
+     "type": "region3",
+     "visible": true,
+     "width": 0,
+     "x": 128,
+     "y": 512
     }
    ],
    "opacity": 1,
@@ -3407,25 +3410,15 @@
    "y": 0
   },
   {
+   "draworder": "topdown",
    "id": 8,
    "name": "items",
-   "type": "objectgroup",
-   "draworder": "topdown",
-   "x": 0,
-   "y": 0,
-   "opacity": 1,
-   "visible": true,
    "objects": [
     {
+     "height": 32,
      "id": 14,
      "name": "potion",
-     "type": "region3",
-     "x": 1088,
-     "y": 96,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
+     "opacity": 1,
      "properties": [
       {
        "name": "item",
@@ -3437,31 +3430,175 @@
        "type": "int",
        "value": 2
       }
-     ]
+     ],
+     "rotation": 0,
+     "type": "region3",
+     "visible": true,
+     "width": 32,
+     "x": 1088,
+     "y": 96
     },
     {
+     "height": 32,
      "id": 15,
      "name": "repel",
-     "type": "region3",
-     "x": 96,
-     "y": 704,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
+     "opacity": 1,
      "properties": [
       {
        "name": "item",
        "type": "string",
        "value": "repel"
       }
-     ]
+     ],
+     "rotation": 0,
+     "type": "region3",
+     "visible": true,
+     "width": 32,
+     "x": 96,
+     "y": 704
     }
-   ]
+   ],
+   "opacity": 1,
+   "type": "objectgroup",
+   "visible": true,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "draworder": "topdown",
+   "id": 9,
+   "name": "berries",
+   "objects": [
+    {
+     "height": 32,
+     "id": 18,
+     "name": "",
+     "opacity": 1,
+     "properties": [
+      {
+       "name": "berry",
+       "type": "string",
+       "value": "pecha-berry"
+      },
+      {
+       "name": "id",
+       "type": "string",
+       "value": "pecha"
+      }
+     ],
+     "rotation": 0,
+     "type": "",
+     "visible": true,
+     "width": 32,
+     "x": 928,
+     "y": 480
+    },
+    {
+     "height": 32,
+     "id": 19,
+     "name": "",
+     "opacity": 1,
+     "properties": [
+      {
+       "name": "berry",
+       "type": "string",
+       "value": "rawst-berry"
+      },
+      {
+       "name": "id",
+       "type": "string",
+       "value": "rawst"
+      }
+     ],
+     "rotation": 0,
+     "type": "",
+     "visible": true,
+     "width": 32,
+     "x": 1024,
+     "y": 544
+    },
+    {
+     "height": 32,
+     "id": 20,
+     "name": "",
+     "opacity": 1,
+     "properties": [
+      {
+       "name": "berry",
+       "type": "string",
+       "value": "cheri-berry"
+      },
+      {
+       "name": "id",
+       "type": "string",
+       "value": "cheri"
+      }
+     ],
+     "rotation": 0,
+     "type": "",
+     "visible": true,
+     "width": 32,
+     "x": 1024,
+     "y": 480
+    },
+    {
+     "height": 32,
+     "id": 21,
+     "name": "",
+     "opacity": 1,
+     "properties": [
+      {
+       "name": "berry",
+       "type": "string",
+       "value": "sitrus-berry"
+      },
+      {
+       "name": "id",
+       "type": "string",
+       "value": "sitrus"
+      }
+     ],
+     "rotation": 0,
+     "type": "",
+     "visible": true,
+     "width": 32,
+     "x": 1024,
+     "y": 416
+    },
+    {
+     "height": 32,
+     "id": 22,
+     "name": "",
+     "opacity": 1,
+     "properties": [
+      {
+       "name": "berry",
+       "type": "string",
+       "value": "oran-berry"
+      },
+      {
+       "name": "id",
+       "type": "string",
+       "value": "oran"
+      }
+     ],
+     "rotation": 0,
+     "type": "",
+     "visible": true,
+     "width": 32,
+     "x": 928,
+     "y": 416
+    }
+   ],
+   "opacity": 1,
+   "type": "objectgroup",
+   "visible": true,
+   "x": 0,
+   "y": 0
   }
  ],
- "nextlayerid": 9,
- "nextobjectid": 16,
+ "nextlayerid": 10,
+ "nextobjectid": 23,
  "orientation": "orthogonal",
  "properties": [
   {

@@ -11,7 +11,7 @@
  "tileheight": 32,
  "tilewidth": 32,
  "nextlayerid": 11,
- "nextobjectid": 31,
+ "nextobjectid": 41,
  "properties": [
   {
    "name": "displayName",
@@ -2504,49 +2504,6 @@
      ]
     },
     {
-     "id": 24,
-     "name": "",
-     "type": "",
-     "x": 160,
-     "y": 320,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "name",
-       "type": "string",
-       "value": "Maître des capacités"
-      },
-      {
-       "name": "sprite",
-       "type": "string",
-       "value": "npc_10"
-      },
-      {
-       "name": "facing",
-       "type": "string",
-       "value": "down"
-      },
-      {
-       "name": "behavior",
-       "type": "string",
-       "value": "static"
-      },
-      {
-       "name": "action",
-       "type": "string",
-       "value": "move_tutor"
-      },
-      {
-       "name": "text",
-       "type": "string",
-       "value": "..."
-      }
-     ]
-    },
-    {
      "id": 30,
      "name": "cherche_vs",
      "type": "",
@@ -2604,6 +2561,496 @@
        "value": "La batterie se recharge en marchant : 100 pas."
       }
      ]
+    },
+    {
+     "id": 31,
+     "name": "boutique_pharmacie",
+     "type": "",
+     "x": 160,
+     "y": 320,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Pharmacienne"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_11"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "down"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "shop"
+      },
+      {
+       "name": "shop",
+       "type": "string",
+       "value": "pharmacie"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "boutique_combat",
+     "type": "",
+     "x": 544,
+     "y": 384,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Vendeur d'objets de combat"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_10"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "down"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "shop"
+      },
+      {
+       "name": "shop",
+       "type": "string",
+       "value": "combat"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
+    },
+    {
+     "id": 33,
+     "name": "boutique_balls",
+     "type": "",
+     "x": 608,
+     "y": 384,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Vendeuse de Balls"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_11"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "down"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "shop"
+      },
+      {
+       "name": "shop",
+       "type": "string",
+       "value": "balls"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
+    },
+    {
+     "id": 34,
+     "name": "boutique_herboriste",
+     "type": "",
+     "x": 672,
+     "y": 384,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Herboriste"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_10"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "down"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "shop"
+      },
+      {
+       "name": "shop",
+       "type": "string",
+       "value": "herboriste"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
+    },
+    {
+     "id": 35,
+     "name": "boutique_vitamines",
+     "type": "",
+     "x": 736,
+     "y": 384,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Vendeur de vitamines"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_10"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "down"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "shop"
+      },
+      {
+       "name": "shop",
+       "type": "string",
+       "value": "vitamines"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
+    },
+    {
+     "id": 36,
+     "name": "boutique_baies",
+     "type": "",
+     "x": 800,
+     "y": 384,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Marchande de Baies"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_11"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "down"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "shop"
+      },
+      {
+       "name": "shop",
+       "type": "string",
+       "value": "baies"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "boutique_ct",
+     "type": "",
+     "x": 864,
+     "y": 384,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Vendeur de CT"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_10"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "down"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "shop"
+      },
+      {
+       "name": "shop",
+       "type": "string",
+       "value": "ct"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
+    },
+    {
+     "id": 38,
+     "name": "boutique_objets_type",
+     "type": "",
+     "x": 640,
+     "y": 128,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Vendeur d'objets de type"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_10"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "down"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "shop"
+      },
+      {
+       "name": "shop",
+       "type": "string",
+       "value": "objets_type"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "boutique_objets_combat",
+     "type": "",
+     "x": 704,
+     "y": 128,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Vendeuse d'objets tenus"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_11"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "down"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "shop"
+      },
+      {
+       "name": "shop",
+       "type": "string",
+       "value": "objets_combat"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "boutique_objets_evolution",
+     "type": "",
+     "x": 768,
+     "y": 128,
+     "width": 0,
+     "height": 0,
+     "point": true,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "name",
+       "type": "string",
+       "value": "Vendeur d'objets d'évolution"
+      },
+      {
+       "name": "sprite",
+       "type": "string",
+       "value": "npc_10"
+      },
+      {
+       "name": "facing",
+       "type": "string",
+       "value": "down"
+      },
+      {
+       "name": "behavior",
+       "type": "string",
+       "value": "static"
+      },
+      {
+       "name": "action",
+       "type": "string",
+       "value": "shop"
+      },
+      {
+       "name": "shop",
+       "type": "string",
+       "value": "objets_evolution"
+      },
+      {
+       "name": "text",
+       "type": "string",
+       "value": "..."
+      }
+     ]
     }
    ]
   },
@@ -2656,7 +3103,7 @@
       {
        "name": "text",
        "type": "string",
-       "value": "SALLE DE TEST\nUn peu de tout : PNJ, Centre Pokémon, Pension, Maître des capacités, rebords, hautes herbes, étang, CS, objets...\n\nÀ gauche : la salle des événements (scénario)."
+       "value": "SALLE DE TEST\nUn peu de tout : PNJ, Centre Pokémon, Pension, boutiques spécialisées, rebords, hautes herbes, étang, CS, objets...\n\nÀ gauche : la salle des événements (scénario)."
       }
      ]
     },

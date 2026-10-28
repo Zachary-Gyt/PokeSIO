@@ -3,6 +3,7 @@ import { TYPE_ROWS } from '../battle/BattleUI.js';
 import { loadImages } from '../battle/BattleAssets.js';
 import { clickable } from '../ui/Controls.js';
 import { ballName, itemIconKey, itemIconUrl } from './MenuAssets.js';
+import { toast } from '../ui/Toast.js';
 
 /**
  * L'écran RÉSUMÉ d'Essentials (Graphics/UI/Summary), positions reprises de UI_Summary.rb :
@@ -11,8 +12,11 @@ import { ballName, itemIconKey, itemIconUrl } from './MenuAssets.js';
  *   await new SummaryScreen(scene, party, index).open();                       // consulter
  *   const slot = await new SummaryScreen(scene, [pokemon], 0, { learn: move }).open();
  *        // apprentissage : 0..3 = capacité à oublier, 4 ou null = ne pas apprendre
+ *   await new SummaryScreen(scene, party, index, { moves: { load, replace } }).open();
+ *        // équipe : page Capacités, Action sur une capacité = la remplacer par une autre (voir MenuScene.moveEditor)
  *
  * Touches : gauche/droite = page, haut/bas = Pokémon suivant, Action (page 4) = détail, Retour = fermer.
+ * Changer une capacité : page 4, Action, choisir la capacité, Action, choisir la remplaçante, Action.
  */
 
 // Couleurs d'Essentials
@@ -37,7 +41,12 @@ export default class SummaryScreen extends Phaser.GameObjects.Container {
         this.learnMove = options.learn ?? null;
         this.page = this.learnMove ? 4 : 1;
         this.moveIndex = 0;
-        this.mode = this.learnMove ? 'learn' : 'view'; // view | detail | learn
+        this.mode = this.learnMove ? 'learn' : 'view'; // view | detail | learn | replace
+        // Changer les capacités (équipe, hors combat) : { load(pokemon), replace(pokemon, slot, move) }
+        this.editor = options.moves ?? null;
+        this.candidates = [];     // mode replace : les capacités qui peuvent prendre la place
+        this.candidateIndex = 0;
+        this.busy = false;
         this.setDepth(1500);
         scene.add.existing(this);
         this.promise = new Promise((resolve) => (this.resolve = resolve));
@@ -51,6 +60,11 @@ export default class SummaryScreen extends Phaser.GameObjects.Container {
 
     get pokemon() {
         return this.party[this.index];
+    }
+
+    /** L'écran est-il encore ouvert ? (une réponse du serveur peut arriver après sa fermeture) */
+    get active() {
+        return !this.closed;
     }
 
     async loadAssets() {
@@ -69,17 +83,19 @@ export default class SummaryScreen extends Phaser.GameObjects.Container {
     draw() {
         this.removeAll(true);
         const p = this.pokemon;
-        const detail = this.mode === 'detail' || this.mode === 'learn';
+        const detail = this.mode === 'detail' || this.mode === 'learn' || this.mode === 'replace';
         // Étape 18 : un Œuf a sa propre page (Essentials : bg_egg, "Suivi de l'Œuf")
         if (p.egg && !detail) {
             this.add(this.scene.add.image(0, 0, this.scene.textures.exists('summary_bg_egg') ? 'summary_bg_egg' : 'summary_bg_2').setOrigin(0, 0));
             this.drawEgg();
             return;
         }
-        const bg = this.mode === 'learn' ? 'summary_bg_learnmove' : this.mode === 'detail' ? 'summary_bg_movedetail' : `summary_bg_${this.page}`;
+        const bg = this.mode === 'learn' ? 'summary_bg_learnmove' : detail ? 'summary_bg_movedetail' : `summary_bg_${this.page}`;
         this.add(this.scene.add.image(0, 0, bg).setOrigin(0, 0));
 
-        if (detail) {
+        if (this.mode === 'replace') {
+            this.drawReplace();
+        } else if (detail) {
             this.drawMoveSelection();
         } else {
             this.drawCommon();
@@ -253,7 +269,7 @@ export default class SummaryScreen extends Phaser.GameObjects.Container {
         const learning = this.mode === 'learn';
         const moves = p.moves;
         const startY = learning ? 104 - 76 : 104;
-        const count = learning ? 5 : moves.length;
+        const count = learning ? 5 : this.detailCount();
         this.moveIndex = Math.min(this.moveIndex, count - 1);
 
         this.text(26, 22, 'CAPACITÉS', WHITE);
@@ -283,7 +299,10 @@ export default class SummaryScreen extends Phaser.GameObjects.Container {
             const power = move.category === 'status' ? '---' : (move.power ?? '???');
             this.text(216, 154, String(power), DARK, { align: 'right' });
             this.text(216, 186, move.accuracy ? `${move.accuracy}%` : '---', DARK, { align: 'right' });
-            this.wrapped(4, 224, 230, 5, move.description ?? '', DARK);
+            this.wrapped(4, 224, 230, this.editor ? 4 : 5, move.description ?? '', DARK);
+        }
+        if (this.editor && !learning) {
+            this.text(4, 352, move ? 'Action : remplacer' : 'Action : apprendre', RED);
         }
 
         // Souris : clic sur une capacité = la choisir
@@ -296,6 +315,94 @@ export default class SummaryScreen extends Phaser.GameObjects.Container {
             });
             this.add(zone);
         }
+    }
+
+    /** Nombre de lignes du détail : les capacités connues, plus une place vide si on peut en ajouter une */
+    detailCount() {
+        const known = this.pokemon.moves.length;
+        return this.editor ? Math.min(4, known + 1) : known;
+    }
+
+    /**
+     * Mode REMPLACER : à droite la liste des capacités possibles (4 visibles, défilement),
+     * à gauche le détail de celle qui est sous le curseur.
+     */
+    drawReplace() {
+        const p = this.pokemon;
+        const list = this.candidates;
+        const replaced = p.moves[this.moveIndex] ?? null;
+        this.candidateIndex = Math.max(0, Math.min(this.candidateIndex, list.length - 1));
+        const top = Math.max(0, Math.min(this.candidateIndex - 1, list.length - 4));
+
+        this.text(26, 22, 'REMPLACER', WHITE);
+        this.text(20, 128, 'CATÉGORIE', WHITE);
+        this.text(20, 160, 'PUISSANCE', WHITE);
+        this.text(20, 192, 'PRÉCISION', WHITE);
+        const iconKey = `pkmn_icon_${p.sprites.icon}`;
+        if (this.scene.textures.exists(iconKey)) {
+            this.add(this.scene.add.image(46, 92, iconKey).setCrop(0, 0, 64, 64).setOrigin(0.25, 0.5));
+        }
+        p.types.forEach((type, i) => {
+            this.image(p.types.length === 1 ? 130 : 96 + 70 * i, 78, 'battle_types', `t${TYPE_ROWS[type] ?? 0}`);
+        });
+        this.text(492, 62, `${this.candidateIndex + 1}/${list.length}`, WHITE, { align: 'right' });
+
+        // La liste (même dessin que les capacités connues)
+        this.drawMoveList(list.slice(top, top + 4), 104, false);
+        this.image(240, 92 + (this.candidateIndex - top) * 64, 'summary_cursor_move', 0);
+
+        const move = list[this.candidateIndex];
+        if (move) {
+            this.image(166, 124, 'ui_category', CATEGORY_ROWS[move.category] ?? 2);
+            const power = move.category === 'status' ? '---' : (move.power ?? '???');
+            this.text(216, 154, String(power), DARK, { align: 'right' });
+            this.text(216, 186, move.accuracy ? `${move.accuracy}%` : '---', DARK, { align: 'right' });
+            this.wrapped(4, 224, 230, 4, move.description ?? '', DARK);
+        }
+        this.text(4, 352, replaced ? `Au lieu de ${replaced.name}` : 'Nouvelle capacité', RED);
+
+        // Souris : survol = curseur, clic = choisir
+        for (let i = 0; i < Math.min(4, list.length); i++) {
+            const zone = this.scene.add.zone(240, 92 + i * 64, 252, 74).setOrigin(0, 0);
+            clickable(zone, {
+                onHover: () => { if (this.candidateIndex !== top + i) { this.candidateIndex = top + i; this.draw(); } },
+                onClick: () => { this.candidateIndex = top + i; this.handleKey('ok'); },
+            });
+            this.add(zone);
+        }
+    }
+
+    /** Action sur une capacité (détail) : charger les capacités possibles et passer en mode REMPLACER */
+    async startReplace() {
+        const p = this.pokemon;
+        if (p.egg || this.busy) return;
+        this.busy = true;
+        const options = await this.editor.load(p);
+        this.busy = false;
+        if (!options || !this.active) return;
+        this.candidates = options.filter((m) => !m.slot);
+        if (this.candidates.length === 0) {
+            toast(`${p.name} ne peut reprendre aucune autre capacité pour le moment.`);
+            return;
+        }
+        this.candidateIndex = 0;
+        this.mode = 'replace';
+        this.draw();
+    }
+
+    /** Action dans le mode REMPLACER : la capacité choisie prend la place */
+    async confirmReplace() {
+        const move = this.candidates[this.candidateIndex];
+        if (!move || this.busy) return;
+        this.busy = true;
+        const updated = await this.editor.replace(this.pokemon, this.moveIndex + 1, move);
+        this.busy = false;
+        if (!updated || !this.active) return;
+        // Le Pokémon à jour remplace l'ancien dans la liste (l'écran d'équipe derrière le voit aussi)
+        this.party[this.index] = { ...this.pokemon, ...updated };
+        this.mode = 'detail';
+        this.moveIndex = Math.min(this.moveIndex, this.pokemon.moves.length - 1);
+        this.draw();
     }
 
     /** Onglets des pages en haut à droite : cliquables */
@@ -329,13 +436,29 @@ export default class SummaryScreen extends Phaser.GameObjects.Container {
     // ---------------------------------------------------------------------
 
     handleKey(action) {
+        if (this.busy) return true;   // une requête est en cours
+        if (this.mode === 'replace') {
+            const count = this.candidates.length;
+            if (action === 'up' || action === 'down') {
+                this.candidateIndex = (this.candidateIndex + (action === 'up' ? count - 1 : 1)) % count;
+                this.draw();
+            } else if (action === 'ok') {
+                this.confirmReplace();
+            } else if (action === 'cancel') {
+                this.mode = 'detail';
+                this.draw();
+            }
+            return true;
+        }
         if (this.mode === 'learn' || this.mode === 'detail') {
-            const count = this.mode === 'learn' ? 5 : this.pokemon.moves.length;
+            const count = this.mode === 'learn' ? 5 : this.detailCount();
             if (action === 'up' || action === 'down') {
                 this.moveIndex = (this.moveIndex + (action === 'up' ? count - 1 : 1)) % count;
                 this.draw();
             } else if (action === 'ok' && this.mode === 'learn') {
                 this.close(this.moveIndex);
+            } else if (action === 'ok' && this.editor) {
+                this.startReplace();
             } else if (action === 'cancel') {
                 if (this.mode === 'learn') this.close(null);
                 else { this.mode = 'view'; this.draw(); }
@@ -350,7 +473,7 @@ export default class SummaryScreen extends Phaser.GameObjects.Container {
         else if ((action === 'up' || action === 'down') && this.party.length > 1) {
             this.index = (this.index + (action === 'up' ? this.party.length - 1 : 1)) % this.party.length;
             this.draw();
-        } else if (action === 'ok' && this.page === 4 && this.pokemon.moves.length > 0) {
+        } else if (action === 'ok' && this.page === 4 && this.detailCount() > 0) {
             this.mode = 'detail';
             this.moveIndex = 0;
             this.draw();
@@ -362,10 +485,11 @@ export default class SummaryScreen extends Phaser.GameObjects.Container {
 
     /** La molette fait défiler les Pokémon */
     get wheel() {
-        return this.mode === 'view';
+        return this.mode === 'view' || this.mode === 'replace';
     }
 
     close(value) {
+        this.closed = true;
         this.destroy();
         this.resolve(value);
     }

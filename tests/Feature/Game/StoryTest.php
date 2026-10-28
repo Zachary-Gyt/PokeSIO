@@ -95,6 +95,34 @@ class StoryTest extends GameTestCase
         $this->assertSame(50, $legend->level);
     }
 
+    /** Le vrai scénario de Mme Goudet : 8 badges = 1 légendaire, 16 badges = 2 légendaires et une Master Ball */
+    public function test_mme_goudet_asks_for_sixteen_badges(): void
+    {
+        $script = File::get(resource_path('scenario/ort_office.txt'));
+        $object = $this->world($script, 'goudet');
+        GameWorld::item('master-ball');
+        foreach (range(1, 16) as $order) {
+            Badge::forceCreate(['order' => $order, 'name' => "Badge {$order}", 'sprite' => (string) ($order - 1)]);
+        }
+        $sacha = GameWorld::character();
+        $sacha->badges()->attach(Badge::where('order', '<=', 8)->pluck('id'), ['obtained_at' => now()]);
+
+        $this->talk($sacha, $object)->assertOk();
+        $this->assertSame(1, $sacha->pokemon()->whereHas('species', fn ($q) => $q->where('slug', 'mewtwo'))->count());
+
+        // Toujours 8 badges : elle demande les 16
+        $texts = collect($this->talk($sacha, $object)->json('steps'))->pluck('text')->implode(' ');
+        $this->assertStringContainsString('Obtiens-en seize', $texts);
+        $this->assertSame(1, $sacha->pokemon()->whereHas('species', fn ($q) => $q->where('slug', 'mewtwo'))->count());
+
+        // 16 badges : deux légendaires et une Master Ball, une seule fois
+        $sacha->badges()->attach(Badge::where('order', '>', 8)->pluck('id'), ['obtained_at' => now()]);
+        $this->talk($sacha, $object)->assertOk();
+        $this->talk($sacha, $object)->assertOk();
+        $this->assertSame(3, $sacha->pokemon()->whereHas('species', fn ($q) => $q->where('slug', 'mewtwo'))->count());
+        $this->assertSame(1, $sacha->fresh()->quantityOf(GameWorld::item('master-ball')));
+    }
+
     public function test_the_trainer_card_has_sixteen_badges(): void
     {
         foreach (range(1, 16) as $order) {

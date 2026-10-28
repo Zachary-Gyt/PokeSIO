@@ -26,14 +26,14 @@ class GameCornerTest extends GameTestCase
         $sacha = GameWorld::character();
         $this->expectException(InvalidAction::class);
 
-        app(GameCornerService::class)->buy($sacha, 0);
+        app(GameCornerService::class)->buy($sacha, 50);
     }
 
     public function test_50_coins_cost_1000(): void
     {
         $sacha = $this->gambler(0, 1500);
 
-        $r = app(GameCornerService::class)->buy($sacha, 0);
+        $r = app(GameCornerService::class)->buy($sacha, 50);
 
         $this->assertSame(50, $r['coins']);
         $this->assertSame(500, $r['money']);
@@ -44,7 +44,29 @@ class GameCornerTest extends GameTestCase
         $sacha = $this->gambler(9990, 5000);
 
         $this->expectException(InvalidAction::class);
-        app(GameCornerService::class)->buy($sacha, 0);
+        app(GameCornerService::class)->buy($sacha, 50);
+    }
+
+    public function test_buy_an_exact_number_and_sell_back_at_20(): void
+    {
+        $sacha = $this->gambler(10, 1000);
+
+        $r = app(GameCornerService::class)->buy($sacha, 37);
+        $this->assertSame([47, 260], [$r['coins'], $r['money']]);   // 37 x 20 = 740 ₽
+        $this->assertSame(13, $r['canBuy']);                          // 260 / 20
+
+        $r = app(GameCornerService::class)->sell($sacha, 40);
+        $this->assertSame([7, 1060], [$r['coins'], $r['money']]);    // 40 x 20 = 800 ₽
+
+        $this->expectException(InvalidAction::class);
+        app(GameCornerService::class)->sell($sacha, 8);               // il n'en reste que 7
+    }
+
+    public function test_every_prize_pokemon_exists(): void
+    {
+        $slugs = array_column(config('game_corner.prizes.pokemon'), 'pokemon');
+        $this->assertGreaterThanOrEqual(20, count($slugs));
+        $this->assertSame($slugs, array_unique($slugs));
     }
 
     public function test_add_coins_is_capped(): void

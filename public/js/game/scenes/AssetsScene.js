@@ -1,3 +1,4 @@
+import { watchLoader } from '../net/ImageWatch.js';
 import { preloadBattleAssets, registerBattleFrames } from '../battle/BattleAssets.js';
 import { preloadMenuAssets } from '../menu/MenuAssets.js';
 
@@ -16,6 +17,7 @@ export default class AssetsScene extends Phaser.Scene {
 
     preload() {
         const config = this.registry.get('config');
+        watchLoader(this);
         const avatar = config.character.avatar ?? config.character.gender;
         preloadBattleAssets(this, config.basePath, avatar);
         preloadMenuAssets(this, config.basePath, config.character.gender);

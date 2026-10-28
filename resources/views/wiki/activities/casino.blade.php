@@ -12,10 +12,12 @@
         <h2>Les jetons</h2>
         <ul>
             <li>Il faut une <strong>Boîte Jetons</strong> pour jouer. Elle contient {{ number_format($max, 0, ',', ' ') }} jetons au plus.</li>
-            <li>Au guichet :
-                @foreach ($packs as $pack){{ $pack['coins'] }} jetons pour {{ number_format($pack['price'], 0, ',', ' ') }} ₽@if (! $loop->last) ; @endif @endforeach.
-            </li>
-            <li>Les jetons ne se revendent pas : on les échange contre des lots aux comptoirs.</li>
+            <li>Au guichet, achetez exactement le nombre de jetons voulu : <strong>{{ number_format($price, 0, ',', ' ') }} ₽ le jeton</strong>.</li>
+            @if ($sellPrice > 0)
+                <li>Le guichet rachète aussi vos jetons : <strong>{{ number_format($sellPrice, 0, ',', ' ') }} ₽ le jeton</strong>.</li>
+            @else
+                <li>Les jetons ne se revendent pas : on les échange contre des lots aux comptoirs.</li>
+            @endif
         </ul>
 
         <h2>Les machines à sous</h2>

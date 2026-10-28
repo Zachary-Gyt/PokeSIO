@@ -16,7 +16,6 @@ import PokedexScreen from './PokedexScreen.js';
 import HatchScreen from './HatchScreen.js';
 import HallOfFameScreen from './HallOfFameScreen.js';
 import NamingScreen from './NamingScreen.js';
-import MoveTutorScreen from './MoveTutorScreen.js';
 import SlotMachineScreen from './SlotMachineScreen.js';
 import RouletteScreen from './RouletteScreen.js';
 import { toast } from '../ui/Toast.js';
@@ -44,7 +43,6 @@ import { api } from './Api.js';
  *   { type: 'bank', map, atm }            la Banque (atm = distributeur : pas de banquier qui parle)
  *   { type: 'daycare', map, name }        étape 18 : la responsable de la Pension (confier / reprendre)
  *   { type: 'hatch', list: [...] }        étape 18 : des Œufs qui éclosent
- *   { type: 'moveTutor', map, name }      étape 19 : le Maître des capacités
  *   { type: 'coins', map, name }          étape 20 : le guichet des jetons du Casino
  *   { type: 'prizes', map, counter, name } étape 20 : un comptoir des lots
  *   { type: 'slots', map, difficulty }    étape 20 : une machine à sous
@@ -143,9 +141,6 @@ export default class MenuScene extends Phaser.Scene {
                     await this.offerNickname(hatched.pokemon);
                 }
                 break;
-            case 'moveTutor':
-                await this.moveTutor(this.task.map, this.task.name);
-                break;
             case 'coins':
                 await this.coinSeller(this.task.map);
                 break;
@@ -222,16 +217,17 @@ export default class MenuScene extends Phaser.Scene {
             // Comme Essentials : le nom du joueur ouvre sa Carte Dresseur
             // Étape 12 : "Options" (volumes de la musique et des effets)
             // Étape 13 : "Pokédex" en tête, comme dans Essentials
-            const commands = ['Pokédex', 'Pokémon', 'Sac', this.config.character.name, 'Sauvegarder', 'Options', 'Retour'];
+            // "Groupe" : les groupes de joueurs (membres, inviter, quitter)
+            const commands = ['Pokédex', 'Pokémon', 'Sac', this.config.character.name, 'Groupe', 'Sauvegarder', 'Options', 'Retour'];
             const win = new ChoiceWindow(this, commands.map((label) => ({ label })), {
-                x: 512 - 200, y: 0, width: 200, cancelValue: 6,
+                x: 512 - 200, y: 0, width: 200, cancelValue: 7,
             }).setDepth(1000);
             win.index = this.menuIndex;
             win.drawRows();
             this.focus = win;
             const choice = await win.promise;
             this.focus = null;
-            if (choice === null || choice === 6) return null;
+            if (choice === null || choice === 7) return null;
             this.menuIndex = choice;
 
             if (choice === 0) await this.openPokedex();
@@ -246,8 +242,9 @@ export default class MenuScene extends Phaser.Scene {
                 if (used) return used;
             }
             if (choice === 3) await this.trainerCard();
-            if (choice === 4) await this.save();
-            if (choice === 5) await this.options();
+            if (choice === 4) await this.groupMenu();
+            if (choice === 5) await this.save();
+            if (choice === 6) await this.options();
         }
     }
 
@@ -408,7 +405,8 @@ export default class MenuScene extends Phaser.Scene {
                 const chosen = await this.chooseFieldMove(fieldMove.slug);
                 if (chosen) return chosen;
             } else if (result.command === 'Résumé') {
-                await this.showSummary(party, result.index);
+                // Page Capacités : on peut y changer les capacités des Pokémon de l'équipe
+                await this.showSummary(party, result.index, { moves: this.moveEditor() });
             } else if (result.command === 'Surnom') {
                 const updated = await this.rename(party[result.index]);
                 if (updated) party = updated.party;
@@ -507,8 +505,32 @@ export default class MenuScene extends Phaser.Scene {
         return updated ? (await api.get(this.urls.bag)).data : null;
     }
 
-    async showSummary(list, index) {
-        const summary = new SummaryScreen(this, list, index);
+    /**
+     * Ce qu'il faut au Résumé pour changer les capacités : la liste des capacités possibles d'un Pokémon,
+     * et le remplacement d'une capacité (renvoie le Pokémon à jour, ou null). Les erreurs s'affichent en bandeau.
+     */
+    moveEditor() {
+        return {
+            load: async (pokemon) => {
+                const r = await api.get(`${this.urls.partyMoves}?pokemon_id=${pokemon.id}`);
+                if (!r.ok) toast(r.data.message ?? 'Impossible.');
+                return r.ok ? r.data.moves : null;
+            },
+            replace: async (pokemon, slot, move) => {
+                const r = await api.post(this.urls.partyMovesReplace, { pokemon_id: pokemon.id, slot, move_id: move.id });
+                if (!r.ok) {
+                    toast(r.data.message ?? 'Impossible.');
+                    return null;
+                }
+                this.registry.get('audio')?.se('save');
+                toast(`${pokemon.name} apprend ${move.name} !`);
+                return r.data.pokemon;
+            },
+        };
+    }
+
+    async showSummary(list, index, options = {}) {
+        const summary = new SummaryScreen(this, list, index, options);
         const previous = this.focus;
         this.focus = summary;
         await summary.open();
@@ -707,9 +729,9 @@ export default class MenuScene extends Phaser.Scene {
                 this.focus = summary;
                 const slot = await summary.open();
                 this.focus = null;
-                // Étape 19 : une CS ne s'oublie que chez le Maître des capacités
+                // Étape 19 : une CS ne s'oublie que depuis le Résumé (page Capacités)
                 if (slot !== null && slot < 4 && pokemon.moves[slot]?.hm) {
-                    await this.say('Une CS ne peut pas être oubliée ainsi. Le Maître des capacités peut la faire oublier.');
+                    await this.say('Une CS ne peut pas être oubliée ainsi. Change-la depuis le Résumé du Pokémon (page Capacités).');
                     continue;
                 }
                 if (slot !== null && slot < 4) {
@@ -782,11 +804,15 @@ export default class MenuScene extends Phaser.Scene {
         this.wallet = box;
     }
 
-    /** Le guichet : acheter des jetons (il faut la Boîte Jetons) */
+    /**
+     * Le guichet : acheter ou revendre des jetons, au nombre près (comme à la Banque).
+     * Prix : config/game_corner.php (coin_price, coin_sell_price). Il faut la Boîte Jetons.
+     */
     async coinSeller(map) {
         let r = await api.get(this.urls.casino);
         if (!r.ok) return;
         let state = r.data;
+        const money = (n) => `${formatMoney(n)} ₽`;
         await this.say('Bienvenue au Casino !');
         if (!state.coinCase) {
             await this.say('Il vous faut une Boîte Jetons pour garder vos jetons.');
@@ -794,21 +820,36 @@ export default class MenuScene extends Phaser.Scene {
         }
         this.showWallet(state.money, state.coins);
         while (true) {
-            const items = [...state.packs.map((p) => ({ label: `${p.coins} jetons`, right: `${formatMoney(p.price)} ₽` })), { label: 'Non merci' }];
-            const choice = await this.chooseRows('Voulez-vous acheter des jetons ?', items);
-            if (choice === null) break;
-            const pack = state.packs[choice];
-            r = await api.post(this.urls.casinoBuy, { map, pack: pack.index });
+            const actions = ['Acheter des jetons', ...(state.sellPrice > 0 ? ['Vendre des jetons'] : []), 'Quitter'];
+            const choice = await this.choose(`Un jeton coûte ${money(state.price)}.${state.sellPrice > 0 ? `\nNous le rachetons ${money(state.sellPrice)}.` : ''}`, actions);
+            const action = actions[choice] ?? 'Quitter';
+            if (action === 'Quitter') break;
+            const buying = action === 'Acheter des jetons';
+            const max = buying ? state.canBuy : state.canSell;
+            if (max <= 0) {
+                await this.say(buying
+                    ? (state.coins >= state.max ? 'Votre Boîte Jetons est pleine !' : 'Vous n\'avez pas assez d\'argent.')
+                    : 'Vous n\'avez aucun jeton.');
+                continue;
+            }
+            const amount = await this.chooseAmount(buying ? 'Combien de jetons acheter ?' : 'Combien de jetons vendre ?', max, 'jetons');
+            if (!amount) continue;
+            const total = amount * (buying ? state.price : state.sellPrice);
+            const question = buying
+                ? `${formatMoney(amount)} jetons pour ${money(total)}. D'accord ?`
+                : `${formatMoney(amount)} jetons contre ${money(total)}. D'accord ?`;
+            if (!(await this.yesNo(question))) continue;
+            r = await api.post(buying ? this.urls.casinoBuy : this.urls.casinoSell, { map, amount });
             if (!r.ok) {
                 await this.say(r.data.message ?? 'Impossible.');
                 continue;
             }
-            state = { ...state, coins: r.data.coins, money: r.data.money };
+            state = { ...state, ...r.data };
             this.registry.get('audio')?.se('buy');
             this.showWallet(state.money, state.coins);
             await this.say(r.data.message);
         }
-        await this.say('Merci ! Bonne chance !');
+        await this.say('Bonne chance !');
         this.wallet?.destroy(true);
     }
 
@@ -1057,28 +1098,30 @@ export default class MenuScene extends Phaser.Scene {
      * Choisir une somme d'argent (comme Essentials) : un chiffre à la fois.
      * Gauche / droite : changer de chiffre ; haut / bas : +1 / -1 sur ce chiffre. On ne dépasse jamais max.
      * Raccourci : un premier choix "Tout" ou "Autre somme". Renvoie la somme, ou null.
+     * unit : ce qu'on compte (₽ par défaut ; 'jetons' au Casino).
      */
-    async chooseAmount(text, max) {
-        const quick = await this.choose(text, [`Tout (${formatMoney(max)} ₽)`, 'Autre somme', 'Annuler']);
+    async chooseAmount(text, max, unit = '₽') {
+        const quick = await this.choose(text, [`Tout (${formatMoney(max)} ${unit})`, unit === '₽' ? 'Autre somme' : 'Autre nombre', 'Annuler']);
         if (quick === 0) return max;
         if (quick !== 1) return null;
         return new Promise(async (resolve) => {
             this.message.setVisible(true);
-            await this.message.show(`${text}\n(max. ${formatMoney(max)} ₽)`, { keep: true });
+            await this.message.show(`${text}\n(max. ${formatMoney(max)} ${unit})`, { keep: true });
             const digits = String(max).length;
             const charW = 18;
-            const width = Math.max(140, digits * charW + 76);
+            const unitW = Math.ceil(PixelText.measure(unit));
+            const width = Math.max(140, digits * charW + 58 + unitW);
             const win = this.add.container(512 - width, 288 - 72).setDepth(2001);
             const frame = createWindow(this, 'ui_choice', width, 72);
             const cells = [];
             win.add(frame);
-            const left = width - 40 - digits * charW;
+            const left = width - 22 - unitW - digits * charW;
             for (let i = 0; i < digits; i++) {
                 const t = new PixelText(this, left + i * charW, 22, '0', { color: '#505058', shadow: '#a0a0a8' });
                 cells.push(t);
                 win.add(t);
             }
-            win.add(new PixelText(this, width - 34, 22, '₽', { color: '#505058', shadow: '#a0a0a8' }));
+            win.add(new PixelText(this, width - 16 - unitW, 22, unit, { color: '#505058', shadow: '#a0a0a8' }));
             const arrowUp = this.add.text(0, 5, '▲', { fontSize: '13px', color: '#e05050' });
             const arrowDown = this.add.text(0, 51, '▼', { fontSize: '13px', color: '#e05050' });
             win.add([arrowUp, arrowDown]);
@@ -1137,60 +1180,6 @@ export default class MenuScene extends Phaser.Scene {
     async offerNickname(pokemon) {
         if (!pokemon || !this.urls.nickname) return;
         if (await this.yesNo(`Voulez-vous donner un surnom à ${pokemon.speciesName} ?`)) await this.rename(pokemon);
-    }
-
-    // =====================================================================
-    // Étape 19 : le Maître des capacités
-    // =====================================================================
-
-    /**
-     * Choisir un Pokémon, puis ses 4 capacités (et leur ordre) parmi tout ce qu'il peut connaître :
-     * réapprendre une capacité oubliée, oublier une CS, réorganiser.
-     */
-    async moveTutor(map, name = '') {
-        await this.say('Je suis le Maître des capacités !\nJe peux rappeler à vos Pokémon des capacités oubliées.');
-        await this.say('Je peux aussi leur faire oublier une capacité, même une CS, ou changer leur ordre.');
-        while (true) {
-            const party = await this.fetchParty();
-            const screen = new PartyScreen(this, party, { prompt: 'Quel Pokémon ?', mode: 'item' });
-            this.focus = screen;
-            const index = await screen.open();
-            this.focus = null;
-            if (index === null || index === undefined) break;
-            const pokemon = party[index];
-            if (pokemon.egg) {
-                await this.say('Un Œuf ne connaît aucune capacité !');
-                continue;
-            }
-            const query = `?map=${encodeURIComponent(map)}&pokemon_id=${pokemon.id}`;
-            const r = await api.get(this.urls.moveTutor + query);
-            if (!r.ok) {
-                await this.say(r.data.message ?? 'Impossible.');
-                break;
-            }
-            const tutor = new MoveTutorScreen(this, r.data.pokemon, r.data.moves);
-            const promise = tutor.open();
-            this.focus = tutor;
-            const ids = await promise;
-            this.focus = null;
-            const before = r.data.moves.filter((m) => m.slot).sort((a, b) => a.slot - b.slot).map((m) => m.id);
-            if (!ids || ids.join(',') === before.join(',')) {
-                if (!(await this.yesNo('Voulez-vous voir un autre Pokémon ?'))) break;
-                continue;
-            }
-            const price = r.data.price > 0 ? ` Cela coûte ${formatMoney(r.data.price)} ₽.` : '';
-            if (!(await this.yesNo(`Enregistrer ces capacités pour ${pokemon.name} ?${price}`))) continue;
-            const saved = await api.post(this.urls.moveTutorSave, { map, pokemon_id: pokemon.id, moves: ids });
-            if (!saved.ok) {
-                await this.say(saved.data.message ?? 'Impossible.');
-                continue;
-            }
-            const names = saved.data.pokemon.moves.map((m) => m.name).join(', ');
-            this.registry.get('audio')?.me('item');
-            await this.say(`${pokemon.name} connaît maintenant :\n${names}.`);
-            if (!(await this.yesNo('Voulez-vous voir un autre Pokémon ?'))) break;
-        }
-        await this.say('Revenez quand vous voulez !');
     }
 
     // =====================================================================
@@ -1402,13 +1391,104 @@ export default class MenuScene extends Phaser.Scene {
     }
 
     // =====================================================================
+    // Les groupes de joueurs (aussi en commandes de chat : /inviter, /quitter, /g...)
+    // =====================================================================
+
+    /** Menu > Groupe : les membres (chef, carte), inviter, gérer un membre (chef), quitter */
+    async groupMenu() {
+        const u = this.multiUrls;
+        while (true) {
+            const r = await api.get(u.groupShow);
+            if (!r.ok) {
+                await this.say(r.data.message ?? 'Impossible.');
+                return;
+            }
+            const { group, candidates, max } = r.data;
+            if (!group) {
+                const choice = await this.choose(`Vous n'avez pas de groupe.\nInvitez un joueur (${max} au plus) pour en créer un.`, ['Inviter un joueur', 'Annuler']);
+                if (choice !== 0) return;
+                await this.chooseInvitee(candidates);
+                return;
+            }
+
+            const me = this.config.character.id;
+            const leader = group.leaderId === me;
+            const short = (text, n = 14) => (text.length > n ? `${text.slice(0, n - 1)}.` : text);
+            const rows = group.members.map((m) => ({ label: `${m.leader ? '★' : ' '}${short(m.name, 12)}`, right: m.online ? short(m.map ?? '?') : 'absent' }));
+            const actions = leader ? ['Inviter un joueur', 'Quitter le groupe', 'Retour'] : ['Quitter le groupe', 'Retour'];
+            const choice = await this.chooseRows(`Groupe (${group.members.length}/${max}). ★ : le chef.\nChoisissez un membre ou une action.`, [...rows, ...actions.map((label) => ({ label }))]);
+            if (choice === null) return;
+
+            if (choice < rows.length) {
+                const member = group.members[choice];
+                if (!leader || member.id === me) {
+                    await this.say(`${member.name}${member.leader ? ' (chef)' : ''}\n${member.online ? `Se trouve : ${member.map}` : 'N\'est pas connecté.'}`);
+                    continue;
+                }
+                const action = await this.choose(`Que faire avec ${member.name} ?`, ['Nommer chef', 'Exclure', 'Annuler']);
+                if (action === 0 || action === 1) {
+                    const done = await api.post(action === 0 ? u.groupPromote : u.groupKick, { target: member.id });
+                    if (!done.ok) await this.say(done.data.message ?? 'Impossible.');
+                }
+                continue;
+            }
+
+            const label = actions[choice - rows.length];
+            if (label === 'Inviter un joueur') {
+                if (group.members.length >= max) await this.say(`Le groupe est complet (${max} joueurs).`);
+                else await this.chooseInvitee(candidates);
+            } else if (label === 'Quitter le groupe') {
+                if (!(await this.yesNo('Quitter le groupe ?'))) continue;
+                const done = await api.post(u.groupLeave, {});
+                if (!done.ok) await this.say(done.data.message ?? 'Impossible.');
+                return;
+            } else {
+                return;
+            }
+        }
+    }
+
+    /** La liste des joueurs connectés sans groupe (ceux de ma carte d'abord) */
+    async chooseInvitee(candidates) {
+        if (!candidates?.length) {
+            await this.say('Aucun joueur connecté à inviter pour le moment.\nAstuce : /inviter Pseudo dans le chat.');
+            return;
+        }
+        const short = (text, n = 14) => (text.length > n ? `${text.slice(0, n - 1)}.` : text);
+        const choice = await this.chooseRows('Inviter qui ?', [...candidates.map((c) => ({ label: short(c.name, 12), right: short(c.map ?? '') })), { label: 'Annuler' }]);
+        if (choice === null) return;
+        await this.inviteToGroup(candidates[choice]);
+    }
+
+    async inviteToGroup(target) {
+        const r = await api.post(this.multiUrls.groupInvite, { target: target.id });
+        if (!r.ok) {
+            await this.say(r.data.message ?? 'Invitation impossible.');
+            return;
+        }
+        toast(`Vous invitez ${target.name} dans votre groupe. En attente de sa réponse...`);
+    }
+
+    /** Un joueur m'invite dans son groupe */
+    async groupInvitation(inv) {
+        const accept = await this.yesNo(`${inv.from.name} vous invite dans son groupe. Accepter ?`);
+        const r = await api.post(this.multiUrls.groupAnswer, { id: inv.id, accept });
+        if (!r.ok) await this.say(r.data.message ?? 'Cette invitation n\'est plus valable.');
+        return null;
+    }
+
+    // =====================================================================
     // Multijoueur : invitations et échanges
     // =====================================================================
 
     /** J'ai parlé à un autre joueur : Échanger / Combattre */
     async playerMenu(target) {
-        const choice = await this.choose(`Que voulez-vous faire avec ${target.name} ?`, ['Échanger', 'Combattre', 'Annuler']);
-        if (choice === null || choice === 2) return;
+        const choice = await this.choose(`Que voulez-vous faire avec ${target.name} ?`, ['Échanger', 'Combattre', 'Inviter dans le groupe', 'Annuler']);
+        if (choice === null || choice === 3) return;
+        if (choice === 2) {
+            await this.inviteToGroup(target);
+            return;
+        }
         const kind = choice === 0 ? 'trade' : 'battle';
         const r = await api.post(this.multiUrls.invite, { target: target.id, kind });
         if (!r.ok) {
@@ -1423,6 +1503,7 @@ export default class MenuScene extends Phaser.Scene {
 
     /** Un joueur m'invite. Renvoie { tradeId } ou { battleId } si j'accepte. */
     async invitation(inv) {
+        if (inv.kind === 'group') return this.groupInvitation(inv);
         const text = inv.kind === 'trade'
             ? `${inv.from.name} veut échanger des Pokémon avec vous. Accepter ?`
             : `${inv.from.name} vous défie dans un combat amical ! Accepter ?`;

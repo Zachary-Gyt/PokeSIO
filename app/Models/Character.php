@@ -30,7 +30,20 @@ class Character extends Model
         return [
             'story_flags' => 'array',
             'last_seen_at' => 'datetime',
+            'group_joined_at' => 'datetime',
         ];
+    }
+
+    /** Le groupe de joueurs (null : seul). group_id ne se remplit que par GroupService. */
+    public function group()
+    {
+        return $this->belongsTo(Group::class);
+    }
+
+    /** Le jeu a sauvegardé il y a peu (config chat.online_seconds) : le joueur est connecté */
+    public function isOnline(): bool
+    {
+        return $this->last_seen_at !== null && $this->last_seen_at->gte(now()->subSeconds((int) config('chat.online_seconds', 120)));
     }
 
     // ------------------------------------------------------------------

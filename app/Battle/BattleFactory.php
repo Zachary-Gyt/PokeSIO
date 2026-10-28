@@ -140,6 +140,7 @@ class BattleFactory
             'speciesName' => $species->name,
             'level' => $pokemon->level,
             'gender' => $pokemon->gender,
+            'happiness' => $pokemon->friendship ?? 70,   // Retour, Frustration
             'shiny' => (bool) $pokemon->is_shiny,
             'natureId' => $pokemon->nature_id,
             'abilityId' => $pokemon->ability_id,

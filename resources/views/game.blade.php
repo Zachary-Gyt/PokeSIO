@@ -331,7 +331,7 @@
                 'Astuce : T ouvre le chat, Échap ou M le menu.',
                 'Astuce : un Repousse éloigne les Pokémon sauvages faibles.',
                 'Astuce : la Pension garde deux Pokémon. Un Œuf ? Marchez !',
-                'Astuce : le Maître des capacités fait oublier les CS.',
+                'Astuce : Résumé > Capacités pour changer les capacités d\'un Pokémon.',
                 'Astuce : le Wiki (en haut) explique tout le jeu.',
                 'Astuce : au Casino, il faut d\'abord une Boîte Jetons.',
                 'Astuce : sur téléphone, garde B appuyé pour courir.',

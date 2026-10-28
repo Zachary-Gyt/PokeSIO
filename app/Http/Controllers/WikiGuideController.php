@@ -127,7 +127,8 @@ class WikiGuideController extends Controller
 
         return [
             'max' => $corner->max(),
-            'packs' => $corner->packs(),
+            'price' => $corner->coinPrice(),
+            'sellPrice' => $corner->coinSellPrice(),
             'prizes' => collect($counters)->map(fn ($name, $key) => ['name' => $name, 'list' => $corner->prizes($key)])->filter(fn ($c) => $c['list']),
             'payouts' => config('game_corner.slots.payouts', []),
             'rounds' => (int) config('game_corner.roulette.rounds', 6),

@@ -16,25 +16,44 @@ return [
     // L'objet rare sans lequel on ne peut ni acheter ni jouer (slug de la table items)
     'coin_case' => 'coin-case',
 
-    // Le guichet (PNJ action = coins) : [jetons, prix en ₽]. Rouge / Bleu : 50 jetons pour 1 000 ₽.
-    'packs' => [
-        [50, 1000],
-        [500, 10000],
-    ],
+    // Le guichet (PNJ action = coins) : le joueur choisit le nombre exact de jetons, comme à la Banque.
+    // Prix d'un jeton à l'achat (Rouge / Bleu : 50 jetons pour 1 000 ₽, soit 20 ₽ le jeton)
+    'coin_price' => 20,
+    // Ce que rapporte un jeton revendu au guichet (0 = revente impossible)
+    'coin_sell_price' => 20,
 
     /*
     | Les comptoirs des lots (PNJ action = prizes, propriété prizes = la clé ci-dessous).
     | Une ligne : un objet ('item' => slug), une CT ('tm' => slug de la capacité, la CT est retrouvée toute seule)
     | ou un Pokémon ('pokemon' => slug, 'level'). 'price' = jetons.
-    | Valeurs par défaut : le Casino de Céladopole dans Rouge Feu.
+    | Pokémon : des 4 premières générations, du moins cher au plus cher (1 jeton = 20 ₽ au guichet).
+    | Les bébés et Pokémon courants sont abordables ; les futurs Pokémon très forts (Minidraco, Embrylex, Draby,
+    | Griknot, Terhal) et les raretés (Spiritomb, Motisma, Porygon) coûtent beaucoup de jetons.
+    | CT et objets : le Casino de Céladopole dans Rouge Feu.
     */
     'prizes' => [
         'pokemon' => [
-            ['pokemon' => 'abra', 'level' => 9, 'price' => 180],
-            ['pokemon' => 'clefairy', 'level' => 8, 'price' => 500],
-            ['pokemon' => 'dratini', 'level' => 18, 'price' => 2800],
-            ['pokemon' => 'scyther', 'level' => 25, 'price' => 5500],
-            ['pokemon' => 'porygon', 'level' => 26, 'price' => 9999],
+            ['pokemon' => 'abra', 'level' => 10, 'price' => 200],        // 1re génération
+            ['pokemon' => 'pichu', 'level' => 10, 'price' => 400],       // 2e
+            ['pokemon' => 'clefairy', 'level' => 10, 'price' => 500],    // 1re
+            ['pokemon' => 'wynaut', 'level' => 10, 'price' => 600],      // 3e
+            ['pokemon' => 'smoochum', 'level' => 10, 'price' => 600],    // 2e
+            ['pokemon' => 'bonsly', 'level' => 12, 'price' => 700],      // 4e
+            ['pokemon' => 'togepi', 'level' => 10, 'price' => 1000],     // 2e
+            ['pokemon' => 'munchlax', 'level' => 12, 'price' => 1200],   // 4e
+            ['pokemon' => 'eevee', 'level' => 15, 'price' => 2000],      // 1re
+            ['pokemon' => 'dratini', 'level' => 18, 'price' => 2800],    // 1re
+            ['pokemon' => 'riolu', 'level' => 18, 'price' => 3500],      // 4e
+            ['pokemon' => 'beldum', 'level' => 20, 'price' => 3500],     // 3e
+            ['pokemon' => 'larvitar', 'level' => 20, 'price' => 4000],   // 2e
+            ['pokemon' => 'bagon', 'level' => 20, 'price' => 4000],      // 3e
+            ['pokemon' => 'gible', 'level' => 20, 'price' => 4000],      // 4e
+            ['pokemon' => 'heracross', 'level' => 25, 'price' => 5000],  // 2e
+            ['pokemon' => 'absol', 'level' => 25, 'price' => 5000],      // 3e
+            ['pokemon' => 'scyther', 'level' => 25, 'price' => 5500],    // 1re
+            ['pokemon' => 'spiritomb', 'level' => 25, 'price' => 6500],  // 4e
+            ['pokemon' => 'rotom', 'level' => 25, 'price' => 7500],      // 4e
+            ['pokemon' => 'porygon', 'level' => 26, 'price' => 9999],    // 1re
         ],
         'tms' => [
             ['tm' => 'ice-beam', 'price' => 4000],

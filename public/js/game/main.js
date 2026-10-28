@@ -9,6 +9,7 @@ import Multiplayer from './net/Multiplayer.js';
 import Chat from './net/Chat.js';
 import AudioManager from './audio/AudioManager.js';
 import TouchControls from './ui/TouchControls.js';
+import { watchIdle } from './net/IdleWatch.js';
 
 // On attend que la police des dialogues soit chargée AVANT de lancer le jeu :
 // la boîte de dialogue mesure le texte pour le découper en pages, il faut donc la vraie police.
@@ -32,6 +33,12 @@ const game = new Phaser.Game({
     },
     // la première de la liste démarre seule ; étape 21 : AssetsScene charge les menus et combats en arrière-plan
     scene: [BootScene, WorldScene, BattleScene, MenuScene, AssetsScene],
+    // Chargement des images :
+    //   - HTMLImageElement : l'image garde sa vraie adresse ; le navigateur peut la relire dans son cache
+    //     s'il a vidé sa mémoire (sur téléphone, une image chargée en « blob » ne peut plus être relue) ;
+    //   - timeout : une requête bloquée (réseau mobile) échoue au bout de 20 s au lieu d'attendre pour toujours ;
+    //   - maxRetries : une image ratée est retentée 2 fois.
+    loader: { imageLoadType: 'HTMLImageElement', timeout: 20000, maxRetries: 2 },
 });
 
 // Le "registry" : un espace de données partagé par toutes les scènes
@@ -64,5 +71,8 @@ if (window.GAME_CONFIG.multiplayer?.enabled) {
 
 // Étape 29 : les commandes tactiles (croix, A, B...), affichées seules sur un écran tactile
 game.registry.set('touch', new TouchControls(game));
+
+// Déconnexion après quelques minutes sans rien faire (config/inactivity.php)
+watchIdle(game, window.GAME_CONFIG.idle ?? {});
 
 window.game = game; // pour inspecter le jeu depuis la console du navigateur

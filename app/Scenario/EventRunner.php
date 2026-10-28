@@ -303,11 +303,18 @@ class EventRunner
         $this->steps[] = ['type' => 'say', 'name' => '', 'text' => "{$character->name} donne {$what}."];
     }
 
-    /** L'espèce d'un « donner » : son slug, ou « legendaire » = un légendaire ou fabuleux de la base, au hasard */
-    private static function species(string $slug): PokemonSpecies
+    /**
+     * L'espèce d'un « donner » : son slug, ou « legendaire » = un légendaire ou fabuleux de la base, au hasard.
+     * Avec $character : de préférence un légendaire qu'il n'a pas encore (deux « donner » de suite = deux différents).
+     */
+    private static function species(string $slug, ?Character $character = null): PokemonSpecies
     {
         if ($slug === 'legendaire') {
-            return PokemonSpecies::where('is_legendary', true)->where('is_obtainable', true)->inRandomOrder()->first()
+            $pool = PokemonSpecies::where('is_legendary', true)->where('is_obtainable', true);
+            $owned = $character ? $character->pokemon()->pluck('pokemon_species_id')->all() : [];
+
+            return (clone $pool)->whereNotIn('id', $owned)->inRandomOrder()->first()
+                ?? $pool->inRandomOrder()->first()
                 ?? throw new ScriptError('aucun Pokémon légendaire dans la base.');
         }
 
@@ -317,7 +324,7 @@ class EventRunner
     /** Un Œuf (qui éclot après $steps pas, dans l'équipe) */
     private function giveEgg(Character $character, MapInfo $map, string $slug, int $steps): void
     {
-        $species = self::species($slug);
+        $species = self::species($slug, $character);
         $egg = $this->pokemonFactory->make($species, 1);
         $egg->fill([
             'is_egg' => true, 'egg_steps' => $steps, 'current_hp' => 0, 'experience' => 0,
@@ -342,7 +349,7 @@ class EventRunner
 
     private function givePokemon(Character $character, MapInfo $map, string $slug, int $level, bool $shiny, ?string $itemSlug): void
     {
-        $species = self::species($slug);
+        $species = self::species($slug, $character);
         $item = $itemSlug ? (Item::where('slug', $itemSlug)->first() ?? throw new ScriptError("objet inconnu : \"{$itemSlug}\".")) : null;
 
         $pokemon = $this->pokemonFactory->make($species, $level, $shiny ? ['shiny' => true] : []);

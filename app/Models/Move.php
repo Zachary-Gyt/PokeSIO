@@ -34,7 +34,7 @@ class Move extends Model
 
     /**
      * Étape 19 : les capacités enseignées par une CS (objets "hm01"... de la table items).
-     * Avec config('move_tutor.lock_hms'), elles ne s'oublient que chez le Maître des capacités.
+     * Avec config('move_tutor.lock_hms'), elles ne s'oublient que depuis le Résumé (page Capacités).
      */
     public static function hmIds(): array
     {

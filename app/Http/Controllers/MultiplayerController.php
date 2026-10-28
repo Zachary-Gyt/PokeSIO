@@ -117,7 +117,7 @@ class MultiplayerController extends Controller
         $this->authorizeCharacter($request, $character);
         abort_unless($battle->isPvp(), 404);
         $input = $request->validate([
-            'type' => ['required', Rule::in(['move', 'switch', 'continue'])],
+            'type' => ['required', Rule::in(['move', 'switch', 'continue', 'stay'])],
             'slot' => ['nullable', 'integer', 'between:-1,3'],
             'party' => ['nullable', 'integer', 'between:0,5'],
             'since' => ['nullable', 'integer'],

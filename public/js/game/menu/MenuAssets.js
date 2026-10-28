@@ -61,11 +61,8 @@ export function preloadMenuAssets(scene, basePath, gender) {
         img(`roulette_${name}`, `${roul}/${name}.png`);
     }
 
-    // Étape 19 : écran de surnom et Maître des capacités
+    // Étape 19 : écran de surnom
     img('naming_bg', `${ui}/naming/bg.png`);
-    img('tutor_bg', `${ui}/move_reminder/bg.png`);
-    img('tutor_cursor', `${ui}/move_reminder/cursor.png`);
-    img('tutor_buttons', `${ui}/move_reminder/buttons.png`);
 
     // Étape 18 : les Œufs (Résumé d'un Œuf, éclosion)
     img('summary_bg_egg', `${ui}/summary/bg_egg.png`);

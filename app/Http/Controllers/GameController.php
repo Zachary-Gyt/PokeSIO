@@ -104,8 +104,11 @@ class GameController extends Controller
                 'version' => $version,
                 'basePath' => asset('game'),
                 'saveUrl' => route('game.save', $character),   // où le jeu envoie ses sauvegardes
+                'diagnosticUrl' => route('diagnostic.image', $character),   // images qui ne se chargent pas
                 'autosaveSeconds' => 30,
                 'dashboardUrl' => route('dashboard'),           // étape 10 : retour à la sélection (kick)
+                // Déconnexion pour inactivité (config/inactivity.php)
+                'idle' => ['minutes' => (float) config('inactivity.minutes', 5), 'warningSeconds' => (int) config('inactivity.warning_seconds', 60)],
 
                 // Menu du jeu (équipe, Sac, PC) : adresses appelées par le JavaScript
                 'menu' => [
@@ -135,10 +138,10 @@ class GameController extends Controller
                     'daycareDeposit' => route('daycare.deposit', $character),
                     'daycareWithdraw' => route('daycare.withdraw', $character),
                     'steps' => route('daycare.steps', $character),
-                    // Étape 19 : surnoms, Maître des capacités, Repousse et Corde Sortie
+                    // Étape 19 : surnoms, Repousse et Corde Sortie ; capacités changées depuis le Résumé
                     'nickname' => route('party.nickname', $character),
-                    'moveTutor' => route('movetutor.show', $character),
-                    'moveTutorSave' => route('movetutor.update', $character),
+                    'partyMoves' => route('party.moves', $character),
+                    'partyMovesReplace' => route('party.moves.replace', $character),
                     'fieldItem' => route('fielditem.use', $character),
                     'vsSeeker' => route('rematch.vsseeker', $character),   // étape 26
                     // Étape 28 : la Tour de Combat
@@ -154,6 +157,7 @@ class GameController extends Controller
                     // Étape 20 : le Casino
                     'casino' => route('casino.show', $character),
                     'casinoBuy' => route('casino.buy', $character),
+                    'casinoSell' => route('casino.sell', $character),
                     'casinoPrizes' => route('casino.prizes', $character),
                     'casinoExchange' => route('casino.exchange', $character),
                     'slotsOpen' => route('casino.slots.open', $character),
@@ -248,6 +252,15 @@ class GameController extends Controller
                     'pvpClaim' => route('multi.pvp.claim', [$character, 'BATTLE_ID']),
                     'chat' => route('chat.index', $character),
                     'chatSend' => route('chat.send', $character),
+                    // Les groupes de joueurs
+                    'group' => $character->group_id,
+                    'announceConnections' => (bool) config('chat.announce_connections', true),
+                    'groupShow' => route('group.show', $character),
+                    'groupInvite' => route('group.invite', $character),
+                    'groupAnswer' => route('group.answer', $character),
+                    'groupLeave' => route('group.leave', $character),
+                    'groupKick' => route('group.kick', $character),
+                    'groupPromote' => route('group.promote', $character),
                     // Combat entre joueurs en cours (page rechargée) : le jeu le reprend
                     'pvpBattle' => $pvpBattle?->id,
                 ],

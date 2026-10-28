@@ -1,5 +1,10 @@
 /**
- * Le CHAT textuel : les messages des joueurs présents sur la même carte.
+ * Le CHAT textuel, quatre canaux (voir app/Http/Controllers/ChatController.php) :
+ *
+ *   Message               [Local]   les joueurs de la même carte
+ *   /all Message          [Global]  tous les joueurs connectés
+ *   /msg Pseudo Message   [MP]      un joueur (/r Message : répondre au dernier)
+ *   /g Message            [Groupe]  mon groupe ; les arrivées et départs des membres s'y affichent aussi
  *
  *   T          ouvrir la zone de saisie
  *   Entrée     envoyer
@@ -9,9 +14,16 @@
  * Pendant la saisie, le clavier du jeu est coupé : taper "z" n'avance pas le personnage.
  * Le message part à Laravel (ChatController), qui le vérifie et l'envoie à toute la carte par Reverb.
  *
- * Étape 10 : un texte qui commence par "/" est une commande d'administrateur (/aide pour la liste).
- * La réponse du serveur ("reply") s'affiche seulement chez celui qui l'a tapée.
+ * Les autres commandes (/inviter, /quitter, /aide... et celles des administrateurs) répondent par "reply",
+ * affiché seulement chez celui qui l'a tapée.
  */
+const CHANNELS = {
+    local: { tag: 'Local', css: 'chat-tag-local' },
+    global: { tag: 'Global', css: 'chat-tag-global' },
+    group: { tag: 'Groupe', css: 'chat-tag-group' },
+    private: { tag: 'MP', css: 'chat-tag-private' },
+};
+const LEAVE_DELAY = 6000;   // un membre du groupe qui recharge sa page ne "part" pas vraiment
 const VISIBLE_SECONDS = 20;   // un message disparaît du journal après ce délai (sauf pendant la saisie)
 const MAX_LINES = 6;
 
@@ -32,7 +44,7 @@ export default class Chat {
         this.form.className = 'chat-input';
         this.form.hidden = true;
         this.input = document.createElement('input');
-        this.input.maxLength = 120;
+        this.input.maxLength = 160;   // les commandes (/msg Pseudo) s'ajoutent au message de 120 caractères
         this.input.setAttribute('aria-label', 'Message');
         // Ce qu'on voit : le texte tapé, recopié avec la police du jeu, et un curseur clignotant
         this.display = document.createElement('div');
@@ -57,7 +69,71 @@ export default class Chat {
         });
 
         multi.on('chat', (message) => this.add(message));
+        // Mon groupe : changements (arrivée, départ, nouveau chef...) et membres qui se connectent
+        multi.on('group', (data) => {
+            this.groupChangedAt = Date.now();   // l'arrivée dans le canal qui suit n'est pas une "connexion"
+            if (data.text) this.add({ name: '', text: data.text, channel: 'group', system: true });
+        });
+        this.leaving = new Map();
+        this.groupMembers = new Set();   // les membres de mon groupe vus en ligne (leurs connexions s'affichent en [Groupe])
+        multi.on('group_presence', ({ type, member }) => {
+            if (member) this.groupMembers.add(member.id);
+            if (type !== 'here') this.presence('group', type, member);
+        });
+        multi.on('group', () => this.groupMembers.clear());
+        // Tous les joueurs : "Ondine s'est connecté." (sauf les membres de mon groupe, déjà annoncés en [Groupe]).
+        // Un membre rejoint le canal "online" juste avant celui du groupe : on attend un peu avant de décider.
+        multi.on('online_presence', ({ type, member }) => {
+            if (!member) return;
+            setTimeout(() => { if (!this.groupMembers.has(member.id)) this.presence('online', type, member); }, 2000);
+        });
+        this.addStyles();
         setInterval(() => this.render(), 1000);
+    }
+
+    /**
+     * Un joueur se connecte ou se déconnecte. scope : 'group' (membre de mon groupe) ou 'online' (tout joueur).
+     * Un départ suivi d'un retour rapide (page rechargée) n'est pas annoncé.
+     */
+    presence(scope, type, member) {
+        if (!member || member.id === this.me.id) return;
+        const key = `${scope}:${member.id}`;
+        const line = (text) => this.add(scope === 'group'
+            ? { name: '', text, channel: 'group', system: true }
+            : { name: '', text, info: true });
+        if (type === 'leaving') {
+            clearTimeout(this.leaving.get(key));
+            this.leaving.set(key, setTimeout(() => {
+                this.leaving.delete(key);
+                line(`${member.name} s'est déconnecté.`);
+            }, LEAVE_DELAY));
+        } else if (type === 'joining') {
+            if (scope === 'group' && Date.now() - (this.groupChangedAt ?? 0) < 8000) return;   // il vient d'entrer dans le groupe
+            if (this.leaving.has(key)) {
+                clearTimeout(this.leaving.get(key));
+                this.leaving.delete(key);
+                return;
+            }
+            line(`${member.name} s'est connecté.`);
+        }
+    }
+
+    /** Les couleurs des canaux (une seule fois) */
+    addStyles() {
+        if (document.getElementById('chat-channel-styles')) return;
+        const style = document.createElement('style');
+        style.id = 'chat-channel-styles';
+        style.textContent = `
+            .chat-tag { margin-right: 4px; }
+            .chat-tag-local { color: #d8d8d8; }
+            .chat-tag-global { color: #f8a838; }
+            .chat-tag-group { color: #70e070; }
+            .chat-tag-private { color: #f080f0; }
+            .chat-line.chat-private .chat-text-body { color: #f8c8f8; }
+            .chat-line.chat-group .chat-text-body { color: #c8f8c8; }
+            .chat-line.chat-info { color: #a8c8f0; font-style: italic; }
+        `;
+        document.head.appendChild(style);
     }
 
     /** Pas de chat sans Reverb, ni par-dessus une boîte de dialogue de PNJ */
@@ -86,7 +162,7 @@ export default class Chat {
     drawInput() {
         const value = this.input.value;
         if (!value) {
-            this.display.innerHTML = '<span class="chat-caret">_</span><span class="chat-placeholder"> Message... (Entrée : envoyer, Échap : fermer)</span>';
+            this.display.innerHTML = '<span class="chat-caret">_</span><span class="chat-placeholder"> Message... (/all, /g, /msg Pseudo, /aide)</span>';
             return;
         }
         const text = document.createElement('span');
@@ -159,16 +235,30 @@ export default class Chat {
 
         this.log.replaceChildren(...visible.map((l) => {
             const line = document.createElement('div');
-            line.className = l.system ? 'chat-line chat-system' : 'chat-line';
+            const channel = CHANNELS[l.channel] ? l.channel : (l.system || l.info ? null : 'local');
+            line.className = (l.info ? 'chat-line chat-info' : l.system ? 'chat-line chat-system' : 'chat-line') + (channel ? ` chat-${channel}` : '');
+            // [Local] [Global] [Groupe] [MP]
+            if (channel) {
+                const tag = document.createElement('span');
+                tag.className = `chat-tag ${CHANNELS[channel].css}`;
+                tag.textContent = `[${CHANNELS[channel].tag}]`;
+                line.appendChild(tag);
+            }
             if (l.name) {
                 const name = document.createElement('span');
                 // Les titres : [Admin] (administrateur), [Professeur] (grade Professeur, sans privilège)
                 const title = l.admin ? 'Admin' : l.professor ? 'Professeur' : null;
-                name.className = (l.id === this.me.id ? 'chat-name chat-me' : 'chat-name') + (l.admin ? ' chat-admin' : l.professor ? ' chat-professor' : '');
-                name.textContent = title ? `[${title}] ${l.name} : ` : `${l.name} : `;
+                const mine = l.id === this.me.id;
+                name.className = (mine ? 'chat-name chat-me' : 'chat-name') + (l.admin ? ' chat-admin' : l.professor ? ' chat-professor' : '');
+                // Message privé : "À Ondine" (envoyé) ou "De Sacha" (reçu)
+                const who = channel === 'private' ? (mine ? `À ${l.to}` : `De ${l.name}`) : l.name;
+                name.textContent = title && !(channel === 'private' && mine) ? `[${title}] ${who} : ` : `${who} : `;
                 line.appendChild(name);
             }
-            line.appendChild(document.createTextNode(l.text));   // textContent : jamais de HTML injecté
+            const body = document.createElement('span');
+            body.className = 'chat-text-body';
+            body.textContent = l.text;   // textContent : jamais de HTML injecté
+            line.appendChild(body);
             return line;
         }));
         this.log.hidden = visible.length === 0;

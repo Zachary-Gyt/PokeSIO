@@ -481,6 +481,8 @@ class BattleService
             'switch' => ['type' => 'switch', 'party' => (int) ($input['party'] ?? -1)],
             'learn' => ['type' => 'learn', 'forget' => isset($input['forget']) ? (int) $input['forget'] : null],
             'run', 'continue' => ['type' => $type],
+            // Le dresseur va envoyer un Pokémon : changer le sien (party) ou le garder (party absent)
+            'shift' => ['type' => 'shift', 'party' => isset($input['party']) ? (int) $input['party'] : null],
             // Étape 15 : Parc Safari
             'safari_ball', 'bait', 'rock' => ['type' => $type],
             default => throw new InvalidAction('Action inconnue.'),
@@ -519,6 +521,11 @@ class BattleService
             if ($this->saveOwnedPokemon($b)) {
                 $leveledUp[] = $b['id'];
             }
+        }
+
+        // Jackpot : les pièces ramassées pendant le combat
+        if (($state['payDay'] ?? 0) > 0 && $result !== 'loss') {
+            $character->addMoney((int) $state['payDay']);
         }
 
         // 2) Pokédex : toutes les espèces vues pendant le combat
@@ -666,6 +673,10 @@ class BattleService
         // Étape 14 : la Baie tenue a été mangée pendant le combat
         if (! empty($b['itemConsumed'])) {
             $pokemon->held_item_id = null;
+        }
+        // Larcin / Implore contre un Pokémon sauvage : l'objet volé est gardé
+        if (! empty($b['stolenItemId'])) {
+            $pokemon->held_item_id = $b['stolenItemId'];
         }
         foreach ($b['evs'] as $stat => $value) {
             $pokemon->{"ev_{$stat}"} = $value;

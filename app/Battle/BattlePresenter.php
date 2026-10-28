@@ -48,7 +48,7 @@ class BattlePresenter
             ],
             // Attaque imposée (préparation, repos, Mania) : pas de menu, on envoie "continue"
             'locked' => ! empty($active['volatile']['locked']),
-            'trapped' => ! empty($active['volatile']['trapped']),
+            'trapped' => ! empty($active['volatile']['trapped']) || ! empty($active['volatile']['cantEscape']) || ! empty($active['volatile']['ingrain']),
             'canRun' => $state['type'] === 'wild',
         ];
 
@@ -56,7 +56,9 @@ class BattlePresenter
             // Combat entre joueurs : le Pokémon adverse est montré comme celui d'un dresseur,
             // et "mustSwitch" dit si CE joueur doit envoyer un Pokémon (après un K.O.)
             $view['foe']['class'] = null;
-            $view['mustSwitch'] = ! empty($state['needSwitch']['player']);
+            $view['mustSwitch'] = ($state['needSwitch']['player'] ?? false) === true;
+            // Style « Choix » : l'adversaire remplace son Pokémon K.O., je PEUX changer le mien
+            $view['mayShift'] = ($state['needSwitch']['player'] ?? false) === 'optional';
             $view['canRun'] = false;
         }
 

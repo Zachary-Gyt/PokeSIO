@@ -24,7 +24,7 @@ class HttpAccessTest extends GameTestCase
 
         $this->actingAs($ondine->user)->getJson("/jouer/{$sacha->id}/equipe")->assertNotFound();
         $this->actingAs($ondine->user)->getJson("/jouer/{$sacha->id}/sac")->assertNotFound();
-        $this->actingAs($ondine->user)->postJson("/jouer/{$sacha->id}/casino/jetons", ['map' => 'test_ville', 'pack' => 0])->assertNotFound();
+        $this->actingAs($ondine->user)->postJson("/jouer/{$sacha->id}/casino/jetons", ['map' => 'test_ville', 'amount' => 50])->assertNotFound();
     }
 
     public function test_the_owner_sees_their_party(): void
@@ -68,8 +68,8 @@ class HttpAccessTest extends GameTestCase
         $sacha = GameWorld::character();
         $sacha->addItem(GameWorld::item('coin-case'));
 
-        $this->actingAs($sacha->user)->postJson("/jouer/{$sacha->id}/casino/jetons", ['map' => 'test_ville', 'pack' => 0])->assertUnprocessable();
-        $this->actingAs($sacha->user)->postJson("/jouer/{$sacha->id}/casino/jetons", ['map' => '../../etc', 'pack' => 0])->assertUnprocessable();
+        $this->actingAs($sacha->user)->postJson("/jouer/{$sacha->id}/casino/jetons", ['map' => 'test_ville', 'amount' => 50])->assertUnprocessable();
+        $this->actingAs($sacha->user)->postJson("/jouer/{$sacha->id}/casino/jetons", ['map' => '../../etc', 'amount' => 50])->assertUnprocessable();
     }
 
     public function test_casino_buy_through_http(): void
@@ -78,7 +78,7 @@ class HttpAccessTest extends GameTestCase
         $sacha = GameWorld::character(['money' => 2000]);
         $sacha->addItem(GameWorld::item('coin-case'));
 
-        $this->actingAs($sacha->user)->postJson("/jouer/{$sacha->id}/casino/jetons", ['map' => 'test_casino', 'pack' => 0])
+        $this->actingAs($sacha->user)->postJson("/jouer/{$sacha->id}/casino/jetons", ['map' => 'test_casino', 'amount' => 50])
             ->assertOk()->assertJson(['coins' => 50, 'money' => 1000]);
     }
 

@@ -5,16 +5,34 @@
 
 evenement goudet
     nom Mme Goudet
-    si drapeau goudet_legendaire_donne
-        dire Huit badges... Je suis fière de toi, {joueur}.
-        dire Le Maître de l'ORT t'attend en salle 310, si tu te sens prêt.
+    si drapeau goudet_seize_badges
+        dire Seize badges... Tu es devenu un très grand dresseur, {joueur}.
+        dire Prends soin de tes Pokémon légendaires. Et n'oublie pas : le Maître de l'ORT t'attend en salle 310.
+    sinon si drapeau goudet_legendaire_donne
+        si badges 16
+            dire {joueur} ! Seize badges ! Les Champions de Kanto et de Johto... tu les as tous battus !
+            dire Tu as tenu ta promesse. Voici la mienne.
+            donner pokemon legendaire 50
+            donner pokemon legendaire 50
+            donner objet master-ball 1
+            drapeau goudet_seize_badges
+            dire Ces deux Pokémon légendaires te font confiance. Et cette Master Ball attrape n'importe quel Pokémon à coup sûr.
+            dire Je n'ai plus rien à t'apprendre, {joueur}. L'École ORT est fière de toi !
+        sinon
+            dire Huit badges... Je suis fière de toi, {joueur}.
+            dire Mais l'École compte seize Champions : ceux de Kanto et ceux de Johto.
+            dire Tu as {badges} badges. Obtiens-en seize et reviens me voir : j'aurai une récompense digne de toi.
+            dire En attendant, le Maître de l'ORT t'attend en salle 310, si tu te sens prêt.
+        fin
     sinon si badges 8
         dire {joueur} ! Ces huit badges... Tu as donc battu huit Champions de l'École !
         dire Le Professeur Thouverez avait raison à ton sujet.
         dire Je garde depuis longtemps un Pokémon très particulier. Il mérite un dresseur comme toi.
         donner pokemon legendaire 50
         drapeau goudet_legendaire_donne
-        dire Prends-en grand soin. Et maintenant, pourquoi ne pas défier le Maître de l'ORT, en salle 310 ?
+        dire Prends-en grand soin.
+        dire Mais ce n'est qu'un début : l'École compte seize Champions. Obtiens les seize badges et reviens me voir !
+        dire Et pourquoi ne pas défier le Maître de l'ORT, en salle 310 ?
     sinon
         dire Bonjour, {joueur}. Je suis Madame Goudet, la directrice de l'École ORT.
         dire Le Professeur Thouverez m'a parlé de toi.

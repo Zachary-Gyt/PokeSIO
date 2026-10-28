@@ -1,3 +1,4 @@
+import { watchLoader, textureUsable } from '../net/ImageWatch.js';
 /**
  * Images du combat.
  *
@@ -94,7 +95,8 @@ export function registerBattleFrames(scene, gender) {
  * Les clés déjà chargées sont ignorées. Renvoie une promesse.
  */
 export function loadImages(scene, images) {
-    const missing = Object.entries(images).filter(([key, url]) => url && !scene.textures.exists(key));
+    watchLoader(scene);
+    const missing = Object.entries(images).filter(([key, url]) => url && !textureUsable(scene, key));
     if (missing.length === 0) return Promise.resolve();
 
     return new Promise((resolve) => {

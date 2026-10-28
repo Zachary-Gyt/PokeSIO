@@ -18,6 +18,8 @@ namespace App\Battle;
  * Phases ($state['phase']) :
  *   command     le joueur choisit : attaque, sac, Pokémon ou fuite
  *   switch      son Pokémon est K.O. : il DOIT en envoyer un autre
+ *   shift       le dresseur adverse va envoyer un Pokémon : le joueur PEUT changer le sien avant
+ *               (style « Choix » des jeux) : ['type' => 'shift', 'party' => index ou null]
  *   learn_move  un Pokémon veut apprendre une 5e attaque : laquelle oublier ?
  *   ended       combat terminé ($state['result'] : win, loss, fled, caught, draw)
  *
@@ -34,6 +36,8 @@ class BattleEngine
 {
     // Étape 23 : talents et météo (app/Battle/Concerns/AbilitiesAndWeather.php)
     use Concerns\AbilitiesAndWeather;
+    // Capacités au fonctionnement unique : Faux-Chage, Riposte, Abri, Clone, Picots... (app/Battle/Concerns/MoveEffects.php)
+    use Concerns\MoveEffects;
 
     // Cibles PokéAPI qui désignent le lanceur lui-même (Danse-Lames, Repos...)
     private const SELF_TARGETS = ['user', 'users-field', 'user-or-ally', 'user-and-allies', 'all-allies', 'ally'];
@@ -46,13 +50,16 @@ class BattleEngine
         'skull-bash' => 'baisse la tête !',
         'sky-attack' => "est entouré d'une lumière intense !",
         'razor-wind' => 'se prépare à lancer une bourrasque !',
+        'dive' => 'plonge sous l\'eau !',
+        'bounce' => 'rebondit très haut !',
+        'shadow-force' => 'disparaît !',
     ];
 
     // Pendant la préparation de Vol et Tunnel, le Pokémon est hors d'atteinte
-    private const SEMI_INVULNERABLE = ['fly', 'dig'];
+    private const SEMI_INVULNERABLE = ['fly', 'dig', 'dive', 'bounce', 'shadow-force'];
 
     // Attaques qui obligent à se reposer au tour suivant
-    private const RECHARGE_MOVES = ['hyper-beam', 'giga-impact', 'blast-burn', 'hydro-cannon', 'frenzy-plant'];
+    private const RECHARGE_MOVES = ['hyper-beam', 'giga-impact', 'blast-burn', 'hydro-cannon', 'frenzy-plant', 'roar-of-time', 'rock-wrecker'];
 
     // Attaques "furie" : 2 ou 3 tours d'affilée, puis le Pokémon devient confus
     private const RAMPAGE_MOVES = ['thrash', 'petal-dance', 'outrage'];
@@ -63,8 +70,8 @@ class BattleEngine
     // Attaques qui mettent le lanceur K.O.
     private const SELF_DESTRUCT = ['explosion', 'self-destruct'];
 
-    // Attaques qui échouent toujours ici (elles dépendent de la dernière attaque reçue)
-    private const UNSUPPORTED_DAMAGE = ['counter', 'mirror-coat', 'bide', 'metal-burst', 'natural-gift', 'fling'];
+    // Attaques qui renvoient les dégâts reçus (Riposte, Voile Miroir, Fulmifer, Patience)
+    private const COUNTER_MOVES = ['counter', 'mirror-coat', 'metal-burst', 'bide'];
 
     // Attaques à dégâts fixes (leur puissance est "null" dans PokéAPI)
     private const FIXED_DAMAGE = ['seismic-toss', 'night-shade', 'dragon-rage', 'sonic-boom', 'super-fang', 'psywave', 'endeavor'];
@@ -74,6 +81,15 @@ class BattleEngine
     private BattleText $text;
     private array $events = [];
     private ?int $speedTie = null;
+
+    /** L'emplacement de la capacité en cours (-1 : Lutte ou capacité appelée par une autre) */
+    private int $currentSlot = -1;
+
+    /** La capacité en cours (Blabla Dodo et Ronflement marchent en dormant) */
+    private ?string $currentMove = null;
+
+    /** La capacité en cours a-t-elle atteint sa cible ? (Taillade, Roulade) */
+    private bool $moveLanded = false;
 
     /** Étape 14 : la Vive Griffe s'est déclenchée ce tour-ci pour ce camp ('player' => true) */
     private array $quick = [];
@@ -195,6 +211,7 @@ class BattleEngine
             }
             $this->resolveLearnMove($action['forget'] ?? null);
             $this->afterTurn();
+            $this->settleFoeReplacement();
 
             return $this->events;
         }
@@ -204,8 +221,30 @@ class BattleEngine
                 throw new InvalidAction('Choisissez le Pokémon à envoyer.');
             }
             $this->validateSwitch((int) $action['party']);
-            $this->switchIn('player', (int) $action['party'], recall: false);
+            // Demi-Tour / Relais : le Pokémon encore au combat retourne dans sa Ball
+            $pending = $this->state['pendingSwitch'] ?? null;
+            unset($this->state['pendingSwitch']);
+            $this->state['batonPass'] = ! empty($pending['baton']);
+            $this->switchIn('player', (int) $action['party'], recall: $pending !== null && $this->active('player')['hp'] > 0);
+            $this->state['batonPass'] = false;
             $this->state['phase'] = 'command';
+            // Le dresseur adverse envoie ensuite son Pokémon (sans redemander : le joueur vient de choisir)
+            $this->settleFoeReplacement(ask: false);
+
+            return $this->events;
+        }
+
+        // Le dresseur adverse va envoyer un Pokémon : le joueur change le sien, ou garde celui qui est au combat
+        if ($phase === 'shift') {
+            if (($action['type'] ?? null) !== 'shift') {
+                throw new InvalidAction('Voulez-vous changer de Pokémon ?');
+            }
+            if (isset($action['party']) && $action['party'] !== null) {
+                $this->validateSwitch((int) $action['party']);
+                $this->switchIn('player', (int) $action['party'], recall: true);
+            }
+            $this->state['phase'] = 'command';
+            $this->settleFoeReplacement(ask: false);
 
             return $this->events;
         }
@@ -217,12 +256,16 @@ class BattleEngine
         if (! empty($player['volatile']['locked'])) {
             $action = ['type' => 'move', 'slot' => $player['volatile']['locked']['slot']];
         }
+        // Encore : la même capacité, tant que l'effet dure
+        if (($action['type'] ?? null) === 'move' && empty($player['volatile']['locked']) && isset($player['volatile']['encore'])
+            && ($player['moves'][$player['volatile']['encore']['slot']]['pp'] ?? 0) > 0) {
+            $action['slot'] = $player['volatile']['encore']['slot'];
+        }
 
         $this->validateAction($action);
 
-        // Plus aucun PP sur aucune attaque : ce sera Lutte
-        if ($action['type'] === 'move' && empty($player['volatile']['locked'])
-            && ! collect($player['moves'])->contains(fn ($m) => $m['pp'] > 0)) {
+        // Plus aucune capacité utilisable (PP, Entrave, Provoc...) : ce sera Lutte
+        if ($action['type'] === 'move' && empty($player['volatile']['locked']) && ! $this->hasSelectableMove($player)) {
             $action['slot'] = -1;
         }
 
@@ -250,9 +293,12 @@ class BattleEngine
             if (($action['type'] ?? null) === 'continue') {
                 $action = ['type' => 'move', 'slot' => 0];
             }
+            if ($action['type'] === 'move' && empty($b['volatile']['locked']) && isset($b['volatile']['encore'])
+                && ($b['moves'][$b['volatile']['encore']['slot']]['pp'] ?? 0) > 0) {
+                $action['slot'] = $b['volatile']['encore']['slot'];
+            }
             $this->validateAction($action, $side);
-            if ($action['type'] === 'move' && empty($b['volatile']['locked'])
-                && ! collect($b['moves'])->contains(fn ($m) => $m['pp'] > 0)) {
+            if ($action['type'] === 'move' && empty($b['volatile']['locked']) && ! $this->hasSelectableMove($b)) {
                 $action['slot'] = -1; // Lutte
             }
         }
@@ -264,6 +310,8 @@ class BattleEngine
     /**
      * Combat entre joueurs, phase "switch" : le ou les joueurs dont le Pokémon est K.O. envoient le suivant.
      * $choices : ['player' => index ou null, 'foe' => index ou null]
+     * needSwitch 'optional' (style « Choix ») : ce joueur peut changer (index) ou garder son Pokémon (null) ;
+     * il change en premier, puis l'autre envoie son remplaçant.
      */
     public function pvpSwitch(array $choices): array
     {
@@ -272,16 +320,20 @@ class BattleEngine
             throw new InvalidAction('Aucun Pokémon à remplacer.');
         }
         foreach (['player', 'foe'] as $side) {
-            if (! empty($this->state['needSwitch'][$side])) {
-                if (! isset($choices[$side])) {
-                    throw new InvalidAction('Choisissez le Pokémon à envoyer.');
-                }
+            $need = $this->state['needSwitch'][$side] ?? false;
+            if ($need === true && ! isset($choices[$side])) {
+                throw new InvalidAction('Choisissez le Pokémon à envoyer.');
+            }
+            if ($need && isset($choices[$side])) {
                 $this->validateSwitch((int) $choices[$side], $side);
             }
         }
-        foreach (['player', 'foe'] as $side) {
-            if (! empty($this->state['needSwitch'][$side])) {
-                $this->switchIn($side, (int) $choices[$side], recall: false);
+        // D'abord celui qui change de lui-même (son Pokémon revient dans sa Ball), puis le remplaçant du K.O.
+        foreach (['optional', true] as $kind) {
+            foreach (['player', 'foe'] as $side) {
+                if (($this->state['needSwitch'][$side] ?? false) === $kind && isset($choices[$side])) {
+                    $this->switchIn($side, (int) $choices[$side], recall: $kind === 'optional');
+                }
             }
         }
         $this->state['needSwitch'] = ['player' => false, 'foe' => false];
@@ -294,6 +346,9 @@ class BattleEngine
     public function checkAction(array $action, string $side): void
     {
         if ($this->state['phase'] === 'switch') {
+            if (($action['type'] ?? null) === 'stay' && ($this->state['needSwitch'][$side] ?? false) === 'optional') {
+                return;   // style « Choix » : il garde son Pokémon
+            }
             $this->validateSwitch((int) ($action['party'] ?? -1), $side);
 
             return;
@@ -319,6 +374,8 @@ class BattleEngine
             $foeAction = $foeChoice['type'] === 'move' ? (int) $foeChoice['slot'] : null;
             $foeSwitch = $foeChoice['type'] === 'switch' ? (int) $foeChoice['party'] : null;
         }
+
+        $this->startTurnEffects(['player' => $action['type'] === 'move' ? (int) $action['slot'] : null, 'foe' => $foeAction]);
 
         // 1) Les actions "rapides" passent AVANT les attaques : fuite, changement, objet
         $type = $action['type'];
@@ -402,6 +459,18 @@ class BattleEngine
             $this->handleFaints();
         }
 
+        // 4) Le dresseur adverse remplace son Pokémon K.O. (en proposant au joueur de changer le sien)
+        $this->settleFoeReplacement();
+
+        // Demi-Tour / Relais du joueur : il choisit maintenant le Pokémon qui prend la relève
+        if (! empty($this->state['pendingSwitch'])) {
+            if (! $this->battleIsDecided() && $this->state['phase'] === 'command' && $this->active('player')['hp'] > 0) {
+                $this->state['phase'] = 'switch';
+            } else {
+                unset($this->state['pendingSwitch']);
+            }
+        }
+
         $this->afterTurn();
 
         return $this->events;
@@ -431,6 +500,11 @@ class BattleEngine
                 if ($player['moves'][$slot]['pp'] <= 0) {
                     throw new InvalidAction('Il n\'y a plus de PP pour cette capacité !');
                 }
+                // Entrave, Provoc, Tourmente, Possessif, Anti-Soin, Gravité (Dernier Recours échoue en combat)
+                if ($player['moves'][$slot]['slug'] !== 'last-resort' && $this->hasSelectableMove($player)
+                    && ($why = $this->moveRestriction($player, $player['moves'][$slot], $slot))) {
+                    throw new InvalidAction($why);
+                }
                 // Étape 22 : objet Choix, une seule capacité tant que le Pokémon reste au combat
                 $lock = $player['volatile']['choiceLock'] ?? null;
                 if ($lock !== null && $lock !== $slot && ($player['moves'][$lock]['pp'] ?? 0) > 0 && $this->holds($player, 'choice')) {
@@ -447,6 +521,10 @@ class BattleEngine
                 // Étape 23 : Marque Ombre, Piège Sable, Magnépiège de l'adversaire
                 if (($trap = $this->trappedByAbility($side)) && ! $this->holds($player, 'shed_shell')) {
                     throw new InvalidAction("{$player['name']} ne peut pas être rappelé à cause de {$trap} !");
+                }
+                // Regard Noir, Barrage, Toile ; Racines
+                if ((! empty($player['volatile']['cantEscape']) || ! empty($player['volatile']['ingrain'])) && ! $this->holds($player, 'shed_shell')) {
+                    throw new InvalidAction("{$player['name']} ne peut pas être rappelé !");
                 }
                 $this->validateSwitch((int) ($action['party'] ?? -1), $side);
 
@@ -469,7 +547,8 @@ class BattleEngine
                 if ($this->state['type'] !== 'wild') {
                     throw new InvalidAction('Impossible de fuir un combat de Dresseur !');
                 }
-                if ((! empty($player['volatile']['trapped']) || $this->trappedByAbility($side)) && ! $this->hasAbility($player, 'run-away')) {
+                if ((! empty($player['volatile']['trapped']) || ! empty($player['volatile']['cantEscape']) || ! empty($player['volatile']['ingrain'])
+                    || $this->trappedByAbility($side)) && ! $this->hasAbility($player, 'run-away')) {
                     throw new InvalidAction('Impossible de fuir !');
                 }
 
@@ -524,7 +603,8 @@ class BattleEngine
         $sa = $this->effectiveSpeed($a['side']);
         $sb = $this->effectiveSpeed($b['side']);
         if ($sa !== $sb) {
-            return $sb <=> $sa;
+            // Distorsion : les plus lents agissent en premier
+            return empty($this->state['field']['trickRoom']) ? $sb <=> $sa : $sa <=> $sb;
         }
 
         // Égalité parfaite : pile ou face (mais un seul tirage, pour rester cohérent)
@@ -556,6 +636,9 @@ class BattleEngine
         }
         $speed *= $this->speciesStat($b, 'speed');
         $speed *= $this->abilitySpeed($b, $side);   // étape 23 : Glissade, Chlorophylle, Pied Véloce...
+        if (! empty($this->state[$side]['tailwind'])) {
+            $speed *= 2;                              // Vent Arrière
+        }
 
         return (int) floor($speed);
     }
@@ -573,6 +656,9 @@ class BattleEngine
         if ($user['hp'] <= 0) {
             return;
         }
+        $this->state['moved'][$side] = true;
+        $this->currentSlot = $slot;
+        $this->currentMove = $user['moves'][$slot]['slug'] ?? null;
 
         // Repos forcé après Ultralaser
         if (! empty($user['volatile']['recharge'])) {
@@ -582,8 +668,10 @@ class BattleEngine
             return;
         }
 
-        if (! $this->canAct($side)) {
-            unset($user['volatile']['charging'], $user['volatile']['rampage'], $user['volatile']['locked'], $user['volatile']['invulnerable']);
+        if (! $this->canAct($side) || ! $this->attractCheck($side)) {
+            unset($user['volatile']['charging'], $user['volatile']['rampage'], $user['volatile']['locked'], $user['volatile']['invulnerable'],
+                $user['volatile']['rollout'], $user['volatile']['bide']);
+            $user['volatile']['furyCutter'] = 0;
 
             return;
         }
@@ -602,6 +690,14 @@ class BattleEngine
             $this->say($this->text->subject($user, $side) . " n'a plus de capacités !");
         } else {
             $move = $user['moves'][$slot];
+            // Entrave, Provoc, Tourmente... posées après le choix de la capacité
+            $why = $move['slug'] === 'last-resort' || ! empty($user['volatile']['charging']) ? null : $this->moveRestriction($user, $move, $slot, $this->text->subject($user, $side));
+            if ($why) {
+                $this->say($why);
+                unset($user['volatile']['rampage'], $user['volatile']['locked']);
+
+                return;
+            }
         }
 
         // ---- attaques en deux tours : 1er tour = préparation ----
@@ -641,12 +737,19 @@ class BattleEngine
             unset($user['volatile']['locked']);
         }
 
-        // ---- PP (pas pour le 2e tour d'une attaque en deux tours, ni pendant une furie) ----
-        $inRampage = isset($user['volatile']['rampage']);
+        // ---- PP (pas pour le 2e tour d'une attaque en deux tours, ni pendant une furie, Patience ou Roulade) ----
+        $inRampage = isset($user['volatile']['rampage']) || isset($user['volatile']['bide']) || isset($user['volatile']['rollout']);
         if (! $struggle && ! $wasCharging && ! $inRampage) {
             // Étape 23 : Pression, la capacité utilise 2 PP
             $cost = $this->hasAbility($target, 'pressure') && ! in_array($move['target'], self::SELF_TARGETS, true) ? 2 : 1;
             $user['moves'][$slot]['pp'] = max(0, $user['moves'][$slot]['pp'] - $cost);
+        }
+
+        // Patience : deux tours à encaisser, sans message « utilise »
+        if ($move['slug'] === 'bide' && $this->bideTurn($side, $slot)) {
+            $this->afterMoveUsed($side, $move, false);
+
+            return;
         }
 
         $this->say($this->text->subject($user, $side) . " utilise {$move['name']} !");
@@ -683,8 +786,13 @@ class BattleEngine
         }
 
         $this->moldBreaker = $this->hasAbility($user, 'mold-breaker');   // étape 23 : Brise Moule
+        $this->moveLanded = false;
         $this->resolveMove($side, $slot, $move, $struggle);
         $this->moldBreaker = false;
+        if ($this->state['phase'] === 'ended') {
+            return;
+        }
+        $this->afterMoveUsed($side, $move, $this->moveLanded);
 
         // Explosion, Destruction : le lanceur est K.O. quoi qu'il arrive
         if (in_array($move['slug'], self::SELF_DESTRUCT, true) && $this->active($side)['hp'] > 0) {
@@ -707,14 +815,20 @@ class BattleEngine
         $selfTarget = in_array($move['target'], self::SELF_TARGETS, true);
         $fieldMove = in_array($move['target'], ['entire-field', 'opponents-field'], true);
 
+        if (! $selfTarget && ! $fieldMove && $target['hp'] <= 0 && $move['slug'] !== 'bide') {
+            $this->say('Mais il n\'y a pas de cible...');
+
+            return;
+        }
+        // Abri, Reflet Magik, Saisie, Coup Bas, Mitra-Poing, Bluff, Moi d'Abord...
+        if ($this->beforeMoveEffects($side, $move)) {
+            return;
+        }
+
         // ---- précision ----
         if (! $selfTarget && ! $fieldMove) {
-            if ($target['hp'] <= 0) {
-                $this->say('Mais il n\'y a pas de cible...');
-
-                return;
-            }
-            if (! $this->moveHits($side, $move)) {
+            $special = $this->specialAccuracy($side, $move);
+            if (! ($special ?? $this->moveHits($side, $move))) {
                 $this->emit('move', ['side' => $side, 'move' => $move['slug'], 'moveType' => $move['type'], 'category' => $move['category'], 'missed' => true]);
                 $this->say($this->text->subject($target, $other) . " évite l'attaque !");
                 unset($user['volatile']['rampage'], $user['volatile']['locked']);
@@ -724,6 +838,7 @@ class BattleEngine
         }
 
         $this->emit('move', ['side' => $side, 'move' => $move['slug'], 'moveType' => $move['type'], 'category' => $move['category']]);
+        $this->moveLanded = true;
 
         if ($move['category'] === 'status') {
             // Étape 23 : Absorbe-Volt contre Cage Éclair, Anti-Bruit contre Rugissement...
@@ -762,7 +877,8 @@ class BattleEngine
                 $this->emit('status_anim', ['side' => $side, 'status' => 'sleep']);
                 $this->say("{$who} dort profondément.");
 
-                return false;
+                // Blabla Dodo et Ronflement s'utilisent en dormant
+                return in_array($this->currentMove, ['sleep-talk', 'snore'], true);
             }
             $b['status'] = 'none';
             $this->emit('status', ['side' => $side, 'status' => 'none']);
@@ -886,10 +1002,31 @@ class BattleEngine
         $user = &$this->active($side);
         $target = &$this->active($other);
 
+        // Puissance et type selon la situation (Façade, Puissance Cachée, Don Naturel, Dégommage, Cadeau...)
+        if (! $struggle) {
+            $move = $this->situationalMove($side, $move);
+            if ($move === null) {
+                $this->say('Mais cela échoue !');
+
+                return;
+            }
+            if (! empty($move['skip'])) {
+                return;
+            }
+        }
+
         $targetTypes = $target['types'];
-        // Étape 22 : la Balle Fer cloue au sol, les attaques Sol touchent même un Pokémon Vol
-        if ($move['type'] === 'ground' && $this->holds($target, 'iron_ball')) {
+        // Étape 22 : la Balle Fer cloue au sol, les attaques Sol touchent même un Pokémon Vol (Gravité aussi)
+        if ($move['type'] === 'ground' && ($this->holds($target, 'iron_ball') || ! empty($this->state['field']['gravity']))) {
             $targetTypes = array_values(array_diff($targetTypes, ['flying'])) ?: ['normal'];
+        }
+        // Clairvoyance, Flair : Normal et Combat touchent les Spectre ; Œil Miracle : Psy touche les Ténèbres
+        $identified = $target['volatile']['identified'] ?? null;
+        if ($identified === 'ghost' && in_array($move['type'], ['normal', 'fighting'], true)) {
+            $targetTypes = array_values(array_diff($targetTypes, ['ghost'])) ?: ['normal'];
+        }
+        if ($identified === 'dark' && $move['type'] === 'psychic') {
+            $targetTypes = array_values(array_diff($targetTypes, ['dark'])) ?: ['normal'];
         }
         // Étape 23 : Querelleur, les attaques Normal et Combat touchent les Pokémon Spectre
         if (in_array($move['type'], ['normal', 'fighting'], true) && $this->hasAbility($user, 'scrappy')) {
@@ -904,6 +1041,13 @@ class BattleEngine
             return;
         }
 
+        // Vol Magnétik : les attaques Sol ne touchent pas
+        if ($move['type'] === 'ground' && ! empty($target['volatile']['magnetRise']) && empty($this->state['field']['gravity']) && ! $this->holds($target, 'iron_ball')) {
+            $this->say('Ça n\'affecte pas ' . $this->text->subject($target, $other, capital: false) . '...');
+
+            return;
+        }
+
         // Étape 23 : Lévitation, Absorbe-Volt, Torche, Garde Mystik...
         if ($this->abilityBlocks($side, $other, $move, $effectiveness)) {
             unset($user['volatile']['rampage'], $user['volatile']['locked']);
@@ -911,15 +1055,36 @@ class BattleEngine
             return;
         }
 
+        // Prescience, Vœu Destructeur : les dégâts arrivent deux tours plus tard
+        if (in_array($move['slug'], ['future-sight', 'doom-desire'], true)) {
+            if (! empty($this->state[$other]['future'])) {
+                $this->say('Mais cela échoue !');
+
+                return;
+            }
+            $this->state[$other]['future'] = ['turns' => 3, 'name' => $move['name'],
+                'damage' => $this->computeDamage($side, $other, ['type' => null] + $move, false, 1.0)];
+            $this->say($move['slug'] === 'future-sight' ? $this->text->subject($user, $side) . ' prévoit une attaque !' : $this->text->subject($user, $side) . ' fait un vœu destructeur !');
+
+            return;
+        }
+
         if ($move['effect'] === 'ohko') {
+            if (! empty($target['volatile']['substitute'])) {
+                $this->hitSubstitute($side, $move, $target['volatile']['substitute']);
+
+                return;
+            }
             $this->applyDamage($other, $target['hp'], 'damage', $effectiveness);
             $this->say('K.O. en un coup !');
 
             return;
         }
 
+        $fixed = in_array($move['slug'], self::FIXED_DAMAGE, true) || in_array($move['slug'], self::COUNTER_MOVES, true);
+
         // Attaques à puissance variable (Gigotage, Gyroballe, Balayage...) : "null" dans PokéAPI
-        if ($move['power'] === null && ! in_array($move['slug'], self::FIXED_DAMAGE, true)) {
+        if ($move['power'] === null && ! $fixed) {
             $move['power'] = $this->variablePower($move['slug'], $user, $target);
             if ($move['power'] === null) {
                 $this->say('Mais cela échoue !');
@@ -933,16 +1098,26 @@ class BattleEngine
         if ($hits > 1 && $this->hasAbility($user, 'skill-link')) {
             $hits = (int) ($move['meta']['max_hits'] ?? $hits);
         }
+        // Baston : un coup par Pokémon de l'équipe en forme et sans statut
+        if ($move['slug'] === 'beat-up') {
+            $hits = max(1, count(array_filter($this->state[$side]['party'], fn ($b) => $b['hp'] > 0 && $b['status'] === 'none')));
+        }
         $totalDamage = 0;
         $hitsDone = 0;
+        $subHit = false;
 
         for ($i = 0; $i < $hits; $i++) {
             if ($target['hp'] <= 0 || $user['hp'] <= 0) {
                 break;
             }
+            if ($move['slug'] === 'triple-kick') {
+                $move['power'] = 10 * ($i + 1);   // Triple Pied : 10, 20, puis 30
+            }
 
-            if (in_array($move['slug'], self::FIXED_DAMAGE, true)) {
-                $damage = $this->fixedDamage($move['slug'], $user, $target);
+            if ($fixed) {
+                $damage = in_array($move['slug'], self::COUNTER_MOVES, true)
+                    ? $this->counterMoveDamage($side, $move['slug'])
+                    : $this->fixedDamage($move['slug'], $user, $target);
                 $crit = false;
                 if ($damage <= 0) {
                     $this->say('Mais cela échoue !');
@@ -955,7 +1130,8 @@ class BattleEngine
                     + (int) ($this->speciesItem($user, 'species_crit')['value'] ?? 0)   // étape 22 : Poireau, Poing Chance
                     + ($this->hasAbility($user, 'super-luck') ? 1 : 0);                 // étape 23 : Chanceux
                 $crit = $this->rng->chance(Formulas::critChance($critStage))
-                    && ! $this->targetHas($target, 'battle-armor', 'shell-armor');      // étape 23 : Armurbaston, Coque Armure
+                    && ! $this->targetHas($target, 'battle-armor', 'shell-armor')       // étape 23 : Armurbaston, Coque Armure
+                    && empty($this->state[$other]['luckyChant']);                       // Air Veinard
                 $damage = $this->computeDamage($side, $other, $move, $crit, $effectiveness);
             }
 
@@ -969,7 +1145,19 @@ class BattleEngine
                 $target = &$this->active($other);
             }
 
+            // Clone : il encaisse les coups à la place du Pokémon
+            if (! empty($target['volatile']['substitute']) && $move['slug'] !== 'struggle') {
+                $this->hitSubstitute($side, $move, $damage);
+                $totalDamage += $damage;
+                $hitsDone++;
+                $subHit = true;
+                continue;
+            }
+
             $damage = min($damage, $target['hp']);
+
+            // Faux-Chage laisse toujours 1 PV ; Ténacité aussi
+            [$damage, $endureText] = $this->limitDamage($side, $move, $target, $damage);
 
             // Étape 14 : Bandeau, le Pokémon peut tenir avec 1 PV
             // Étape 22 : Ceinture Force, il tient à coup sûr s'il avait tous ses PV (elle est consommée)
@@ -995,6 +1183,10 @@ class BattleEngine
             $hitsDone++;
 
             $this->applyDamage($other, $damage, 'damage', $effectiveness, $crit);
+            $this->recordHit($other, $side, $move, $damage);
+            if ($endureText) {
+                $this->say($endureText);
+            }
             if ($crit) {
                 $this->say('Coup critique !');
                 // Étape 23 : Colérique, l'Attaque monte au maximum après un coup critique reçu
@@ -1009,7 +1201,7 @@ class BattleEngine
             }
         }
 
-        if (! in_array($move['slug'], self::FIXED_DAMAGE, true)) {
+        if (! $fixed) {
             if ($effectiveness > 1) {
                 $this->say('C\'est super efficace !');
             } elseif ($effectiveness < 1) {
@@ -1051,12 +1243,33 @@ class BattleEngine
             $this->say('L\'énergie ' . $this->text->of($target, $other) . ' est drainée !');
         }
 
-        $this->afterDamageItems($side, $move, $totalDamage, $effectiveness, $struggle);
+        // Le Clone a tout encaissé : pas d'effet sur le Pokémon caché derrière
+        $realDamage = $subHit ? 0 : $totalDamage;
+        $this->afterDamageItems($side, $move, $realDamage, $effectiveness, $struggle);
         // Étape 23 : Statik, Corps Ardent, Peau Dure, Boom Final... et Homochromie
-        $this->contactAbilities($side, $other, $move, $totalDamage);
-        $this->colorChange($other, $move, $totalDamage);
+        $this->contactAbilities($side, $other, $move, $realDamage);
+        $this->colorChange($other, $move, $realDamage);
 
-        $this->secondaryEffects($side, $move, $totalDamage);
+        $this->secondaryEffects($side, $move, $realDamage);
+        // Lien du Destin, Rancune, Sabotage, Larcin, Tour Rapide, Demi-Tour...
+        $this->afterHitEffects($side, $move, $realDamage, $this->currentSlot);
+        if ($subHit && $move['slug'] === 'u-turn') {
+            $this->selfSwitch($side, baton: false);
+        }
+    }
+
+    /** Riposte, Voile Miroir, Fulmifer, Patience : les dégâts reçus, renvoyés */
+    private function counterMoveDamage(string $side, string $slug): int
+    {
+        if ($slug !== 'bide') {
+            return $this->counterDamage($side, $slug);
+        }
+        $b = &$this->active($side);
+        $stored = $b['volatile']['bide']['damage'] ?? 0;
+        unset($b['volatile']['bide'], $b['volatile']['locked']);
+        $this->say($this->text->subject($b, $side) . ' libère son énergie !');
+
+        return $stored * 2;
     }
 
     /** Effets secondaires d'une attaque qui a touché : statut, baisse de stats, peur */
@@ -1230,10 +1443,6 @@ class BattleEngine
      */
     private function variablePower(string $slug, array $user, array $target): ?int
     {
-        if (in_array($slug, self::UNSUPPORTED_DAMAGE, true)) {
-            return null;
-        }
-
         $weight = $target['weight'] ?? 100; // en hectogrammes (100 = 10 kg)
 
         return match ($slug) {
@@ -1323,6 +1532,11 @@ class BattleEngine
         $target = &$this->active($other);
         $meta = $move['meta'] ?? [];
         $slug = $move['slug'];
+
+        // Les capacités au fonctionnement unique (Abri, Clone, Métronome, Picots...) : Concerns/MoveEffects.php
+        if ($this->uniqueStatusMove($side, $move)) {
+            return;
+        }
 
         // Quelques attaques au fonctionnement unique
         switch ($slug) {
@@ -1459,7 +1673,7 @@ class BattleEngine
                 return;
 
             case 'swagger':
-                $this->changeStat($other, 'attack', 2);
+                $this->changeStat($other, 'attack', 2, $side);
                 $this->inflictAilment($other, 'confusion', $move, quiet: false, source: $side);
 
                 return;
@@ -1477,6 +1691,13 @@ class BattleEngine
     {
         $b = &$this->active($side);
         $who = $this->text->subject($b, $side);
+
+        // Rune Protect : l'équipe est protégée des statuts et de la confusion infligés par l'adversaire
+        if ($source !== null && $source !== $side && ! empty($this->state[$side]['safeguard']) && in_array($ailment, ['paralysis', 'burn', 'freeze', 'sleep', 'poison', 'confusion'], true)) {
+            $quiet || $this->say("{$who} est protégé par Rune Protect !");
+
+            return;
+        }
 
         // Étape 23 : talents qui empêchent un statut (Échauffement, Insomnia, Vaccin, Tempo Perso...)
         $wanted = $ailment === 'poison' && ($move['slug'] ?? '') === 'toxic' ? 'bad_poison' : $ailment;
@@ -1767,6 +1988,9 @@ class BattleEngine
                 }
             }
         }
+
+        // Vœu, Anneau Hydro, Racines, Cauchemar, Malédiction, Bâillement, Requiem, Prescience, durées...
+        $this->moveEffectsEndOfTurn();
     }
 
     // =====================================================================
@@ -1817,10 +2041,8 @@ class BattleEngine
 
                 return;
             }
-            // Le dresseur envoie son Pokémon suivant
-            $next = $this->firstUsable('foe');
-            $this->say("{$this->trainerName()} va envoyer {$this->state['foe']['party'][$next]['name']}.");
-            $this->switchIn('foe', $next, recall: false);
+            // Le dresseur enverra son Pokémon suivant à la fin du tour (settleFoeReplacement)
+            $this->state['pendingFoeSwitch'] ??= $this->firstUsable('foe');
         }
 
         if ($this->active('player')['hp'] <= 0) {
@@ -1852,6 +2074,13 @@ class BattleEngine
             'player' => $this->active('player')['hp'] <= 0,
             'foe' => $this->active('foe')['hp'] <= 0,
         ];
+        // Style « Choix » : celui dont le Pokémon est encore debout PEUT changer ('optional') pendant que l'autre remplace le sien
+        foreach (['player', 'foe'] as $side) {
+            $other = $this->opponent($side);
+            if (! $need[$side] && $need[$other] && $this->hasOtherUsable($side)) {
+                $need[$side] = 'optional';
+            }
+        }
         if ($need['player'] || $need['foe']) {
             $this->state['needSwitch'] = $need;
             $this->state['phase'] = 'switch';
@@ -1988,10 +2217,10 @@ class BattleEngine
     /** Réponse du joueur à "Oublier une capacité pour apprendre X ?" */
     private function resolveLearnMove(?int $forget): void
     {
-        // Étape 19 : une CS ne s'oublie pas en apprenant une capacité (seulement chez le Maître des capacités)
+        // Étape 19 : une CS ne s'oublie pas en apprenant une capacité (seulement depuis le Résumé, page Capacités)
         $index = $this->state['pendingMoves'][0]['index'] ?? null;
         if ($forget !== null && $index !== null && ! empty($this->state['player']['party'][$index]['moves'][$forget]['hm'])) {
-            throw new InvalidAction('Une CS ne peut pas être oubliée ainsi. Le Maître des capacités peut la faire oublier.');
+            throw new InvalidAction('Une CS ne peut pas être oubliée ainsi. Change-la depuis le Résumé du Pokémon (page Capacités).');
         }
         $pending = array_shift($this->state['pendingMoves']);
         $b = &$this->state['player']['party'][$pending['index']];
@@ -2012,6 +2241,37 @@ class BattleEngine
     }
 
     /** Après le tour : reste-t-il une attaque à apprendre ? Sinon, phase suivante */
+    /**
+     * Le dresseur adverse envoie son Pokémon suivant (après un K.O.), à la fin du tour, comme dans les jeux :
+     *   « Gamin Paul va envoyer Rattata. Voulez-vous changer de Pokémon ? »
+     * Si le joueur a un autre Pokémon en forme, la phase devient "shift" (il répond par ['type' => 'shift']).
+     * Attend d'abord : une capacité à apprendre (learn_move), ou le remplaçant du joueur s'il est K.O. (switch).
+     * $ask = false : le Pokémon adverse arrive sans poser la question (le joueur vient de choisir).
+     */
+    private function settleFoeReplacement(bool $ask = true): void
+    {
+        $next = $this->state['pendingFoeSwitch'] ?? null;
+        if ($next === null || $this->battleIsDecided() || ! empty($this->state['pendingMoves'])
+            || ! in_array($this->state['phase'], ['command', 'shift'], true) || $this->active('player')['hp'] <= 0) {
+            return;
+        }
+        $name = $this->state['foe']['party'][$next]['name'];
+        $others = array_filter($this->state['player']['party'], fn ($b, $i) => $b['hp'] > 0 && $i !== $this->state['player']['active'], ARRAY_FILTER_USE_BOTH);
+
+        if ($ask && empty($this->state['shiftAsked']) && $others && ($this->state['shiftStyle'] ?? true)) {
+            $this->state['shiftAsked'] = true;
+            $this->state['phase'] = 'shift';
+            $this->say("{$this->trainerName()} va envoyer {$name}.");
+
+            return;
+        }
+        if (empty($this->state['shiftAsked'])) {
+            $this->say("{$this->trainerName()} va envoyer {$name}.");
+        }
+        unset($this->state['pendingFoeSwitch'], $this->state['shiftAsked']);
+        $this->switchIn('foe', $next, recall: false);
+    }
+
     private function afterTurn(): void
     {
         if (! empty($this->state['pendingMoves'])) {
@@ -2088,6 +2348,12 @@ class BattleEngine
 
     private function endBattle(string $result): void
     {
+        // Jackpot : les pièces sont ramassées (sauf en cas de défaite)
+        if (($this->state['payDay'] ?? 0) > 0 && $result !== 'loss') {
+            $this->say("Vous ramassez {$this->state['payDay']} ₽ !", pause: true);
+        }
+        // Objets échangés ou perdus rendus, Morphing et Copie annulés
+        $this->restoreAfterBattle();
         $this->state['result'] = $result;
         $this->state['phase'] = 'ended';
         $this->emit('end', ['result' => $result]);
@@ -2120,15 +2386,30 @@ class BattleEngine
         unset($current);
         $this->onLeave($side);   // étape 23 : Médic Nature
         $current = &$this->active($side);
+        // Relais : les changements de stats et certains états passent au remplaçant
+        $kept = ! empty($this->state['batonPass']) ? $this->batonPassKeep($current) : null;
+        // Morphing, Copie, Conversion... : le Pokémon redevient lui-même
+        if (isset($current['volatile']['roostTypes'])) {
+            $current['types'] = $current['volatile']['roostTypes'];
+        }
+        $this->restoreOriginal($current);
         // En quittant le terrain : niveaux de stats et états temporaires remis à zéro
         $current['stages'] = $this->freshStages();
         $current['volatile'] = [];
         unset($current);
+        // L'adversaire n'est plus bloqué / amoureux / scellé par ce Pokémon
+        $foeB = &$this->active($this->opponent($side));
+        foreach (['cantEscape', 'attract'] as $key) {
+            if (($foeB['volatile'][$key] ?? null) === $side) {
+                unset($foeB['volatile'][$key]);
+            }
+        }
+        unset($foeB['volatile']['imprisoned'], $foeB);
 
         $this->state[$side]['active'] = $index;
         $new = &$this->active($side);
-        $new['stages'] = $this->freshStages();
-        $new['volatile'] = [];
+        $new['stages'] = $kept['stages'] ?? $this->freshStages();
+        $new['volatile'] = $kept['volatile'] ?? [];
         $new['toxic'] = 0;
 
         if ($pvp) {
@@ -2140,6 +2421,7 @@ class BattleEngine
         }
         $this->emitSendOut($side);
         $this->onEntry($side);   // étape 23 : Intimidation, Sécheresse, Télécharge...
+        $this->entryEffects($side);   // Picots, Pics Toxik, Piège de Roc, Vœu Soin
 
         if ($side === 'player') {
             if (! in_array($index, $this->state['participants'], true)) {
@@ -2594,6 +2876,14 @@ class BattleEngine
         if (! $usable) {
             return -1;
         }
+        // Encore : la même capacité ; Entrave, Provoc, Tourmente... : les capacités interdites ne sont pas choisies
+        if (isset($foe['volatile']['encore']) && in_array($foe['volatile']['encore']['slot'], $usable, true)) {
+            return $foe['volatile']['encore']['slot'];
+        }
+        $usable = array_values(array_filter($usable, fn ($i) => $this->moveRestriction($foe, $foe['moves'][$i], $i) === null));
+        if (! $usable) {
+            return -1;   // Lutte
+        }
         // Étape 22 : objet Choix
         $lock = $foe['volatile']['choiceLock'] ?? null;
         if ($lock !== null && in_array($lock, $usable, true) && $this->holds($foe, 'choice')) {
@@ -2714,8 +3004,8 @@ class BattleEngine
     /** L'effet de l'objet tenu s'il est de ce genre (config/held_items.php), sinon null */
     private function holds(array $b, string $effect): ?array
     {
-        if ($this->hasAbility($b, 'klutz')) {
-            return null;   // étape 23 : Maladresse, l'objet tenu n'a aucun effet
+        if ($this->hasAbility($b, 'klutz') || ! empty($b['volatile']['embargo'])) {
+            return null;   // étape 23 : Maladresse (et Embargo), l'objet tenu n'a aucun effet
         }
         $e = $b['item']['effect'] ?? null;
 
@@ -2893,6 +3183,8 @@ class BattleEngine
     private function consumeItem(string $side): void
     {
         $b = &$this->active($side);
+        $b['lastItem'] = $b['item'];   // Recyclage
+        unset($b['stolenItemId']);
         $b['item'] = null;
         $b['itemConsumed'] = true;
         $b['volatile']['unburden'] = true;   // étape 23 : Délestage (Vitesse x2 quand l'objet est utilisé)
@@ -2911,6 +3203,30 @@ class BattleEngine
     private function opponent(string $side): string
     {
         return $side === 'player' ? 'foe' : 'player';
+    }
+
+    /** Un autre Pokémon en forme que celui au combat ? */
+    private function hasOtherUsable(string $side): bool
+    {
+        foreach ($this->state[$side]['party'] as $i => $b) {
+            if ($b['hp'] > 0 && $i !== $this->state[$side]['active']) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /** Reste-t-il une capacité utilisable (PP, et ni Entrave, ni Provoc, ni Tourmente...) ? Sinon : Lutte */
+    private function hasSelectableMove(array $b): bool
+    {
+        foreach ($b['moves'] as $i => $m) {
+            if ($m['pp'] > 0 && ($m['slug'] === 'last-resort' || $this->moveRestriction($b, $m, $i) === null)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private function trainerName(): string
